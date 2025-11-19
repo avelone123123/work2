@@ -1,0 +1,444 @@
+/* ========================================
+   WALLET PAGE STYLES
+   ======================================== */
+
+.wallet-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Balance Cards */
+.balance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.balance-card {
+    padding: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.balance-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(176, 0, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.balance-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--spacing-md);
+}
+
+.balance-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.balance-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.balance-amount {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: var(--spacing-sm);
+}
+
+.currency-symbol {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.amount-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.amount-cents {
+    font-size: 24px;
+    color: var(--text-secondary);
+    margin-left: 2px;
+}
+
+.balance-change {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.balance-change.positive {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--neon-green);
+}
+
+.balance-info {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* Quick Actions */
+.quick-actions-wallet {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.wallet-action-btn {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+}
+
+.wallet-action-btn:hover {
+    transform: translateY(-4px);
+}
+
+.action-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.action-label {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Wallet Content Grid */
+.wallet-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--spacing-xl);
+}
+
+/* Transactions List */
+.transactions-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.transaction-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--spacing-md);
+    align-items: center;
+    padding: var(--spacing-lg);
+    transition: all 0.3s ease;
+}
+
+.transaction-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(4px);
+}
+
+.transaction-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.transaction-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.transaction-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.transaction-details {
+    display: flex;
+    gap: var(--spacing-md);
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.transaction-project {
+    color: var(--text-secondary);
+}
+
+.transaction-date {
+    color: var(--text-muted);
+}
+
+.transaction-amount {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.transaction-amount.positive {
+    color: var(--neon-green);
+}
+
+.transaction-amount.negative {
+    color: #ff4444;
+}
+
+.transaction-amount.escrow {
+    color: var(--neon-blue);
+}
+
+/* Wallet Sidebar */
+.wallet-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.sidebar-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Payment Methods */
+.payment-methods {
+    padding: var(--spacing-lg);
+}
+
+.payment-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.payment-card {
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, 
+        rgba(0, 212, 255, 0.1) 0%, 
+        rgba(176, 0, 255, 0.1) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.payment-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+}
+
+.card-chip {
+    width: 40px;
+    height: 30px;
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.3), 
+        rgba(255, 215, 0, 0.5));
+    border-radius: 6px;
+    margin-bottom: var(--spacing-md);
+}
+
+.card-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-md);
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-holder {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.card-logo {
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.add-card-btn {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.add-card-btn:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Escrow Info */
+.escrow-info {
+    padding: var(--spacing-lg);
+}
+
+.escrow-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--spacing-md);
+}
+
+.escrow-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.escrow-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.escrow-features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.feature-item svg {
+    color: var(--neon-green);
+}
+
+/* Earnings Chart */
+.earnings-chart {
+    padding: var(--spacing-lg);
+}
+
+.chart-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    height: 200px;
+    padding: var(--spacing-md) 0;
+}
+
+.chart-bar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.bar-fill {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(180deg, 
+        rgba(176, 0, 255, 0.5) 0%, 
+        rgba(176, 0, 255, 0.2) 100%);
+    transition: height 0.5s ease;
+}
+
+.bar-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .wallet-content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wallet-sidebar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .balance-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quick-actions-wallet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .transaction-item {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+    
+    .transaction-amount {
+        margin-top: var(--spacing-xs);
+    }
+}

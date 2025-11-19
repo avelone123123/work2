@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - TalentSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="marketplace.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page marketplace-page">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar glass-effect">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon neon-glow-purple"></div>
+                <span class="logo-text">TalentSphere</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <rect x="3" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <rect x="14" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <rect x="14" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Дашборд</span>
+            </a>
+            <a href="marketplace.html" class="nav-item active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Проекты</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 20C5 16.6863 7.68629 14 11 14H13C16.3137 14 19 16.6863 19 20" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Профиль</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="6" width="18" height="14" rx="3" stroke="currentColor" stroke-width="2"/>
+                    <path d="M3 10H21" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="7" cy="15" r="1.5" fill="currentColor"/>
+                </svg>
+                <span>Кошелек</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Сообщения</span>
+                <span class="badge neon-glow-pink">3</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-profile glass-card">
+                <div class="user-avatar neon-glow-blue"></div>
+                <div class="user-info">
+                    <div class="user-name">Alex Design</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="content-header">
+            <div class="header-left">
+                <h1 class="page-title">Маркетплейс <span class="gradient-text">Проектов</span></h1>
+                <p class="page-subtitle">Найдите идеальный проект для ваших навыков</p>
+            </div>
+            <div class="header-right">
+                <button class="btn-primary neon-button">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Создать проект
+                </button>
+            </div>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-section">
+            <div class="search-bar glass-card">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                    <path d="M20 20L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input type="text" placeholder="Поиск проектов по ключевым словам...">
+                <button class="search-btn neon-button">Найти</button>
+            </div>
+        </div>
+
+        <!-- Marketplace Grid -->
+        <div class="marketplace-grid">
+            <!-- Filters Sidebar -->
+            <aside class="filters-sidebar">
+                <div class="filter-section glass-card">
+                    <h3 class="filter-title">Категории</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            <span class="filter-label">UI/UX Design</span>
+                            <span class="filter-count">124</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <span class="filter-label">Web Development</span>
+                            <span class="filter-count">98</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <span class="filter-label">Mobile Apps</span>
+                            <span class="filter-count">76</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <span class="filter-label">Branding</span>
+                            <span class="filter-count">65</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <span class="filter-label">Illustration</span>
+                            <span class="filter-count">54</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section glass-card">
+                    <h3 class="filter-title">Бюджет</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="radio" name="budget">
+                            <span class="checkmark radio"></span>
+                            <span class="filter-label">До $500</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="budget" checked>
+                            <span class="checkmark radio"></span>
+                            <span class="filter-label">$500 - $2,000</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="budget">
+                            <span class="checkmark radio"></span>
+                            <span class="filter-label">$2,000 - $5,000</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="budget">
+                            <span class="checkmark radio"></span>
+                            <span class="filter-label">$5,000+</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section glass-card">
+                    <h3 class="filter-title">Срок выполнения</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <span class="filter-label">До 1 недели</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            <span class="filter-label">1-2 недели</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <span class="filter-label">2-4 недели</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <span class="filter-label">1+ месяц</span>
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Projects Grid -->
+            <div class="projects-content">
+                <div class="projects-header">
+                    <div class="results-info">
+                        Найдено <span class="gradient-text">487</span> проектов
+                    </div>
+                    <div class="sort-options">
+                        <select class="sort-select glass-card">
+                            <option>Сначала новые</option>
+                            <option>По бюджету (возр.)</option>
+                            <option>По бюджету (убыв.)</option>
+                            <option>По дедлайну</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="projects-grid-container">
+                    <!-- Project Card 1 -->
+                    <div class="marketplace-card glass-card">
+                        <div class="card-header">
+                            <div class="card-category neon-glow-blue">UI/UX Design</div>
+                            <div class="card-badge featured">Featured</div>
+                        </div>
+                        <h3 class="card-title">Редизайн Dashboard для SaaS платформы</h3>
+                        <p class="card-description">
+                            Требуется создать современный интерфейс для B2B SaaS платформы с акцентом на аналитику и визуализацию данных
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">UI Design</span>
+                            <span class="tag">Analytics</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Бюджет:</span>
+                                <span class="price-value neon-text-blue">$3,500</span>
+                            </div>
+                            <div class="card-meta">
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>14 дней</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <span>12 откликов</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="apply-btn neon-button">Откликнуться</button>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="marketplace-card glass-card">
+                        <div class="card-header">
+                            <div class="card-category neon-glow-pink">Web Development</div>
+                        </div>
+                        <h3 class="card-title">Landing Page для криптовалютного проекта</h3>
+                        <p class="card-description">
+                            Нужна разработка посадочной страницы с анимациями и интеграцией Web3 кошельков
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Web3</span>
+                            <span class="tag">GSAP</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Бюджет:</span>
+                                <span class="price-value neon-text-pink">$4,200</span>
+                            </div>
+                            <div class="card-meta">
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>21 день</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <span>8 откликов</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="apply-btn neon-button">Откликнуться</button>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="marketplace-card glass-card">
+                        <div class="card-header">
+                            <div class="card-category neon-glow-purple">Mobile App</div>
+                            <div class="card-badge urgent">Срочно</div>
+                        </div>
+                        <h3 class="card-title">Дизайн мобильного приложения для фитнеса</h3>
+                        <p class="card-description">
+                            UI/UX дизайн iOS и Android приложения с трекингом тренировок и планами питания
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Mobile</span>
+                            <span class="tag">Fitness</span>
+                            <span class="tag">Health</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Бюджет:</span>
+                                <span class="price-value neon-text-purple">$5,800</span>
+                            </div>
+                            <div class="card-meta">
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>30 дней</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <span>5 откликов</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="apply-btn neon-button">Откликнуться</button>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="marketplace-card glass-card">
+                        <div class="card-header">
+                            <div class="card-category neon-glow-cyan">Branding</div>
+                        </div>
+                        <h3 class="card-title">Фирменный стиль для tech стартапа</h3>
+                        <p class="card-description">
+                            Разработка логотипа, брендбука, визиток и презентационных материалов для AI стартапа
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Logo</span>
+                            <span class="tag">Brand Identity</span>
+                            <span class="tag">AI</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Бюджет:</span>
+                                <span class="price-value" style="color: var(--neon-cyan);">$2,900</span>
+                            </div>
+                            <div class="card-meta">
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>18 дней</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <span>15 откликов</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="apply-btn neon-button">Откликнуться</button>
+                    </div>
+
+                    <!-- Project Card 5 -->
+                    <div class="marketplace-card glass-card">
+                        <div class="card-header">
+                            <div class="card-category neon-glow-orange">Illustration</div>
+                            <div class="card-badge featured">Featured</div>
+                        </div>
+                        <h3 class="card-title">3D иллюстрации для веб-сайта</h3>
+                        <p class="card-description">
+                            Серия 3D иллюстраций в стиле cyberpunk для маркетингового сайта
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">3D</span>
+                            <span class="tag">Blender</span>
+                            <span class="tag">Cyberpunk</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Бюджет:</span>
+                                <span class="price-value neon-text-orange">$3,200</span>
+                            </div>
+                            <div class="card-meta">
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>25 дней</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <span>9 откликов</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="apply-btn neon-button">Откликнуться</button>
+                    </div>
+
+                    <!-- Project Card 6 -->
+                    <div class="marketplace-card glass-card">
+                        <div class="card-header">
+                            <div class="card-category neon-glow-green">Full-Stack</div>
+                        </div>
+                        <h3 class="card-title">E-commerce платформа на Next.js</h3>
+                        <p class="card-description">
+                            Полный цикл разработки интернет-магазина с админ-панелью и интеграцией платежей
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Stripe</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-price">
+                                <span class="price-label">Бюджет:</span>
+                                <span class="price-value neon-text-green">$7,500</span>
+                            </div>
+                            <div class="card-meta">
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                    <span>45 дней</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <span>18 откликов</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="apply-btn neon-button">Откликнуться</button>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn glass-card">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M12 5L7 10L12 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button class="page-btn glass-card active">1</button>
+                    <button class="page-btn glass-card">2</button>
+                    <button class="page-btn glass-card">3</button>
+                    <button class="page-btn glass-card">...</button>
+                    <button class="page-btn glass-card">12</button>
+                    <button class="page-btn glass-card">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SVG Gradients -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="gradient-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff0080;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ff6ec7;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#b000ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00fff5;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#00ccff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff6b00;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ff9500;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-green" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#00cc6a;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <script src="script.js"></script>
+</body>
+</html>

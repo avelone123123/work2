@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - TalentSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar glass-effect">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon neon-glow-purple"></div>
+                <span class="logo-text">TalentSphere</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <rect x="3" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <rect x="14" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <rect x="14" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Дашборд</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Проекты</span>
+            </a>
+            <a href="profile.html" class="nav-item active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 20C5 16.6863 7.68629 14 11 14H13C16.3137 14 19 16.6863 19 20" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Профиль</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="6" width="18" height="14" rx="3" stroke="currentColor" stroke-width="2"/>
+                    <path d="M3 10H21" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="7" cy="15" r="1.5" fill="currentColor"/>
+                </svg>
+                <span>Кошелек</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Сообщения</span>
+                <span class="badge neon-glow-pink">3</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-profile glass-card">
+                <div class="user-avatar neon-glow-blue"></div>
+                <div class="user-info">
+                    <div class="user-name">Alex Design</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content profile-content">
+        <!-- Profile Header -->
+        <div class="profile-header glass-card-large">
+            <div class="profile-cover">
+                <div class="cover-gradient"></div>
+            </div>
+            <div class="profile-main">
+                <div class="profile-avatar-section">
+                    <div class="profile-avatar neon-glow-purple">
+                        <div class="avatar-inner"></div>
+                    </div>
+                    <button class="btn-edit-avatar glass-card">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M14 2L18 6L7 17H3V13L14 2Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-name-section">
+                        <h1 class="profile-name">
+                            Alex <span class="gradient-text">Designer</span>
+                        </h1>
+                        <div class="profile-badges">
+                            <span class="badge-item neon-glow-blue">Pro</span>
+                            <span class="badge-item neon-glow-purple">Verified</span>
+                            <span class="badge-item neon-glow-pink">Top Rated</span>
+                        </div>
+                    </div>
+                    <p class="profile-bio">
+                        Senior UI/UX Designer & Creative Developer | 8+ лет опыта в создании 
+                        современных интерфейсов | Специализируюсь на Web3, FinTech и SaaS продуктах
+                    </p>
+                    <div class="profile-meta">
+                        <div class="meta-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M3 10H17M10 3C11.6569 5.33333 11.6569 8.66667 10 17C8.34315 8.66667 8.34315 5.33333 10 3Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>Сан-Франциско, США</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2"/>
+                                <path d="M10 6V10L13 13" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>Участник с 2022</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn-primary neon-button">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 7L10 2L17 7V16C17 16.5304 16.7893 17.0391 16.4142 17.4142C16.0391 17.7893 15.5304 18 15 18H5C4.46957 18 3.96086 17.7893 3.58579 17.4142C3.21071 17.0391 3 16.5304 3 16V7Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M7 18V9H13V18" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Редактировать профиль
+                    </button>
+                    <button class="btn-icon glass-card">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M17 3L3 17M3 3L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="profile-stats-grid">
+            <div class="stat-card-profile glass-card">
+                <div class="stat-icon-profile neon-glow-blue">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M16 4L20 12L28 13.5L22 20L23.5 28L16 23.5L8.5 28L10 20L4 13.5L12 12L16 4Z" stroke="url(#gradient-blue)" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="stat-value-profile neon-text-blue">4.9</div>
+                <div class="stat-label-profile">Рейтинг</div>
+            </div>
+            <div class="stat-card-profile glass-card">
+                <div class="stat-icon-profile neon-glow-pink">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect x="6" y="10" width="20" height="16" rx="3" stroke="url(#gradient-pink)" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="stat-value-profile neon-text-pink">147</div>
+                <div class="stat-label-profile">Проектов</div>
+            </div>
+            <div class="stat-card-profile glass-card">
+                <div class="stat-icon-profile neon-glow-purple">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="12" r="5" stroke="url(#gradient-purple)" stroke-width="2"/>
+                        <path d="M8 28C8 23.5817 11.5817 20 16 20C20.4183 20 24 23.5817 24 28" stroke="url(#gradient-purple)" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="stat-value-profile neon-text-purple">892</div>
+                <div class="stat-label-profile">Клиентов</div>
+            </div>
+            <div class="stat-card-profile glass-card">
+                <div class="stat-icon-profile neon-glow-cyan">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect x="6" y="8" width="20" height="16" rx="3" stroke="url(#gradient-cyan)" stroke-width="2"/>
+                        <path d="M6 13H26" stroke="url(#gradient-cyan)" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="stat-value-profile" style="color: var(--neon-cyan);">$547K</div>
+                <div class="stat-label-profile">Заработано</div>
+            </div>
+        </div>
+
+        <!-- Content Tabs -->
+        <div class="profile-tabs">
+            <button class="tab-btn active">Навыки</button>
+            <button class="tab-btn">Портфолио</button>
+            <button class="tab-btn">Отзывы</button>
+            <button class="tab-btn">Опыт</button>
+        </div>
+
+        <!-- Profile Content Grid -->
+        <div class="profile-content-grid">
+            <!-- Skills Section -->
+            <section class="skills-section">
+                <div class="section-header-profile">
+                    <h2 class="section-title-profile">Навыки & Технологии</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category glass-card">
+                        <h3 class="skill-category-title">
+                            <span class="skill-icon">🎨</span>
+                            Design Tools
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Figma</span>
+                                    <span class="skill-level neon-text-blue">Expert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%; background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Adobe XD</span>
+                                    <span class="skill-level neon-text-purple">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%; background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Sketch</span>
+                                    <span class="skill-level neon-text-pink">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%; background: linear-gradient(90deg, var(--neon-pink), var(--neon-orange));"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category glass-card">
+                        <h3 class="skill-category-title">
+                            <span class="skill-icon">💻</span>
+                            Development
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">HTML/CSS</span>
+                                    <span class="skill-level neon-text-blue">Expert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%; background: linear-gradient(90deg, var(--neon-blue), var(--neon-cyan));"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-level neon-text-purple">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%; background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">React</span>
+                                    <span class="skill-level neon-text-pink">Intermediate</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 65%; background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple));"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category glass-card">
+                        <h3 class="skill-category-title">
+                            <span class="skill-icon">⚡</span>
+                            Specializations
+                        </h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag neon-glow-blue">UI/UX Design</span>
+                            <span class="skill-tag neon-glow-pink">Web Design</span>
+                            <span class="skill-tag neon-glow-purple">Mobile Design</span>
+                            <span class="skill-tag neon-glow-cyan">Prototyping</span>
+                            <span class="skill-tag neon-glow-orange">Brand Identity</span>
+                            <span class="skill-tag neon-glow-green">Design Systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Section -->
+                <div class="section-header-profile" style="margin-top: 48px;">
+                    <h2 class="section-title-profile">Последние работы</h2>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item glass-card">
+                        <div class="portfolio-thumbnail neon-glow-blue">
+                            <div class="thumbnail-overlay">
+                                <button class="view-btn">Просмотр</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3 class="portfolio-title">FinTech Dashboard</h3>
+                            <p class="portfolio-category">UI/UX Design</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item glass-card">
+                        <div class="portfolio-thumbnail neon-glow-pink">
+                            <div class="thumbnail-overlay">
+                                <button class="view-btn">Просмотр</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3 class="portfolio-title">Crypto Wallet App</h3>
+                            <p class="portfolio-category">Mobile Design</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item glass-card">
+                        <div class="portfolio-thumbnail neon-glow-purple">
+                            <div class="thumbnail-overlay">
+                                <button class="view-btn">Просмотр</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3 class="portfolio-title">AI Platform Interface</h3>
+                            <p class="portfolio-category">Web Design</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item glass-card">
+                        <div class="portfolio-thumbnail neon-glow-cyan">
+                            <div class="thumbnail-overlay">
+                                <button class="view-btn">Просмотр</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3 class="portfolio-title">E-commerce Platform</h3>
+                            <p class="portfolio-category">Full Design</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reviews Section -->
+            <aside class="reviews-section">
+                <div class="reviews-header glass-card">
+                    <h3 class="reviews-title">Отзывы клиентов</h3>
+                    <div class="reviews-rating">
+                        <div class="rating-value neon-text-purple">4.9</div>
+                        <div class="rating-stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                        <div class="rating-count">243 отзыва</div>
+                    </div>
+                </div>
+
+                <div class="reviews-list">
+                    <div class="review-item glass-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar neon-glow-blue"></div>
+                            <div class="reviewer-info">
+                                <div class="reviewer-name">Sarah Johnson</div>
+                                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            Невероятный дизайнер! Проект выполнен качественно и в срок. 
+                            Отличное понимание современных трендов и потребностей бизнеса.
+                        </p>
+                        <div class="review-footer">
+                            <span class="review-project">UI/UX для SaaS</span>
+                            <span class="review-date">2 дня назад</span>
+                        </div>
+                    </div>
+
+                    <div class="review-item glass-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar neon-glow-pink"></div>
+                            <div class="reviewer-info">
+                                <div class="reviewer-name">Michael Chen</div>
+                                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            Профессионал высочайшего уровня. Создал потрясающий дизайн 
+                            нашего приложения. Рекомендую!
+                        </p>
+                        <div class="review-footer">
+                            <span class="review-project">Mobile App Design</span>
+                            <span class="review-date">1 неделя назад</span>
+                        </div>
+                    </div>
+
+                    <div class="review-item glass-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar neon-glow-purple"></div>
+                            <div class="reviewer-info">
+                                <div class="reviewer-name">Emma Davis</div>
+                                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="review-text">
+                            Быстро, качественно, креативно. Именно то, что нужно для 
+                            успешного проекта!
+                        </p>
+                        <div class="review-footer">
+                            <span class="review-project">Web Design</span>
+                            <span class="review-date">2 недели назад</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- SVG Gradients -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="gradient-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff0080;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ff6ec7;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#b000ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00fff5;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#00ccff;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <script src="script.js"></script>
+</body>
+</html>

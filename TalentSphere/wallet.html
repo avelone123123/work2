@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - TalentSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="wallet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar glass-effect">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon neon-glow-purple"></div>
+                <span class="logo-text">TalentSphere</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <rect x="3" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <rect x="14" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <rect x="14" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Дашборд</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Проекты</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 20C5 16.6863 7.68629 14 11 14H13C16.3137 14 19 16.6863 19 20" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Профиль</span>
+            </a>
+            <a href="wallet.html" class="nav-item active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="6" width="18" height="14" rx="3" stroke="currentColor" stroke-width="2"/>
+                    <path d="M3 10H21" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="7" cy="15" r="1.5" fill="currentColor"/>
+                </svg>
+                <span>Кошелек</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Сообщения</span>
+                <span class="badge neon-glow-pink">3</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-profile glass-card">
+                <div class="user-avatar neon-glow-blue"></div>
+                <div class="user-info">
+                    <div class="user-name">Alex Design</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content wallet-content">
+        <!-- Header -->
+        <header class="content-header">
+            <div class="header-left">
+                <h1 class="page-title">Кошелек & <span class="gradient-text">Escrow</span></h1>
+                <p class="page-subtitle">Управляйте финансами и отслеживайте транзакции</p>
+            </div>
+            <div class="header-right">
+                <button class="btn-primary neon-button">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Вывести средства
+                </button>
+            </div>
+        </header>
+
+        <!-- Balance Cards -->
+        <div class="balance-grid">
+            <div class="balance-card glass-card-large">
+                <div class="balance-header">
+                    <div class="balance-icon neon-glow-purple">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="8" width="24" height="18" rx="4" stroke="url(#gradient-purple)" stroke-width="2"/>
+                            <path d="M4 14H28" stroke="url(#gradient-purple)" stroke-width="2"/>
+                            <circle cx="10" cy="20" r="2" fill="url(#gradient-purple)"/>
+                        </svg>
+                    </div>
+                    <span class="balance-label">Основной баланс</span>
+                </div>
+                <div class="balance-amount">
+                    <span class="currency-symbol">$</span>
+                    <span class="amount-value neon-text-purple">12,450</span>
+                    <span class="amount-cents">.00</span>
+                </div>
+                <div class="balance-change positive">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>+$2,340 за месяц</span>
+                </div>
+            </div>
+
+            <div class="balance-card glass-card-large">
+                <div class="balance-header">
+                    <div class="balance-icon neon-glow-blue">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="url(#gradient-blue)" stroke-width="2"/>
+                            <path d="M16 10V16L20 20" stroke="url(#gradient-blue)" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="balance-label">В Escrow</span>
+                </div>
+                <div class="balance-amount">
+                    <span class="currency-symbol">$</span>
+                    <span class="amount-value neon-text-blue">8,700</span>
+                    <span class="amount-cents">.00</span>
+                </div>
+                <div class="balance-info">
+                    <span>5 активных проектов</span>
+                </div>
+            </div>
+
+            <div class="balance-card glass-card-large">
+                <div class="balance-header">
+                    <div class="balance-icon neon-glow-pink">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M4 24L12 12L18 18L28 8" stroke="url(#gradient-pink)" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M22 8H28V14" stroke="url(#gradient-pink)" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="balance-label">Ожидает</span>
+                </div>
+                <div class="balance-amount">
+                    <span class="currency-symbol">$</span>
+                    <span class="amount-value neon-text-pink">3,250</span>
+                    <span class="amount-cents">.00</span>
+                </div>
+                <div class="balance-info">
+                    <span>Поступит в течение 3 дней</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions-wallet">
+            <button class="wallet-action-btn glass-card">
+                <div class="action-icon neon-glow-blue">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L12 22M12 2L16 6M12 2L8 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="action-label">Получить</span>
+            </button>
+            <button class="wallet-action-btn glass-card">
+                <div class="action-icon neon-glow-pink">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 22L12 2M12 22L8 18M12 22L16 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="action-label">Отправить</span>
+            </button>
+            <button class="wallet-action-btn glass-card">
+                <div class="action-icon neon-glow-purple">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 12H21M3 12L7 8M3 12L7 16M21 12L17 8M21 12L17 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="action-label">Обмен</span>
+            </button>
+            <button class="wallet-action-btn glass-card">
+                <div class="action-icon neon-glow-cyan">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="action-label">История</span>
+            </button>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="wallet-content-grid">
+            <!-- Transactions List -->
+            <section class="transactions-section">
+                <div class="section-header-inline">
+                    <h2 class="section-title-small">Последние транзакции</h2>
+                    <button class="btn-text">Все транзакции →</button>
+                </div>
+
+                <div class="transactions-list">
+                    <div class="transaction-item glass-card">
+                        <div class="transaction-icon neon-glow-green">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L12 22M12 2L16 6M12 2L8 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <div class="transaction-title">Получено от клиента</div>
+                            <div class="transaction-details">
+                                <span class="transaction-project">Проект: Dashboard Redesign</span>
+                                <span class="transaction-date">15 дек, 2024</span>
+                            </div>
+                        </div>
+                        <div class="transaction-amount positive">
+                            +$3,500.00
+                        </div>
+                    </div>
+
+                    <div class="transaction-item glass-card">
+                        <div class="transaction-icon neon-glow-blue">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <div class="transaction-title">Escrow удержание</div>
+                            <div class="transaction-details">
+                                <span class="transaction-project">Проект: Mobile App UI</span>
+                                <span class="transaction-date">14 дек, 2024</span>
+                            </div>
+                        </div>
+                        <div class="transaction-amount escrow">
+                            $2,200.00
+                        </div>
+                    </div>
+
+                    <div class="transaction-item glass-card">
+                        <div class="transaction-icon neon-glow-pink">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 22L12 2M12 22L8 18M12 22L16 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <div class="transaction-title">Вывод средств</div>
+                            <div class="transaction-details">
+                                <span class="transaction-project">На банковскую карту</span>
+                                <span class="transaction-date">13 дек, 2024</span>
+                            </div>
+                        </div>
+                        <div class="transaction-amount negative">
+                            -$5,000.00
+                        </div>
+                    </div>
+
+                    <div class="transaction-item glass-card">
+                        <div class="transaction-icon neon-glow-purple">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12L19 12M19 12L15 8M19 12L15 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <div class="transaction-title">Комиссия платформы</div>
+                            <div class="transaction-details">
+                                <span class="transaction-project">5% от сделки</span>
+                                <span class="transaction-date">12 дек, 2024</span>
+                            </div>
+                        </div>
+                        <div class="transaction-amount negative">
+                            -$175.00
+                        </div>
+                    </div>
+
+                    <div class="transaction-item glass-card">
+                        <div class="transaction-icon neon-glow-green">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L12 22M12 2L16 6M12 2L8 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <div class="transaction-title">Получено от клиента</div>
+                            <div class="transaction-details">
+                                <span class="transaction-project">Проект: Brand Identity</span>
+                                <span class="transaction-date">10 дек, 2024</span>
+                            </div>
+                        </div>
+                        <div class="transaction-amount positive">
+                            +$1,800.00
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sidebar Content -->
+            <aside class="wallet-sidebar">
+                <!-- Payment Methods -->
+                <div class="payment-methods glass-card">
+                    <h3 class="sidebar-title">Способы оплаты</h3>
+                    <div class="payment-cards">
+                        <div class="payment-card glass-card neon-glow-blue">
+                            <div class="card-chip"></div>
+                            <div class="card-number">•••• •••• •••• 4242</div>
+                            <div class="card-footer">
+                                <div class="card-holder">Alex Designer</div>
+                                <div class="card-logo">VISA</div>
+                            </div>
+                        </div>
+                        <button class="add-card-btn glass-card">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M16 8V24M8 16H24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Добавить карту</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Escrow Protection -->
+                <div class="escrow-info glass-card">
+                    <div class="escrow-header">
+                        <div class="escrow-icon neon-glow-purple">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="url(#gradient-purple)" stroke-width="2"/>
+                                <path d="M12 16L15 19L20 13" stroke="url(#gradient-purple)" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="sidebar-title">Escrow Защита</h3>
+                    </div>
+                    <p class="escrow-description">
+                        Все средства защищены системой Escrow. Деньги переводятся исполнителю 
+                        только после подтверждения выполнения работы.
+                    </p>
+                    <div class="escrow-features">
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10L8 13L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>100% безопасность</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10L8 13L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>AI мониторинг</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10L8 13L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Моментальные выплаты</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Chart -->
+                <div class="earnings-chart glass-card">
+                    <h3 class="sidebar-title">Доходы за 6 месяцев</h3>
+                    <div class="chart-container">
+                        <div class="chart-bar" style="height: 60%;">
+                            <div class="bar-fill neon-glow-blue" style="height: 100%;"></div>
+                            <span class="bar-label">Июл</span>
+                        </div>
+                        <div class="chart-bar" style="height: 75%;">
+                            <div class="bar-fill neon-glow-pink" style="height: 100%;"></div>
+                            <span class="bar-label">Авг</span>
+                        </div>
+                        <div class="chart-bar" style="height: 55%;">
+                            <div class="bar-fill neon-glow-purple" style="height: 100%;"></div>
+                            <span class="bar-label">Сен</span>
+                        </div>
+                        <div class="chart-bar" style="height: 85%;">
+                            <div class="bar-fill neon-glow-cyan" style="height: 100%;"></div>
+                            <span class="bar-label">Окт</span>
+                        </div>
+                        <div class="chart-bar" style="height: 70%;">
+                            <div class="bar-fill neon-glow-orange" style="height: 100%;"></div>
+                            <span class="bar-label">Ноя</span>
+                        </div>
+                        <div class="chart-bar" style="height: 95%;">
+                            <div class="bar-fill neon-glow-green" style="height: 100%;"></div>
+                            <span class="bar-label">Дек</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- SVG Gradients -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="gradient-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff0080;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ff6ec7;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#b000ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00fff5;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#00ccff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff6b00;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ff9500;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-green" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#00cc6a;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <script src="script.js"></script>
+</body>
+</html>
