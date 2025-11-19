@@ -17,14 +17,22 @@
                 <div class="logo-icon neon-glow-purple"></div>
                 <span class="logo-text">TalentSphere</span>
             </div>
+            <!-- Global Search -->
+            <div class="global-search">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="search-icon">
+                    <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                    <path d="M17 17L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input type="text" placeholder="Поиск проектов, фрилансеров..." class="search-input">
+            </div>
             <ul class="nav-links">
-                <li><a href="#features">Возможности</a></li>
-                <li><a href="#how-it-works">Как это работает</a></li>
-                <li><a href="#pricing">Тарифы</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="education.html">Обучение</a></li>
+                <li><a href="about.html">О платформе</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="dashboard.html" class="btn-secondary">Войти</a>
-                <a href="dashboard.html" class="btn-primary neon-button">Начать</a>
+                <a href="login.html" class="btn-secondary">Войти</a>
+                <a href="register.html" class="btn-primary neon-button">Начать</a>
             </div>
         </div>
     </nav>
@@ -47,7 +55,7 @@
                     и футуристичным интерфейсом для профессионалов
                 </p>
                 <div class="hero-actions">
-                    <a href="dashboard.html" class="btn-hero-primary neon-button">
+                    <a href="register.html" class="btn-hero-primary neon-button">
                         <span>Начать проект</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -183,6 +191,111 @@
         </div>
     </section>
 
+    <!-- Marketplace Preview Section -->
+    <section class="marketplace-preview-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Популярные <span class="gradient-text">проекты</span></h2>
+                <p class="section-subtitle">Найдите идеальный проект прямо сейчас</p>
+            </div>
+            <div class="marketplace-preview-grid">
+                <!-- Project Card 1 -->
+                <div class="preview-card glass-card">
+                    <div class="preview-header">
+                        <div class="preview-icon neon-glow-blue">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <rect x="4" y="4" width="24" height="24" rx="4" stroke="url(#gradient-blue)" stroke-width="2"/>
+                                <path d="M12 16L14 18L20 12" stroke="url(#gradient-blue)" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="preview-badge featured">Featured</span>
+                    </div>
+                    <h3 class="preview-title">UI/UX редизайн SaaS платформы</h3>
+                    <p class="preview-description">
+                        Требуется современный интерфейс для B2B платформы с акцентом на аналитику
+                    </p>
+                    <div class="preview-tags">
+                        <span class="tag">Figma</span>
+                        <span class="tag">UI Design</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                    <div class="preview-footer">
+                        <div class="preview-price">
+                            <span class="price-label">Бюджет:</span>
+                            <span class="price-value neon-text-blue">$3,500</span>
+                        </div>
+                        <a href="marketplace.html" class="btn-preview">Подробнее →</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="preview-card glass-card">
+                    <div class="preview-header">
+                        <div class="preview-icon neon-glow-pink">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M16 4L20 12L28 13L22 19L23.5 27L16 22.5L8.5 27L10 19L4 13L12 12L16 4Z" stroke="url(#gradient-pink)" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <span class="preview-badge hot">Срочно</span>
+                    </div>
+                    <h3 class="preview-title">Landing для криптовалютного проекта</h3>
+                    <p class="preview-description">
+                        Посадочная страница с анимациями и интеграцией Web3 кошельков
+                    </p>
+                    <div class="preview-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Web3</span>
+                        <span class="tag">GSAP</span>
+                    </div>
+                    <div class="preview-footer">
+                        <div class="preview-price">
+                            <span class="price-label">Бюджет:</span>
+                            <span class="price-value neon-text-pink">$4,200</span>
+                        </div>
+                        <a href="marketplace.html" class="btn-preview">Подробнее →</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="preview-card glass-card">
+                    <div class="preview-header">
+                        <div class="preview-icon neon-glow-purple">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <rect x="7" y="4" width="18" height="24" rx="3" stroke="url(#gradient-purple)" stroke-width="2"/>
+                                <path d="M12 10H20M12 15H20M12 20H16" stroke="url(#gradient-purple)" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="preview-badge new">Новое</span>
+                    </div>
+                    <h3 class="preview-title">Мобильное приложение для фитнеса</h3>
+                    <p class="preview-description">
+                        UI/UX дизайн iOS и Android приложения с трекингом тренировок
+                    </p>
+                    <div class="preview-tags">
+                        <span class="tag">Mobile</span>
+                        <span class="tag">Fitness</span>
+                        <span class="tag">Health</span>
+                    </div>
+                    <div class="preview-footer">
+                        <div class="preview-price">
+                            <span class="price-label">Бюджет:</span>
+                            <span class="price-value neon-text-purple">$5,800</span>
+                        </div>
+                        <a href="marketplace.html" class="btn-preview">Подробнее →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="marketplace-cta">
+                <a href="marketplace.html" class="btn-marketplace-all neon-button">
+                    <span>Смотреть все проекты</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-container glass-card-large">
@@ -190,7 +303,7 @@
                 <h2 class="cta-title">Готовы начать?</h2>
                 <p class="cta-subtitle">Присоединяйтесь к платформе будущего прямо сейчас</p>
                 <div class="cta-actions">
-                    <a href="dashboard.html" class="btn-cta-primary neon-button">
+                    <a href="register.html" class="btn-cta-primary neon-button">
                         Создать аккаунт
                     </a>
                     <a href="marketplace.html" class="btn-cta-secondary glass-card">
@@ -218,20 +331,21 @@
                 <div class="footer-column">
                     <h4>Платформа</h4>
                     <a href="marketplace.html">Проекты</a>
-                    <a href="dashboard.html">Дашборд</a>
-                    <a href="profile.html">Профиль</a>
+                    <a href="find-freelancers.html">Поиск фрилансеров</a>
+                    <a href="education.html">Обучение</a>
+                    <a href="create-project.html">Создать проект</a>
                 </div>
                 <div class="footer-column">
                     <h4>Компания</h4>
-                    <a href="#">О нас</a>
-                    <a href="#">Блог</a>
-                    <a href="#">Карьера</a>
+                    <a href="about.html">О нас</a>
+                    <a href="contact.html">Контакты</a>
+                    <a href="sitemap.html">Все страницы</a>
                 </div>
                 <div class="footer-column">
                     <h4>Поддержка</h4>
-                    <a href="#">Помощь</a>
-                    <a href="#">Контакты</a>
-                    <a href="#">FAQ</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Помощь</a>
+                    <a href="disputes.html">Арбитраж</a>
                 </div>
             </div>
         </div>

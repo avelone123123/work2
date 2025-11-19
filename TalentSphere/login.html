@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - TalentSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <!-- Background Elements -->
+    <div class="auth-bg">
+        <div class="auth-bg-gradient gradient-1"></div>
+        <div class="auth-bg-gradient gradient-2"></div>
+        <div class="floating-sphere sphere-1 neon-sphere"></div>
+        <div class="floating-sphere sphere-2 neon-sphere"></div>
+    </div>
+
+    <!-- Auth Container -->
+    <div class="auth-container">
+        <!-- Logo -->
+        <a href="index.html" class="auth-logo">
+            <div class="logo-icon neon-glow-purple"></div>
+            <span class="logo-text">TalentSphere</span>
+        </a>
+
+        <!-- Login Card -->
+        <div class="auth-card glass-card-large">
+            <div class="auth-header">
+                <h1 class="auth-title">С возвращением!</h1>
+                <p class="auth-subtitle">Войдите в свой аккаунт</p>
+            </div>
+
+            <form class="auth-form" action="dashboard.html" method="get">
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 5L10 11L17 5M3 5H17V15C17 15.5523 16.5523 16 16 16H4C3.44772 16 3 15.5523 3 15V5Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Email
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        class="form-input glass-card" 
+                        placeholder="your@email.com"
+                        required
+                    >
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password" class="form-label">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <rect x="4" y="9" width="12" height="9" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M7 9V6C7 4.34315 8.34315 3 10 3C11.6569 3 13 4.34315 13 6V9" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Пароль
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        class="form-input glass-card" 
+                        placeholder="••••••••"
+                        required
+                    >
+                </div>
+
+                <!-- Remember & Forgot -->
+                <div class="form-row">
+                    <label class="checkbox-label">
+                        <input type="checkbox" class="form-checkbox">
+                        <span class="checkbox-custom"></span>
+                        <span>Запомнить меня</span>
+                    </label>
+                    <a href="#" class="forgot-link">Забыли пароль?</a>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="auth-submit-btn neon-button">
+                    <span>Войти</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+
+                <!-- Divider -->
+                <div class="auth-divider">
+                    <span>или войти через</span>
+                </div>
+
+                <!-- Social Login -->
+                <div class="social-login">
+                    <button type="button" class="social-btn glass-card">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                        </svg>
+                        Google
+                    </button>
+                    <button type="button" class="social-btn glass-card">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#1877F2">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        Facebook
+                    </button>
+                </div>
+
+                <!-- Register Link -->
+                <div class="auth-footer">
+                    <p>Нет аккаунта? <a href="register.html" class="auth-link">Зарегистрироваться</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Features -->
+        <div class="auth-features">
+            <div class="feature-item glass-card">
+                <div class="feature-icon neon-glow-blue">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span>AI-защита сделок</span>
+            </div>
+            <div class="feature-item glass-card">
+                <div class="feature-icon neon-glow-pink">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <span>Мгновенные выплаты</span>
+            </div>
+            <div class="feature-item glass-card">
+                <div class="feature-icon neon-glow-purple">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M7 11V7C7 4.79086 8.79086 3 11 3H13C15.2091 3 17 4.79086 17 7V11" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <span>Надежная escrow</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SVG Gradients -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="gradient-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0099ff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff0080;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ff6ec7;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#b000ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <script src="script.js"></script>
+</body>
+</html>

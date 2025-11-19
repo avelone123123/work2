@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Верификация - TalentSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <aside class="sidebar glass-effect">
+        <div class="sidebar-header"><a href="index.html" class="logo" style="text-decoration: none; color: inherit;"><div class="logo-icon neon-glow-purple"></div><span class="logo-text">TalentSphere</span></a></div>
+        <nav class="sidebar-nav"><a href="dashboard.html" class="nav-item"><span>Дашборд</span></a><a href="profile.html" class="nav-item"><span>Профиль</span></a></nav>
+    </aside>
+    <main class="main-content">
+        <header class="content-header"><h1 class="page-title">Верификация <span class="gradient-text">профиля</span></h1><p class="page-subtitle">Повысьте доверие клиентов</p></header>
+        <div class="verification-steps">
+            <div class="verification-card glass-card"><div class="verification-icon neon-glow-blue">📧</div><h3>Email верификация</h3><p>Подтвердите ваш email адрес</p><span class="status-badge completed">✓ Завершено</span></div>
+            <div class="verification-card glass-card"><div class="verification-icon neon-glow-pink">📱</div><h3>Телефон</h3><p>Подтвердите номер телефона</p><button class="verify-btn neon-button">Верифицировать</button></div>
+            <div class="verification-card glass-card"><div class="verification-icon neon-glow-purple">🆔</div><h3>Документы</h3><p>Загрузите документ, удостоверяющий личность</p><button class="verify-btn neon-button">Загрузить</button></div>
+            <div class="verification-card glass-card"><div class="verification-icon neon-glow-cyan">💼</div><h3>Профессиональный статус</h3><p>Подтвердите опыт работы</p><button class="verify-btn neon-button">Добавить</button></div>
+        </div>
+        <div class="benefits-section glass-card"><h2>Преимущества верификации</h2><ul><li>🎯 Приоритет в поиске</li><li>⭐ Значок "Verified"</li><li>💰 Доступ к премиум проектам</li><li>🛡️ Повышенное доверие</li></ul></div>
+    </main>
+    <style>
+        .verification-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg); margin-bottom: var(--spacing-xl); }
+        .verification-card { padding: var(--spacing-xl); text-align: center; }
+        .verification-icon { width: 80px; height: 80px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 40px; background: rgba(255, 255, 255, 0.05); margin: 0 auto var(--spacing-md); }
+        .verification-card h3 { font-size: 18px; margin-bottom: var(--spacing-sm); }
+        .verification-card p { color: var(--text-secondary); font-size: 14px; margin-bottom: var(--spacing-md); }
+        .status-badge { display: inline-block; padding: 8px 16px; background: rgba(0, 255, 136, 0.2); color: var(--neon-green); border-radius: 20px; font-size: 13px; font-weight: 700; }
+        .verify-btn { width: 100%; justify-content: center; }
+        .benefits-section { padding: var(--spacing-xl); }
+        .benefits-section h2 { font-size: 24px; margin-bottom: var(--spacing-md); }
+        .benefits-section ul { list-style: none; padding: 0; }
+        .benefits-section li { padding: var(--spacing-sm) 0; font-size: 16px; }
+    </style>
+    <script src="script.js"></script>
+</body>
+</html>

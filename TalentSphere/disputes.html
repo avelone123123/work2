@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Арбитраж - TalentSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <aside class="sidebar glass-effect">
+        <div class="sidebar-header"><a href="index.html" class="logo" style="text-decoration: none; color: inherit;"><div class="logo-icon neon-glow-purple"></div><span class="logo-text">TalentSphere</span></a></div>
+        <nav class="sidebar-nav"><a href="dashboard.html" class="nav-item"><span>Дашборд</span></a><a href="wallet.html" class="nav-item"><span>Кошелек</span></a></nav>
+    </aside>
+    <main class="main-content">
+        <header class="content-header"><h1 class="page-title">Арбитраж & <span class="gradient-text">Споры</span></h1><p class="page-subtitle">Разрешение конфликтных ситуаций</p></header>
+        <div class="disputes-list">
+            <div class="dispute-card glass-card">
+                <div class="dispute-header"><div class="dispute-badge active">Активный</div><span class="dispute-id">#12345</span></div>
+                <h3 class="dispute-title">Проект: Редизайн Dashboard</h3>
+                <p class="dispute-desc">Разногласия по качеству выполненной работы</p>
+                <div class="dispute-meta"><span>Открыт: 2 дня назад</span><span class="dispute-status">⏳ Рассмотрение</span></div>
+                <div class="dispute-actions"><button class="btn-secondary glass-card">Детали</button><button class="btn-primary neon-button">Добавить комментарий</button></div>
+            </div>
+            <div class="dispute-card glass-card">
+                <div class="dispute-header"><div class="dispute-badge resolved">Решено</div><span class="dispute-id">#12340</span></div>
+                <h3 class="dispute-title">Проект: Landing Page</h3>
+                <p class="dispute-desc">Спор по срокам выполнения</p>
+                <div class="dispute-meta"><span>Решено 5 дней назад</span><span class="dispute-status">✓ В пользу фрилансера</span></div>
+            </div>
+        </div>
+        <div class="help-section glass-card"><h2>Как работает арбитраж</h2><ol><li>Открываете спор с описанием проблемы</li><li>Предоставляете доказательства (скриншоты, переписка)</li><li>Наша команда рассматривает обе стороны</li><li>Выносится справедливое решение в течение 3-5 дней</li></ol></div>
+    </main>
+    <style>
+        .disputes-list { display: flex; flex-direction: column; gap: var(--spacing-md); margin-bottom: var(--spacing-xl); }
+        .dispute-card { padding: var(--spacing-xl); }
+        .dispute-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-md); }
+        .dispute-badge { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+        .dispute-badge.active { background: linear-gradient(135deg, var(--neon-orange), var(--neon-pink)); }
+        .dispute-badge.resolved { background: rgba(0, 255, 136, 0.2); color: var(--neon-green); }
+        .dispute-id { color: var(--text-muted); font-size: 13px; }
+        .dispute-title { font-size: 20px; font-weight: 700; margin-bottom: var(--spacing-sm); }
+        .dispute-desc { color: var(--text-secondary); margin-bottom: var(--spacing-md); }
+        .dispute-meta { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-secondary); margin-bottom: var(--spacing-md); }
+        .dispute-actions { display: flex; gap: var(--spacing-sm); }
+        .help-section { padding: var(--spacing-xl); }
+        .help-section h2 { font-size: 24px; margin-bottom: var(--spacing-md); }
+        .help-section ol { padding-left: 20px; }
+        .help-section li { padding: var(--spacing-sm) 0; color: var(--text-secondary); }
+    </style>
+    <script src="script.js"></script>
+</body>
+</html>

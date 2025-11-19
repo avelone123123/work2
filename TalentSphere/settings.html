@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки - TalentSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="settings.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <aside class="sidebar glass-effect">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                <div class="logo-icon neon-glow-purple"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <rect x="3" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <rect x="14" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <rect x="14" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Дашборд</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Проекты</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 20C5 16.6863 7.68629 14 11 14H13C16.3137 14 19 16.6863 19 20" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Профиль</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="6" width="18" height="14" rx="3" stroke="currentColor" stroke-width="2"/>
+                    <path d="M3 10H21" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="7" cy="15" r="1.5" fill="currentColor"/>
+                </svg>
+                <span>Кошелек</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Сообщения</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 14L21 9L12 4L3 9L12 14Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 14V20" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Обучение</span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 8A6 6 0 0 0 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Уведомления</span>
+            </a>
+            <a href="settings.html" class="nav-item active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Настройки</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="content-header">
+            <h1 class="page-title">Настройки <span class="gradient-text">аккаунта</span></h1>
+        </header>
+
+        <div class="settings-tabs glass-card">
+            <button class="tab-btn active">Профиль</button>
+            <button class="tab-btn">Безопасность</button>
+            <button class="tab-btn">Уведомления</button>
+            <button class="tab-btn">Платежи</button>
+        </div>
+
+        <div class="settings-content">
+            <!-- Профиль -->
+            <section class="settings-section glass-card">
+                <div class="section-header">
+                    <div class="section-icon neon-glow-blue">👤</div>
+                    <div>
+                        <h2 class="section-title">Основная информация</h2>
+                        <p class="section-description">Управляйте своими личными данными</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Имя
+                    </label>
+                    <input type="text" class="form-input glass-card" value="Alex Designer">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M3 7L10 11L17 7" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Email
+                    </label>
+                    <input type="email" class="form-input glass-card" value="alex@example.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <rect x="5" y="3" width="10" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Телефон
+                    </label>
+                    <input type="tel" class="form-input glass-card" value="+7 999 123 45 67">
+                </div>
+                <button class="btn-primary neon-button">
+                    <span>Сохранить изменения</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M16 10L10 16M16 10L10 4M16 10H4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </section>
+
+            <!-- Безопасность -->
+            <section class="settings-section glass-card">
+                <div class="section-header">
+                    <div class="section-icon neon-glow-pink">🔒</div>
+                    <div>
+                        <h2 class="section-title">Безопасность</h2>
+                        <p class="section-description">Защитите свой аккаунт</p>
+                    </div>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <h4>Двухфакторная аутентификация</h4>
+                        <p>Дополнительный уровень защиты вашего аккаунта</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <h4>Уведомления о входе</h4>
+                        <p>Получайте уведомления о новых входах</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <button class="btn-secondary glass-card" style="margin-top: 20px;">Изменить пароль</button>
+            </section>
+
+            <!-- Уведомления -->
+            <section class="settings-section glass-card">
+                <div class="section-header">
+                    <div class="section-icon neon-glow-purple">🔔</div>
+                    <div>
+                        <h2 class="section-title">Уведомления</h2>
+                        <p class="section-description">Управляйте уведомлениями</p>
+                    </div>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <h4>Новые проекты</h4>
+                        <p>Уведомления о подходящих проектах</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <h4>Сообщения</h4>
+                        <p>Уведомления о новых сообщениях</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <h4>Email рассылка</h4>
+                        <p>Новости и обновления платформы</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Приватность -->
+            <section class="settings-section glass-card">
+                <div class="section-header">
+                    <div class="section-icon neon-glow-cyan">🔐</div>
+                    <div>
+                        <h2 class="section-title">Приватность</h2>
+                        <p class="section-description">Контролируйте видимость профиля</p>
+                    </div>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <h4>Публичный профиль</h4>
+                        <p>Показывать профиль всем пользователям</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="security-option">
+                    <div class="option-info">
+                        <h4>Показывать статус online</h4>
+                        <p>Другие увидят, когда вы онлайн</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

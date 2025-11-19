@@ -1,5 +1,45 @@
 // TalentSphere - Interactive JavaScript
 
+// Skeleton Loading Helper
+function showSkeletonLoader(container, count = 3) {
+    const skeletonHTML = `
+        <div class="skeleton-card skeleton" style="margin-bottom: 16px;">
+            <div class="skeleton-title skeleton"></div>
+            <div class="skeleton-text skeleton"></div>
+            <div class="skeleton-text skeleton" style="width: 80%;"></div>
+        </div>
+    `;
+    if (container) {
+        container.innerHTML = skeletonHTML.repeat(count);
+    }
+}
+
+function hideSkeletonLoader(container, content) {
+    if (container) {
+        setTimeout(() => {
+            container.innerHTML = content;
+            container.classList.add('fade-in');
+        }, 500);
+    }
+}
+
+// Enhanced Micro-interactions
+function addRippleEffect(button, event) {
+    const ripple = document.createElement('span');
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+    
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    ripple.classList.add('ripple');
+    
+    button.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -294,6 +334,34 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('beforeunload', () => {
         document.body.style.opacity = '0.7';
     });
+
+    // Mobile menu toggle for messages page
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    if (mobileMenuToggle && sidebar && sidebarOverlay) {
+        // Toggle sidebar
+        mobileMenuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+        });
+
+        // Close sidebar when clicking overlay
+        sidebarOverlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        });
+
+        // Close sidebar when clicking nav item
+        const navItems = sidebar.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+            });
+        });
+    }
 
     // Console welcome message
     console.log('%c🚀 TalentSphere Platform', 'color: #b000ff; font-size: 24px; font-weight: bold;');

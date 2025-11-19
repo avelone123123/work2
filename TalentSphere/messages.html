@@ -11,14 +11,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="dashboard-page">
+<body class="dashboard-page messages-page">
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </button>
+
     <!-- Sidebar Navigation -->
-    <aside class="sidebar glass-effect">
+    <aside class="sidebar glass-effect" id="sidebar">
         <div class="sidebar-header">
-            <div class="logo">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
                 <div class="logo-icon neon-glow-purple"></div>
                 <span class="logo-text">TalentSphere</span>
-            </div>
+            </a>
         </div>
         
         <nav class="sidebar-nav">

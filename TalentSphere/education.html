@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обучение - TalentSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <aside class="sidebar glass-effect">
+        <div class="sidebar-header"><a href="index.html" class="logo" style="text-decoration: none; color: inherit;"><div class="logo-icon neon-glow-purple"></div><span class="logo-text">TalentSphere</span></a></div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item"><span>Дашборд</span></a>
+            <a href="education.html" class="nav-item active"><span>Обучение</span></a>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <header class="content-header"><h1 class="page-title">Образовательный <span class="gradient-text">центр</span></h1><p class="page-subtitle">Курсы для профессионального роста</p></header>
+        <div class="courses-grid">
+            <div class="course-card glass-card">
+                <div class="course-image neon-glow-blue"></div>
+                <div class="course-badge">Популярное</div>
+                <h3 class="course-title">Эффективный фриланс</h3>
+                <p class="course-desc">Научитесь находить клиентов и зарабатывать больше</p>
+                <div class="course-meta"><span>12 уроков</span><span>4.8 ⭐</span></div>
+                <button class="course-btn neon-button">Начать обучение</button>
+            </div>
+            <div class="course-card glass-card">
+                <div class="course-image neon-glow-pink"></div>
+                <div class="course-badge">Новое</div>
+                <h3 class="course-title">Создание стартапа с нуля</h3>
+                <p class="course-desc">От идеи до первых продаж за 8 недель</p>
+                <div class="course-meta"><span>20 уроков</span><span>4.9 ⭐</span></div>
+                <button class="course-btn neon-button">Начать обучение</button>
+            </div>
+            <div class="course-card glass-card">
+                <div class="course-image neon-glow-purple"></div>
+                <h3 class="course-title">Основы инвестирования</h3>
+                <p class="course-desc">Как инвестировать в стартапы и фрилансеров</p>
+                <div class="course-meta"><span>15 уроков</span><span>4.7 ⭐</span></div>
+                <button class="course-btn neon-button">Начать обучение</button>
+            </div>
+        </div>
+    </main>
+    <style>
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--spacing-lg); }
+        .course-card { padding: 0; overflow: hidden; }
+        .course-image { width: 100%; height: 180px; background: linear-gradient(135deg, rgba(176, 0, 255, 0.2), rgba(0, 212, 255, 0.2)); }
+        .course-badge { position: absolute; top: 12px; right: 12px; padding: 6px 12px; background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink)); border-radius: 20px; font-size: 11px; font-weight: 700; }
+        .course-title { padding: var(--spacing-md); font-size: 20px; font-weight: 700; }
+        .course-desc { padding: 0 var(--spacing-md); color: var(--text-secondary); font-size: 14px; }
+        .course-meta { display: flex; justify-content: space-between; padding: var(--spacing-md); font-size: 13px; color: var(--text-secondary); }
+        .course-btn { width: calc(100% - 32px); margin: var(--spacing-md); justify-content: center; }
+    </style>
+    <script src="script.js"></script>
+</body>
+</html>
