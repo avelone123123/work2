@@ -658,6 +658,10 @@
         padding-top: 80px;
     }
     
+    .mobile-menu-btn {
+        display: block;
+    }
+    
     .sidebar {
         position: fixed;
         transform: translateX(-100%);
