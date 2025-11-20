@@ -583,6 +583,52 @@
     color: var(--text-secondary);
 }
 
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+.mobile-menu-btn svg {
+    display: block;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
 /* ========================================
    RESPONSIVE
    ======================================== */
@@ -598,23 +644,68 @@
     }
 }
 
-@media (max-width: 768px) {
-    .sidebar {
-        width: 80px;
-        padding: var(--spacing-md);
-    }
-    
-    .sidebar-header .logo-text,
-    .nav-item span,
-    .user-info {
-        display: none;
+@media (max-width: 1024px) {
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .main-content {
-        margin-left: 80px;
+        margin-left: 0;
+        width: 100%;
+        padding: var(--spacing-lg);
+        padding-top: 80px;
+    }
+    
+    .sidebar {
+        position: fixed;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
     }
     
     .stats-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        padding: 18px 24px;
+        font-size: 16px;
+    }
+    
+    .nav-item svg {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        min-height: 32px;
+    }
+    
+    .logo-text {
+        font-size: 24px;
+    }
+    
+    .logo-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .dashboard-header h1 {
+        font-size: 28px;
+    }
+    
+    .stat-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .activity-feed {
+        padding: var(--spacing-lg);
     }
 }

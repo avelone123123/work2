@@ -9,7 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="dashboard-page">
-    <aside class="sidebar glass-effect">
+    <button class="mobile-menu-btn" id="mobileSidebarToggle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar glass-effect" id="dashboardSidebar">
         <div class="sidebar-header"><a href="index.html" class="logo" style="text-decoration: none; color: inherit;"><div class="logo-icon neon-glow-purple"></div><span class="logo-text">TalentSphere</span></a></div>
         <nav class="sidebar-nav"><a href="dashboard.html" class="nav-item"><span>Дашборд</span></a><a href="profile.html" class="nav-item"><span>Профиль</span></a></nav>
     </aside>

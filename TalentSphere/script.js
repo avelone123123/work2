@@ -41,6 +41,36 @@ function addRippleEffect(button, event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Close menu when clicking on links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Close menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+    
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -335,14 +365,68 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.opacity = '0.7';
     });
 
-    // Mobile menu toggle for messages page
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    // Mobile Messages - Contact List / Chat Toggle
+    const mobileChatItems = document.querySelectorAll('.chat-item');
+    const chatWindow = document.querySelector('.chat-window');
+    const messagesContainer = document.querySelector('.messages-container');
+    const backToContactsBtn = document.getElementById('backToContacts');
+    
+    if (mobileChatItems.length > 0 && chatWindow && window.innerWidth <= 768) {
+        // При клике на контакт - открываем чат
+        mobileChatItems.forEach(item => {
+            item.addEventListener('click', () => {
+                chatWindow.classList.add('active');
+                if (messagesContainer) {
+                    messagesContainer.classList.add('chat-active');
+                }
+            });
+        });
+        
+        // Кнопка "Назад" - возвращаемся к списку
+        if (backToContactsBtn) {
+            backToContactsBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                chatWindow.classList.remove('active');
+                if (messagesContainer) {
+                    messagesContainer.classList.remove('chat-active');
+                }
+            });
+        }
+    }
+    
+    // Dashboard/Pages Mobile Sidebar Toggle
+    const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
+    const dashboardSidebar = document.getElementById('dashboardSidebar');
+    const dashboardOverlay = document.getElementById('sidebarOverlay');
+    
+    if (mobileSidebarToggle && dashboardSidebar && dashboardOverlay) {
+        mobileSidebarToggle.addEventListener('click', () => {
+            dashboardSidebar.classList.toggle('active');
+            dashboardOverlay.classList.toggle('active');
+        });
+        
+        dashboardOverlay.addEventListener('click', () => {
+            dashboardSidebar.classList.remove('active');
+            dashboardOverlay.classList.remove('active');
+        });
+        
+        // Close on nav item click
+        dashboardSidebar.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                dashboardSidebar.classList.remove('active');
+                dashboardOverlay.classList.remove('active');
+            });
+        });
+    }
+    
+    // Sidebar toggle for messages page (separate from main mobile menu)
+    const sidebarToggle = document.getElementById('mobileMenuToggle');
     const sidebar = document.getElementById('sidebar');
     const sidebarOverlay = document.getElementById('sidebarOverlay');
 
-    if (mobileMenuToggle && sidebar && sidebarOverlay) {
+    if (sidebarToggle && sidebar && sidebarOverlay) {
         // Toggle sidebar
-        mobileMenuToggle.addEventListener('click', () => {
+        sidebarToggle.addEventListener('click', () => {
             sidebar.classList.toggle('active');
             sidebarOverlay.classList.toggle('active');
         });

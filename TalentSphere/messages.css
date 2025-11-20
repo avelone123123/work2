@@ -702,17 +702,53 @@
 @media (max-width: 768px) {
     .messages-container {
         grid-template-columns: 1fr;
+        position: relative;
     }
     
-    .chat-list {
+    /* По умолчанию показываем список контактов */
+    .contacts-list {
+        display: flex;
+        width: 100%;
+    }
+    
+    /* Чат скрыт по умолчанию */
+    .chat-window {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--bg-primary);
+        z-index: 10;
+    }
+    
+    /* Когда чат активен */
+    .chat-window.active {
+        display: flex;
+    }
+    
+    /* Скрываем список когда чат активен */
+    .messages-container.chat-active .contacts-list {
         display: none;
     }
     
-    .chat-list.active {
+    /* Кнопка назад в чате */
+    .back-to-contacts {
         display: flex;
-        position: fixed;
-        inset: 0;
-        z-index: 1000;
+        align-items: center;
+        gap: 8px;
+        padding: 8px;
+        background: transparent;
+        border: none;
+        color: var(--text-primary);
+        cursor: pointer;
+        font-size: 14px;
+    }
+    
+    .back-to-contacts:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
     }
     
     .message-content {
