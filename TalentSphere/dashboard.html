@@ -6,6 +6,9 @@
     <title>Dashboard - TalentSphere</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboard-fixes.css">
+    <link rel="stylesheet" href="global-header.css">
+    <link rel="stylesheet" href="dashboard-3col.css">
     <!-- Production: href="styles.css" and href="dashboard.css" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,103 +110,158 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Header -->
-        <header class="content-header">
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <!-- Global Search -->
+                <div class="global-search-bar">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="search-icon">
+                        <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                        <path d="M17 17L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <input type="text" placeholder="Поиск проектов, фрилансеров..." class="global-search-input">
+                </div>
+            </div>
+            
+            <div class="global-header-right">
+                <!-- Notifications -->
+                <button class="header-icon-btn" id="notificationsBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                    </svg>
+                    <span class="notification-badge">3</span>
+                </button>
+                
+                <!-- Wallet -->
+                <button class="header-icon-btn" id="walletBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                    <span class="wallet-balance">$2,450</span>
+                </button>
+                
+                <!-- User Avatar -->
+                <div class="header-user-avatar">
+                    <div class="avatar-image">AD</div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Page Header -->
+        <div class="page-header">
             <div class="header-left">
                 <h1 class="page-title">Добро пожаловать, <span class="gradient-text">Alex</span></h1>
                 <p class="page-subtitle">Ваша статистика за последние 30 дней</p>
             </div>
-            <div class="header-right">
-                <button class="btn-icon glass-card">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                </button>
-                <button class="btn-icon glass-card">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                        <path d="M12 2V4M12 20V22M4 12H2M22 12H20M19.07 4.93L17.66 6.34M6.34 17.66L4.93 19.07M19.07 19.07L17.66 17.66M6.34 6.34L4.93 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
-        </header>
+        </div>
 
-        <!-- Stats Cards -->
-        <section class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-card glass-card">
-                    <div class="stat-header">
-                        <div class="stat-icon neon-glow-blue">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                <path d="M16 4L20 12L28 13.5L22 20L23.5 28L16 23.5L8.5 28L10 20L4 13.5L12 12L16 4Z" stroke="url(#gradient-blue)" stroke-width="2" fill="none"/>
-                            </svg>
+        <!-- 3-Column Grid (ТЗ: 30% + 50% + 20%) -->
+        <div class="dashboard-grid-3col">
+            
+            <!-- LEFT COLUMN (30%) - Статистика + AI-рекомендации -->
+            <aside class="dashboard-left">
+                <!-- Статистика (компактная) -->
+                <section class="dashboard-stats-compact">
+                    <h3 class="section-title-compact">📊 Статистика</h3>
+                    <div class="compact-stat-item">
+                        <span class="compact-stat-label">Активные проекты</span>
+                        <span class="compact-stat-value">28</span>
+                    </div>
+                    <div class="compact-stat-item">
+                        <span class="compact-stat-label">Завершенные сделки</span>
+                        <span class="compact-stat-value">145</span>
+                    </div>
+                    <div class="compact-stat-item">
+                        <span class="compact-stat-label">Текущий рейтинг</span>
+                        <span class="compact-stat-value">4.9 ⭐</span>
+                    </div>
+                    <div class="compact-stat-item">
+                        <span class="compact-stat-label">Доход за месяц</span>
+                        <span class="compact-stat-value">$12,450</span>
+                    </div>
+                </section>
+                
+                <!-- AI-рекомендации -->
+                <section class="ai-recommendations">
+                    <h3 class="section-title-compact">🎯 AI-рекомендации</h3>
+                    <div class="ai-project-card">
+                        <div class="ai-match-badge">95% Match</div>
+                        <h4>SaaS Dashboard Redesign</h4>
+                        <p class="ai-project-desc">Нужен UI/UX дизайнер для редизайна...</p>
+                        <div class="ai-project-meta">
+                            <span class="ai-budget">$4,500</span>
+                            <span class="ai-deadline">2 недели</span>
                         </div>
-                        <div class="stat-trend positive">+12.5%</div>
+                        <button class="btn-ai-apply">Откликнуться</button>
                     </div>
-                    <div class="stat-value neon-text-blue">$12,450</div>
-                    <div class="stat-label">Доход за месяц</div>
-                    <div class="stat-chart">
-                        <div class="mini-chart blue"></div>
-                    </div>
-                </div>
-
-                <div class="stat-card glass-card">
-                    <div class="stat-header">
-                        <div class="stat-icon neon-glow-pink">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                <rect x="6" y="10" width="20" height="16" rx="3" stroke="url(#gradient-pink)" stroke-width="2"/>
-                                <path d="M12 10V7C12 5.5 13 4 15 4H17C19 4 20 5.5 20 7V10" stroke="url(#gradient-pink)" stroke-width="2"/>
-                            </svg>
+                    <div class="ai-project-card">
+                        <div class="ai-match-badge">88% Match</div>
+                        <h4>Mobile App UI</h4>
+                        <p class="ai-project-desc">Ищем дизайнера для iOS приложения...</p>
+                        <div class="ai-project-meta">
+                            <span class="ai-budget">$3,200</span>
+                            <span class="ai-deadline">3 недели</span>
                         </div>
-                        <div class="stat-trend positive">+8%</div>
+                        <button class="btn-ai-apply">Откликнуться</button>
                     </div>
-                    <div class="stat-value neon-text-pink">28</div>
-                    <div class="stat-label">Активных проектов</div>
-                    <div class="stat-chart">
-                        <div class="mini-chart pink"></div>
-                    </div>
-                </div>
-
-                <div class="stat-card glass-card">
-                    <div class="stat-header">
-                        <div class="stat-icon neon-glow-purple">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                <circle cx="16" cy="12" r="5" stroke="url(#gradient-purple)" stroke-width="2"/>
-                                <path d="M8 28C8 23.5817 11.5817 20 16 20C20.4183 20 24 23.5817 24 28" stroke="url(#gradient-purple)" stroke-width="2"/>
-                            </svg>
+                </section>
+            </aside>
+            
+            <!-- CENTER COLUMN (50%) - Лента активности -->
+            <main class="dashboard-center">
+                <section class="activity-feed">
+                    <h3 class="section-title-compact">📝 Лента активности</h3>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">💼</div>
+                        <div class="activity-content">
+                            <h4>Новый проект: "E-commerce Website"</h4>
+                            <p>Sarah Johnson приглашает вас к сотрудничеству</p>
+                            <span class="activity-time">5 минут назад</span>
                         </div>
-                        <div class="stat-trend positive">+24%</div>
                     </div>
-                    <div class="stat-value neon-text-purple">1,248</div>
-                    <div class="stat-label">Новых клиентов</div>
-                    <div class="stat-chart">
-                        <div class="mini-chart purple"></div>
-                    </div>
-                </div>
-
-                <div class="stat-card glass-card">
-                    <div class="stat-header">
-                        <div class="stat-icon neon-glow-cyan">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                <path d="M4 24L12 12L18 18L28 8" stroke="url(#gradient-cyan)" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M22 8H28V14" stroke="url(#gradient-cyan)" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">💬</div>
+                        <div class="activity-content">
+                            <h4>Новое сообщение</h4>
+                            <p>Mike Kowalski: "Спасибо за быстрый ответ!"</p>
+                            <span class="activity-time">15 минут назад</span>
                         </div>
-                        <div class="stat-trend positive">+18%</div>
                     </div>
-                    <div class="stat-value" style="color: var(--neon-cyan);">98.5%</div>
-                    <div class="stat-label">Рейтинг успеха</div>
-                    <div class="stat-chart">
-                        <div class="mini-chart cyan"></div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">✅</div>
+                        <div class="activity-content">
+                            <h4>Проект завершен</h4>
+                            <p>"Лендинг для стартапа" отмечен как выполненный</p>
+                            <span class="activity-time">1 час назад</span>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Main Grid -->
-        <div class="content-grid">
-            <!-- Active Projects -->
-            <section class="projects-section">
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">💰</div>
+                        <div class="activity-content">
+                            <h4>Поступление средств</h4>
+                            <p>+$3,500 за "Редизайн мобильного приложения"</p>
+                            <span class="activity-time">2 часа назад</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">🎓</div>
+                        <div class="activity-content">
+                            <h4>Курс завершен</h4>
+                            <p>Вы получили сертификат "Advanced UI/UX Design"</p>
+                            <span class="activity-time">5 часов назад</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Active Projects (в центре) -->
+                <section class="projects-section">
                 <div class="section-header-inline">
                     <h2 class="section-title-small">Активные проекты</h2>
                     <a href="marketplace.html" class="btn-text">Все проекты →</a>
@@ -277,90 +335,59 @@
                     </div>
                 </div>
             </section>
-
-            <!-- AI Recommendations & Quick Stats -->
-            <aside class="sidebar-content">
-                <!-- AI Recommendations -->
-                <div class="ai-recommendations glass-card">
-                    <div class="ai-header">
-                        <div class="ai-icon neon-glow-purple">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="url(#gradient-purple)"/>
-                            </svg>
-                        </div>
-                        <h3>AI Рекомендации</h3>
-                    </div>
-                    <div class="ai-recommendations-list">
-                        <div class="ai-item">
-                            <div class="ai-item-icon">🎯</div>
-                            <div class="ai-item-content">
-                                <div class="ai-item-title">Новый проект для вас</div>
-                                <div class="ai-item-text">UI редизайн • $4,500</div>
-                            </div>
-                        </div>
-                        <div class="ai-item">
-                            <div class="ai-item-icon">⚡</div>
-                            <div class="ai-item-content">
-                                <div class="ai-item-title">Обновите портфолио</div>
-                                <div class="ai-item-text">+35% откликов</div>
-                            </div>
-                        </div>
-                        <div class="ai-item">
-                            <div class="ai-item-icon">💎</div>
-                            <div class="ai-item-content">
-                                <div class="ai-item-title">Повысьте рейтинг</div>
-                                <div class="ai-item-text">2 шага до Pro+</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quick Actions -->
-                <div class="quick-actions glass-card">
-                    <h3 class="quick-actions-title">Быстрые действия</h3>
-                    <button class="action-btn neon-button">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </main>
+            
+            <!-- RIGHT COLUMN (20%) - Быстрые действия -->
+            <aside class="dashboard-right">
+                <!-- Быстрые действия -->
+                <section class="quick-actions-section">
+                    <h3 class="section-title-compact">🚀 Быстрые действия</h3>
+                    
+                    <button class="quick-action-btn btn-create-project">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5V19M5 12H19" stroke-linecap="round"/>
                         </svg>
-                        <span>Создать проект</span>
+                        <div class="quick-action-text">
+                            <h4>Создать проект</h4>
+                            <p>Опубликуйте задание</p>
+                        </div>
                     </button>
-                    <button class="action-btn glass-card">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2"/>
-                            <path d="M10 7V11L13 13" stroke="currentColor" stroke-width="2"/>
+                    
+                    <button class="quick-action-btn btn-find-freelancer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="9" r="6"/>
+                            <path d="M17 17L21 21" stroke-linecap="round"/>
                         </svg>
-                        <span>Найти проект</span>
+                        <div class="quick-action-text">
+                            <h4>Найти фрилансера</h4>
+                            <p>Поиск специалиста</p>
+                        </div>
                     </button>
-                </div>
-
-                <!-- Recent Activity -->
-                <div class="recent-activity glass-card">
-                    <h3 class="activity-title">Недавняя активность</h3>
-                    <div class="activity-list">
-                        <div class="activity-item">
-                            <div class="activity-dot blue"></div>
-                            <div class="activity-content">
-                                <div class="activity-text">Новое сообщение от клиента</div>
-                                <div class="activity-time">5 мин назад</div>
-                            </div>
+                    
+                    <button class="quick-action-btn btn-wallet">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                            <line x1="1" y1="10" x2="23" y2="10"/>
+                        </svg>
+                        <div class="quick-action-text">
+                            <h4>Пополнить кошелек</h4>
+                            <p>Баланс: $2,450</p>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-dot pink"></div>
-                            <div class="activity-content">
-                                <div class="activity-text">Выполнен проект "Редизайн"</div>
-                                <div class="activity-time">2 часа назад</div>
-                            </div>
+                    </button>
+                    
+                    <button class="quick-action-btn btn-settings">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+                        </svg>
+                        <div class="quick-action-text">
+                            <h4>Настройки профиля</h4>
+                            <p>Обновить данные</p>
                         </div>
-                        <div class="activity-item">
-                            <div class="activity-dot purple"></div>
-                            <div class="activity-content">
-                                <div class="activity-text">Получена оплата $2,500</div>
-                                <div class="activity-time">1 день назад</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </button>
+                </section>
             </aside>
+            
         </div>
     </main>
 

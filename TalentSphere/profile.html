@@ -6,7 +6,10 @@
     <title>Profile - TalentSphere</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboard-fixes.css">
+    <link rel="stylesheet" href="global-header.css">
     <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="profile-tabs.css">
     <!-- Production: href="styles.css", href="dashboard.css" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -189,18 +192,57 @@
             </div>
         </div>
 
-        <!-- Content Tabs -->
+        <!-- Content Tabs (ТЗ) -->
         <div class="profile-tabs">
-            <button class="tab-btn active">Навыки</button>
-            <button class="tab-btn">Портфолио</button>
-            <button class="tab-btn">Отзывы</button>
-            <button class="tab-btn">Опыт</button>
+            <button class="tab-btn active" data-tab="about">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z"/>
+                    <path d="M10 13V10M10 7H10.01"/>
+                </svg>
+                🎯 Обо мне
+            </button>
+            <button class="tab-btn" data-tab="portfolio">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="16" height="10" rx="2"/>
+                    <path d="M14 7V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2"/>
+                </svg>
+                💼 Портфолио
+            </button>
+            <button class="tab-btn" data-tab="stats">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 17L7 10L11 14L17 6"/>
+                    <path d="M12 6H17V11"/>
+                </svg>
+                📊 Статистика
+            </button>
+            <button class="tab-btn" data-tab="settings">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="10" cy="10" r="3"/>
+                    <path d="M10 1v4m0 10v4M4.22 4.22l2.83 2.83m5.66 5.66l2.83 2.83M1 10h4m10 0h4M4.22 15.78l2.83-2.83m5.66-5.66l2.83-2.83"/>
+                </svg>
+                ⚙️ Настройки
+            </button>
         </div>
 
-        <!-- Profile Content Grid -->
-        <div class="profile-content-grid">
-            <!-- Skills Section -->
-            <section class="skills-section">
+        <!-- Tab Content Container -->
+        <div class="tab-content-container">
+            
+            <!-- TAB 1: Обо мне -->
+            <div class="tab-content active" data-content="about">
+                <section class="about-section">
+                    <div class="section-header-profile">
+                        <h2 class="section-title-profile">О профессионале</h2>
+                    </div>
+                    <div class="about-content glass-card">
+                        <p class="about-text">
+                            Senior UI/UX дизайнер с 8+ годами опыта в создании современных интерфейсов для Web3, FinTech и SaaS продуктов. 
+                            Специализируюсь на создании интуитивных и красивых пользовательских интерфейсов, которые решают бизнес-задачи.
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- Skills Section -->
+                <section class="skills-section">
                 <div class="section-header-profile">
                     <h2 class="section-title-profile">Навыки & Технологии</h2>
                 </div>
@@ -416,6 +458,108 @@
             </aside>
         </div>
     </main>
+
+    <div class="tab-content-container">
+        <!-- TAB 1: Обо мне -->
+        <div class="tab-content" data-content="about">
+            <div class="about-section glass-card">
+                <h3 class="about-title">Обо мне</h3>
+                <p class="about-text">
+                    Я - опытный дизайнер с большим опытом работы в различных областях. 
+                    Моя цель - создавать качественные и современные дизайны, которые 
+                    удовлетворяют потребности клиентов.
+                </p>
+            </div>
+        </div>
+        <!-- END TAB 1 -->
+
+        <!-- TAB 2: Портфолио -->
+        <div class="tab-content" data-content="portfolio">
+            <div class="portfolio-grid-full">
+                <div class="portfolio-item-large glass-card">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #8B5CF6, #EC4899); height: 300px;"></div>
+                    <div class="portfolio-details">
+                        <h3>Проект 1: FinTech Dashboard</h3>
+                        <p>UI/UX дизайн для финансовой платформы</p>
+                    </div>
+                </div>
+                <div class="portfolio-item-large glass-card">
+                    <div class="portfolio-image" style="background: linear-gradient(135deg, #EC4899, #F59E0B); height: 300px;"></div>
+                    <div class="portfolio-details">
+                        <h3>Проект 2: E-commerce Platform</h3>
+                        <p>Полный дизайн интернет-магазина</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END TAB 2 -->
+
+        <!-- TAB 3: Статистика -->
+        <div class="tab-content" data-content="stats">
+            <div class="stats-dashboard glass-card">
+                <h3>График доходов</h3>
+                <div class="chart-placeholder" style="height: 300px; background: rgba(139, 92, 246, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <p style="color: #9CA3AF;">📈 Здесь будет график доходов</p>
+                </div>
+            </div>
+            <div class="completion-stats glass-card" style="margin-top: 20px;">
+                <h3>Completion Rate</h3>
+                <div class="stat-row">
+                    <span>Успешно завершено:</span>
+                    <span class="neon-text-blue">98.5%</span>
+                </div>
+                <div class="stat-row">
+                    <span>Среднее время выполнения:</span>
+                    <span class="neon-text-purple">12 дней</span>
+                </div>
+            </div>
+        </div>
+        <!-- END TAB 3 -->
+
+        <!-- TAB 4: Настройки -->
+        <div class="tab-content" data-content="settings">
+            <div class="settings-section glass-card">
+                <h3>Личная информация</h3>
+                <div class="settings-form">
+                    <div class="form-group">
+                        <label>Имя</label>
+                        <input type="text" value="Alex Designer" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" value="alex@talentsphere.com" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Локация</label>
+                        <input type="text" value="Сан-Франциско, США" class="form-input">
+                    </div>
+                    <button class="btn-primary neon-button">Сохранить изменения</button>
+                </div>
+            </div>
+        </div>
+        <!-- END TAB 4 -->
+    </div>
+    <!-- END tab-content-container -->
+
+    <script>
+        // Tabs functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.dataset.tab;
+
+                // Remove active from all
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                // Add active to clicked
+                btn.classList.add('active');
+                document.querySelector(`[data-content="${targetTab}"]`).classList.add('active');
+            });
+        });
+    </script>
 
     <!-- SVG Gradients -->
     <svg width="0" height="0" style="position: absolute;">

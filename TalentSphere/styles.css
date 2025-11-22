@@ -1384,12 +1384,23 @@ body {
         flex-direction: column;
     }
     
+    .cta-content {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
     .cta-title {
-        font-size: 28px;
+        font-size: 28px !important;
+        text-align: center !important;
+        width: 100% !important;
     }
     
     .cta-subtitle {
-        font-size: 14px;
+        font-size: 14px !important;
+        text-align: center !important;
+        width: 100% !important;
     }
     
     .cta-actions {

@@ -6,56 +6,301 @@
     <title>Обучение - TalentSphere</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboard-fixes.css">
+    <link rel="stylesheet" href="global-header.css">
+    <link rel="stylesheet" href="education.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="dashboard-page">
-    <button class="mobile-menu-btn" id="mobileSidebarToggle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+<body class="dashboard-page education-page">
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12H21M3 6H21M3 18H21" stroke-linecap="round"/>
+        </svg>
+    </button>
+
+    <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    <aside class="sidebar glass-effect" id="dashboardSidebar">
-        <div class="sidebar-header"><a href="index.html" class="logo" style="text-decoration: none; color: inherit;"><div class="logo-icon neon-glow-purple"></div><span class="logo-text">TalentSphere</span></a></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar glass-effect" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon neon-glow-purple"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+        
         <nav class="sidebar-nav">
-            <a href="dashboard.html" class="nav-item"><span>Дашборд</span></a>
-            <a href="education.html" class="nav-item active"><span>Обучение</span></a>
+            <a href="dashboard.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="9" rx="1"/>
+                    <rect x="14" y="3" width="7" height="5" rx="1"/>
+                    <rect x="14" y="12" width="7" height="9" rx="1"/>
+                    <rect x="3" y="16" width="7" height="5" rx="1"/>
+                </svg>
+                <span>Дашборд</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+                <span>Проекты</span>
+            </a>
+            <a href="education.html" class="nav-item active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                <span>Обучение</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                <span>Сообщения</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span>Профиль</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+                </svg>
+                <span>Настройки</span>
+            </a>
         </nav>
     </aside>
+
+    <!-- Main Content -->
     <main class="main-content">
-        <header class="content-header"><h1 class="page-title">Образовательный <span class="gradient-text">центр</span></h1><p class="page-subtitle">Курсы для профессионального роста</p></header>
-        <div class="courses-grid">
-            <div class="course-card glass-card">
-                <div class="course-image neon-glow-blue"></div>
-                <div class="course-badge">Популярное</div>
-                <h3 class="course-title">Эффективный фриланс</h3>
-                <p class="course-desc">Научитесь находить клиентов и зарабатывать больше</p>
-                <div class="course-meta"><span>12 уроков</span><span>4.8 ⭐</span></div>
-                <button class="course-btn neon-button">Начать обучение</button>
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <div class="global-search-bar">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="search-icon">
+                        <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                        <path d="M17 17L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <input type="text" placeholder="Поиск курсов..." class="global-search-input">
+                </div>
             </div>
-            <div class="course-card glass-card">
-                <div class="course-image neon-glow-pink"></div>
-                <div class="course-badge">Новое</div>
-                <h3 class="course-title">Создание стартапа с нуля</h3>
-                <p class="course-desc">От идеи до первых продаж за 8 недель</p>
-                <div class="course-meta"><span>20 уроков</span><span>4.9 ⭐</span></div>
-                <button class="course-btn neon-button">Начать обучение</button>
+            
+            <div class="global-header-right">
+                <button class="header-icon-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                    </svg>
+                    <span class="notification-badge">3</span>
+                </button>
+                
+                <button class="header-icon-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                    <span class="wallet-balance">$2,450</span>
+                </button>
+                
+                <div class="header-user-avatar">
+                    <div class="avatar-image">AD</div>
+                </div>
             </div>
-            <div class="course-card glass-card">
-                <div class="course-image neon-glow-purple"></div>
-                <h3 class="course-title">Основы инвестирования</h3>
-                <p class="course-desc">Как инвестировать в стартапы и фрилансеров</p>
-                <div class="course-meta"><span>15 уроков</span><span>4.7 ⭐</span></div>
-                <button class="course-btn neon-button">Начать обучение</button>
+        </header>
+        
+        <!-- Progress Header -->
+        <div class="education-progress-header">
+            <div class="progress-info">
+                <h2>Ваш прогресс обучения</h2>
+                <div class="progress-stats">
+                    <div class="progress-stat">
+                        <span class="stat-value">65%</span>
+                        <span class="stat-label">Завершено</span>
+                    </div>
+                    <div class="progress-stat">
+                        <span class="stat-value">12/18</span>
+                        <span class="stat-label">Уроков</span>
+                    </div>
+                    <div class="progress-stat">
+                        <span class="stat-value">8</span>
+                        <span class="stat-label">Сертификатов</span>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-bar-large">
+                <div class="progress-fill-large" style="width: 65%"></div>
             </div>
         </div>
+
+        <!-- Education Grid (30% + 70%) -->
+        <div class="education-grid">
+            
+            <!-- LEFT: Course Navigation (30%) -->
+            <aside class="course-nav">
+                <div class="course-nav-card">
+                    <h3 class="course-nav-title">📚 Эффективный фриланс</h3>
+                    <div class="course-progress-mini">
+                        <span>65% завершено</span>
+                        <div class="progress-bar-mini">
+                            <div class="progress-fill-mini" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="lessons-list">
+                        <div class="lesson-item completed">
+                            <span class="lesson-icon">✓</span>
+                            <span class="lesson-title">Введение в фриланс</span>
+                        </div>
+                        <div class="lesson-item completed">
+                            <span class="lesson-icon">✓</span>
+                            <span class="lesson-title">Создание профиля</span>
+                        </div>
+                        <div class="lesson-item active">
+                            <span class="lesson-icon">▶</span>
+                            <span class="lesson-title">Поиск клиентов</span>
+                        </div>
+                        <div class="lesson-item">
+                            <span class="lesson-icon">🔒</span>
+                            <span class="lesson-title">Ценообразование</span>
+                        </div>
+                        <div class="lesson-item">
+                            <span class="lesson-icon">🔒</span>
+                            <span class="lesson-title">Работа с возражениями</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Achievements -->
+                <div class="achievements-card">
+                    <h3 class="achievements-title">🏆 Достижения</h3>
+                    <div class="badges-grid">
+                        <div class="badge-item earned">
+                            <div class="badge-icon">🥇</div>
+                            <span class="badge-name">Первый курс</span>
+                        </div>
+                        <div class="badge-item earned">
+                            <div class="badge-icon">⭐</div>
+                            <span class="badge-name">5 уроков</span>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-icon">🎯</div>
+                            <span class="badge-name">Мастер</span>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-icon">💎</div>
+                            <span class="badge-name">Эксперт</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- RIGHT: Course Content (70%) -->
+            <div class="course-content">
+                <div class="lesson-header">
+                    <h1 class="lesson-title">Урок 3: Поиск клиентов</h1>
+                    <div class="lesson-meta">
+                        <span>📹 15 минут</span>
+                        <span>📝 2 задания</span>
+                    </div>
+                </div>
+                
+                <!-- Video Player -->
+                <div class="video-player">
+                    <div class="video-placeholder">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="40" fill="rgba(139, 92, 246, 0.2)"/>
+                            <path d="M32 28L56 40L32 52V28Z" fill="white"/>
+                        </svg>
+                        <p>Видео: Эффективные стратегии поиска клиентов</p>
+                    </div>
+                </div>
+                
+                <!-- Lesson Description -->
+                <div class="lesson-description">
+                    <h3>О чем этот урок</h3>
+                    <p>В этом уроке вы узнаете проверенные стратегии поиска клиентов на фриланс-платформах. Мы разберем:</p>
+                    <ul>
+                        <li>Как правильно составить поисковый запрос</li>
+                        <li>Где искать лучшие проекты</li>
+                        <li>Как выделиться среди конкурентов</li>
+                        <li>Техники холодных предложений</li>
+                    </ul>
+                </div>
+                
+                <!-- Materials -->
+                <div class="lesson-materials">
+                    <h3>📁 Материалы урока</h3>
+                    <div class="materials-list">
+                        <a href="#" class="material-item">
+                            <span class="material-icon">📄</span>
+                            <span class="material-name">Шаблоны предложений.pdf</span>
+                        </a>
+                        <a href="#" class="material-item">
+                            <span class="material-icon">📊</span>
+                            <span class="material-name">Чек-лист поиска клиентов.xlsx</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quiz -->
+                <div class="lesson-quiz">
+                    <h3>✏️ Проверочный тест</h3>
+                    <div class="quiz-question">
+                        <p><strong>Вопрос 1:</strong> Какой метод поиска клиентов наиболее эффективен?</p>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1">
+                                <span>Массовая рассылка предложений</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1">
+                                <span>Персонализированный подход</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1">
+                                <span>Ожидание откликов на профиль</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="quiz-submit-btn">Проверить ответы</button>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="lesson-navigation">
+                    <button class="lesson-nav-btn prev">← Предыдущий урок</button>
+                    <button class="lesson-nav-btn next">Следующий урок →</button>
+                </div>
+            </div>
+            
+        </div>
     </main>
-    <style>
-        .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--spacing-lg); }
-        .course-card { padding: 0; overflow: hidden; }
-        .course-image { width: 100%; height: 180px; background: linear-gradient(135deg, rgba(176, 0, 255, 0.2), rgba(0, 212, 255, 0.2)); }
-        .course-badge { position: absolute; top: 12px; right: 12px; padding: 6px 12px; background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink)); border-radius: 20px; font-size: 11px; font-weight: 700; }
-        .course-title { padding: var(--spacing-md); font-size: 20px; font-weight: 700; }
-        .course-desc { padding: 0 var(--spacing-md); color: var(--text-secondary); font-size: 14px; }
-        .course-meta { display: flex; justify-content: space-between; padding: var(--spacing-md); font-size: 13px; color: var(--text-secondary); }
-        .course-btn { width: calc(100% - 32px); margin: var(--spacing-md); justify-content: center; }
-    </style>
-    <script src="script.js"></script>
+
+    <script>
+        // Burger menu toggle
+        const burger = document.getElementById('mobileMenuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        
+        if (burger && sidebar && overlay) {
+            burger.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+            });
+            
+            overlay.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        }
+    </script>
 </body>
 </html>
