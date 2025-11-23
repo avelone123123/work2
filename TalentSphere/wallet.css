@@ -1,444 +1,478 @@
 /* ========================================
-   WALLET PAGE STYLES
+   1. LAYOUT & SIDEBAR FIXES (CRITICAL)
+   ======================================== */
+
+   :root {
+    --sidebar-width: 260px;
+    --header-height-mobile: 60px;
+}
+
+body.dashboard-page {
+    background: #0f172a; /* Темный фон дашборда */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* На больших экранах (ПК, Ноутбуки) */
+@media (min-width: 1024px) {
+    /* Фиксируем сайдбар */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: var(--sidebar-width);
+        height: 100vh;
+        z-index: 100;
+        overflow-y: auto;
+    }
+
+    /* Сдвигаем ВЕСЬ контент вправо, чтобы он не заезжал под сайдбар */
+    .main-content {
+        margin-left: var(--sidebar-width);
+        width: calc(100% - var(--sidebar-width));
+        padding: 40px;
+    }
+
+    /* Прячем мобильные элементы */
+    .mobile-header, 
+    .mobile-menu-btn,
+    .sidebar-overlay {
+        display: none;
+    }
+}
+
+/* На планшетах и мобильных (меньше 1024px) */
+@media (max-width: 1023px) {
+    .sidebar {
+        transform: translateX(-100%); /* Прячем сайдбар влево */
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 280px;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+        background: #0f172a;
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Показываем при клике */
+    }
+
+    .main-content {
+        margin-left: 0; /* Убираем отступ */
+        width: 100%;
+        padding: 20px;
+        padding-top: 80px; /* Место под мобильную шапку */
+    }
+
+    /* Мобильная шапка */
+    .mobile-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--header-height-mobile);
+        background: rgba(15, 23, 42, 0.9);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        z-index: 900;
+        justify-content: space-between;
+    }
+
+    .mobile-menu-btn {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* ========================================
+   2. WALLET PAGE SPECIFIC STYLES
    ======================================== */
 
 .wallet-content {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1600px;
 }
 
-/* Balance Cards */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.page-subtitle {
+    color: var(--text-secondary);
+}
+
+/* Balance Cards Grid */
 .balance-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
+    /* Умная сетка: если места мало, карточки переносятся, но не сжимаются меньше 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
 }
 
 .balance-card {
-    padding: var(--spacing-xl);
+    padding: 24px;
     position: relative;
     overflow: hidden;
-}
-
-.balance-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(176, 0, 255, 0.1) 0%, transparent 70%);
-    pointer-events: none;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .balance-header {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 16px;
 }
 
 .balance-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: var(--radius-md);
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255,255,255,0.05);
 }
 
 .balance-label {
     font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: var(--text-secondary);
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .balance-amount {
-    display: flex;
-    align-items: baseline;
-    margin-bottom: var(--spacing-sm);
-}
-
-.currency-symbol {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 28px;
-    font-weight: 600;
-    margin-right: 4px;
+    margin-bottom: 8px;
 }
 
 .amount-value {
+    font-size: 42px;
+    font-weight: 700;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1;
+    color: white;
+}
+
+.currency-symbol {
+    font-size: 24px;
+    color: var(--text-secondary);
+    vertical-align: top;
+    margin-right: 4px;
 }
 
 .amount-cents {
     font-size: 24px;
     color: var(--text-secondary);
-    margin-left: 2px;
-}
-
-.balance-change {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 8px 14px;
-    border-radius: 20px;
-    width: fit-content;
 }
 
 .balance-change.positive {
-    background: rgba(0, 255, 136, 0.1);
-    color: var(--neon-green);
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
 }
 
-.balance-info {
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-
-/* Quick Actions */
+/* Quick Actions Grid */
 .quick-actions-wallet {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
+    /* Кнопки тоже адаптивные */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
 .wallet-action-btn {
-    padding: var(--spacing-lg);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-sm);
+    justify-content: center;
+    padding: 24px;
     border: none;
     cursor: pointer;
+    background: rgba(255,255,255,0.03);
+    border-radius: 20px;
     transition: all 0.3s ease;
-    color: var(--text-primary);
+    gap: 12px;
 }
 
 .wallet-action-btn:hover {
-    transform: translateY(-4px);
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-5px);
 }
 
 .action-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: var(--radius-md);
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255,255,255,0.05);
+    color: white;
 }
 
 .action-label {
-    font-weight: 600;
-    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
 }
 
-/* Wallet Content Grid */
+/* Content Grid (Transactions Left, Sidebar Right) */
 .wallet-content-grid {
     display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: var(--spacing-xl);
+    grid-template-columns: 1fr 350px; /* Правая колонка фиксирована, левая тянется */
+    gap: 30px;
 }
 
-/* Transactions List */
-.transactions-section {
+/* Transactions Styles */
+.section-header-inline {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title-small {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.view-all-link {
+    color: #8b5cf6;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 .transactions-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: 16px;
 }
 
 .transaction-item {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: var(--spacing-md);
+    display: flex;
     align-items: center;
-    padding: var(--spacing-lg);
-    transition: all 0.3s ease;
+    padding: 20px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
+    transition: 0.3s;
 }
 
 .transaction-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateX(4px);
+    background: rgba(255,255,255,0.05);
+    transform: translateX(5px);
 }
 
 .transaction-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-sm);
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.03);
+    margin-right: 16px;
 }
 
 .transaction-info {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    flex: 1;
 }
 
 .transaction-title {
     font-weight: 600;
-    font-size: 16px;
+    margin-bottom: 4px;
 }
 
-.transaction-details {
-    display: flex;
-    gap: var(--spacing-md);
+.transaction-date {
     font-size: 13px;
     color: var(--text-secondary);
 }
 
-.transaction-project {
-    color: var(--text-secondary);
-}
-
-.transaction-date {
-    color: var(--text-muted);
-}
-
 .transaction-amount {
+    font-weight: 700;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 20px;
-    font-weight: 800;
+    font-size: 18px;
 }
 
-.transaction-amount.positive {
-    color: var(--neon-green);
-}
+.transaction-amount.positive { color: #10b981; }
+.transaction-amount.negative { color: #ef4444; }
 
-.transaction-amount.negative {
-    color: #ff4444;
-}
-
-.transaction-amount.escrow {
-    color: var(--neon-blue);
-}
-
-/* Wallet Sidebar */
+/* Right Sidebar (Cards) */
 .wallet-sidebar {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: 24px;
 }
 
 .sidebar-title {
     font-size: 18px;
-    font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 16px;
 }
 
-/* Payment Methods */
-.payment-methods {
-    padding: var(--spacing-lg);
-}
-
-.payment-cards {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.payment-card {
-    padding: var(--spacing-lg);
-    background: linear-gradient(135deg, 
-        rgba(0, 212, 255, 0.1) 0%, 
-        rgba(176, 0, 255, 0.1) 100%);
+.credit-card {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    padding: 24px;
+    border-radius: 20px;
+    color: white;
     position: relative;
     overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.4);
 }
 
-.payment-card::before {
+.credit-card::before {
     content: '';
     position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
 }
 
 .card-chip {
-    width: 40px;
-    height: 30px;
-    background: linear-gradient(135deg, 
-        rgba(255, 215, 0, 0.3), 
-        rgba(255, 215, 0, 0.5));
+    width: 36px;
+    height: 26px;
+    background: #fbbf24;
     border-radius: 6px;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 24px;
 }
 
 .card-number {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
     letter-spacing: 2px;
-    margin-bottom: var(--spacing-md);
+    font-family: 'Space Grotesk', monospace;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-.card-footer {
+.card-details {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-.card-holder {
     font-size: 12px;
     text-transform: uppercase;
-    font-weight: 600;
     letter-spacing: 1px;
+    opacity: 0.9;
 }
 
 .card-logo {
+    position: absolute;
+    top: 24px;
+    right: 24px;
     font-weight: 800;
-    font-size: 16px;
-    letter-spacing: 2px;
+    font-style: italic;
+    font-size: 18px;
 }
 
 .add-card-btn {
-    padding: var(--spacing-lg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-sm);
-    border: 2px dashed rgba(255, 255, 255, 0.2);
-    cursor: pointer;
+    width: 100%;
+    padding: 16px;
+    background: transparent;
+    border: 2px dashed rgba(255,255,255,0.2);
+    border-radius: 12px;
     color: var(--text-secondary);
-    transition: all 0.3s ease;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .add-card-btn:hover {
-    border-color: rgba(255, 255, 255, 0.4);
-    color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.03);
+    border-color: #8b5cf6;
+    color: #8b5cf6;
 }
 
-/* Escrow Info */
-.escrow-info {
-    padding: var(--spacing-lg);
-}
-
-.escrow-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: var(--spacing-md);
-}
-
-.escrow-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.escrow-description {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: var(--spacing-md);
-}
-
-.escrow-features {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-
-.feature-item svg {
-    color: var(--neon-green);
-}
-
-/* Earnings Chart */
-.earnings-chart {
-    padding: var(--spacing-lg);
-}
-
-.chart-container {
+/* Mini Chart */
+.mini-chart {
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
-    gap: var(--spacing-sm);
-    height: 200px;
-    padding: var(--spacing-md) 0;
+    gap: 8px;
+    height: 100px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.chart-bar {
+.bar {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-xs);
+    background: rgba(139, 92, 246, 0.3);
+    border-radius: 4px 4px 0 0;
+    transition: 0.3s;
 }
 
-.bar-fill {
-    width: 100%;
-    border-radius: 8px 8px 0 0;
-    background: linear-gradient(180deg, 
-        rgba(176, 0, 255, 0.5) 0%, 
-        rgba(176, 0, 255, 0.2) 100%);
-    transition: height 0.5s ease;
+.bar.active {
+    background: #8b5cf6;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
 }
 
-.bar-label {
-    font-size: 11px;
-    color: var(--text-secondary);
-    font-weight: 600;
+.chart-label span {
+    color: white;
+    font-weight: 700;
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
+/* Responsive Fixes for Small Laptops (1024px - 1300px) */
+@media (min-width: 1024px) and (max-width: 1300px) {
+    .wallet-content-grid {
+        grid-template-columns: 1fr; /* Правая колонка падает вниз */
+    }
+    
+    .wallet-sidebar {
+        flex-direction: row; /* Элементы сайдбара встают в ряд */
+    }
+    
+    .payment-methods, .analytics-preview {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
     .wallet-content-grid {
         grid-template-columns: 1fr;
     }
     
     .wallet-sidebar {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .balance-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .quick-actions-wallet {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .transaction-item {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
-        text-align: center;
-    }
-    
-    .transaction-amount {
-        margin-top: var(--spacing-xs);
+        flex-direction: column;
     }
 }

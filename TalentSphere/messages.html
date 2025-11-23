@@ -5,34 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сообщения - TalentSphere</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboard-fixes.css">
+    <link rel="stylesheet" href="global-header.css">
     <link rel="stylesheet" href="messages-new.css">
+    <link rel="stylesheet" href="universal-mobile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="messages-page-new">
+<body class="dashboard-page messages-page">
 
-    <!-- Sidebar Overlay -->
-    <div class="msg-overlay" id="msgOverlay"></div>
-
-    <!-- Burger Menu Button -->
-    <button class="msg-burger" id="msgBurger">
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileSidebarToggle">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 12H21M3 6H21M3 18H21" stroke-linecap="round"/>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
     </button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <!-- Sidebar -->
-    <aside class="msg-sidebar" id="msgSidebar">
-        <div class="msg-sidebar-header">
-            <a href="index.html" class="msg-logo">
-                <span class="msg-logo-icon">✨</span>
-                <span class="msg-logo-text">TalentSphere</span>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar glass-effect" id="dashboardSidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                <div class="logo-icon neon-glow-purple"></div>
+                <span class="logo-text">TalentSphere</span>
             </a>
         </div>
         
-        <nav class="msg-nav">
-            <a href="dashboard.html" class="msg-nav-item">
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="3" width="7" height="9" rx="1"/>
                     <rect x="14" y="3" width="7" height="5" rx="1"/>
@@ -41,34 +45,42 @@
                 </svg>
                 <span>Дашборд</span>
             </a>
-            <a href="marketplace.html" class="msg-nav-item">
+            <a href="marketplace.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
                     <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
                 </svg>
                 <span>Проекты</span>
             </a>
-            <a href="messages.html" class="msg-nav-item active">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                </svg>
-                <span>Сообщения</span>
-            </a>
-            <a href="wallet.html" class="msg-nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
-                    <line x1="1" y1="10" x2="23" y2="10"/>
-                </svg>
-                <span>Кошелек</span>
-            </a>
-            <a href="profile.html" class="msg-nav-item">
+            <a href="profile.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                     <circle cx="12" cy="7" r="4"/>
                 </svg>
                 <span>Профиль</span>
             </a>
-            <a href="settings.html" class="msg-nav-item">
+            <a href="wallet.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                    <line x1="1" y1="10" x2="23" y2="10"/>
+                </svg>
+                <span>Кошелек</span>
+            </a>
+            <a href="messages.html" class="nav-item active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                <span>Сообщения</span>
+                <span class="badge neon-glow-pink">3</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                <span>Обучение</span>
+            </a>
+            <a href="settings.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="3"/>
                     <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
@@ -76,6 +88,16 @@
                 <span>Настройки</span>
             </a>
         </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-profile glass-card">
+                <div class="user-avatar neon-glow-blue"></div>
+                <div class="user-info">
+                    <div class="user-name">Alex Design</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </div>
+        </div>
     </aside>
 
     <!-- Main Messages Container -->
@@ -224,20 +246,24 @@
     </div>
 
     <script>
-        // Burger menu toggle
-        const burger = document.getElementById('msgBurger');
-        const sidebar = document.getElementById('msgSidebar');
-        const overlay = document.getElementById('msgOverlay');
+        // Mobile Menu Toggle
+        const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
+        const dashboardSidebar = document.getElementById('dashboardSidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
         
-        burger.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-        });
+        if (mobileSidebarToggle) {
+            mobileSidebarToggle.addEventListener('click', () => {
+                dashboardSidebar.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+            });
+        }
         
-        overlay.addEventListener('click', () => {
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-        });
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener('click', () => {
+                dashboardSidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+            });
+        }
         
         // Chat selection
         const chatItems = document.querySelectorAll('.msg-chat-item');

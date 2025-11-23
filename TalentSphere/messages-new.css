@@ -122,6 +122,7 @@
     display: grid;
     grid-template-columns: 380px 1fr;
     height: 100vh;
+    width: calc(100% - 280px);
 }
 
 /* CHAT LIST */
@@ -502,11 +503,12 @@
     
     .msg-main {
         margin-left: 0;
+        width: 100%;
         grid-template-columns: 1fr;
     }
     
     .msg-chat-list {
-        display: none;
+        display: none !important;
     }
     
     .msg-chat-window {

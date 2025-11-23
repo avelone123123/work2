@@ -6,10 +6,10 @@
     <title>Profile - TalentSphere</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="dashboard.css">
-    <link rel="stylesheet" href="dashboard-fixes.css">
     <link rel="stylesheet" href="global-header.css">
-    <link rel="stylesheet" href="profile.css">
-    <link rel="stylesheet" href="profile-tabs.css">
+    <link rel="stylesheet" href="profile-variables.css">
+    <link rel="stylesheet" href="profile-enhanced.css">
+    <link rel="stylesheet" href="profile-animations.css">
     <!-- Production: href="styles.css", href="dashboard.css" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,6 +70,21 @@
                 <span>Сообщения</span>
                 <span class="badge neon-glow-pink">3</span>
             </a>
+            <a href="education.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                <span>Обучение</span>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 1v6m0 6v6m5.656-15.656l-4.242 4.242m-2.828 2.828l-4.242 4.242m16.97-.485l-6 1.071m-6 1.071l-6 1.071m.485-16.97l1.071 6m1.071 6l1.071 6"/>
+                </svg>
+                <span>Настройки</span>
+            </a>
         </nav>
         
         <div class="sidebar-footer">
@@ -85,74 +100,44 @@
 
     <!-- Main Content -->
     <main class="main-content profile-content">
-        <!-- Profile Header -->
-        <div class="profile-header glass-card-large">
-            <div class="profile-cover">
+        <!-- Profile Header - Simplified -->
+        <div class="profile-header-simple glass-card animate-fade-in">
+            <div class="profile-cover-simple">
                 <div class="cover-gradient"></div>
             </div>
-            <div class="profile-main">
-                <div class="profile-avatar-section">
-                    <div class="profile-avatar neon-glow-purple">
-                        <div class="avatar-inner"></div>
+            
+            <div class="profile-content-simple">
+                <div class="profile-top">
+                    <div class="profile-avatar-simple neon-glow-purple avatar-entrance animate-shimmer">
+                        AD
                     </div>
-                    <button class="btn-edit-avatar glass-card">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M14 2L18 6L7 17H3V13L14 2Z" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </button>
-                </div>
-                <div class="profile-info">
-                    <div class="profile-name-section">
-                        <h1 class="profile-name">
+                    <div class="profile-info-simple entrance-2">
+                        <h1 class="profile-name-simple">
                             Alex <span class="gradient-text">Designer</span>
                         </h1>
-                        <div class="profile-badges">
-                            <span class="badge-item neon-glow-blue">Pro</span>
-                            <span class="badge-item neon-glow-purple">Verified</span>
-                            <span class="badge-item neon-glow-pink">Top Rated</span>
+                        <div class="profile-badges-simple">
+                            <span class="badge-simple neon-glow-blue">Pro</span>
+                            <span class="badge-simple neon-glow-purple">Verified</span>
+                            <span class="badge-simple neon-glow-pink">Top Rated</span>
+                        </div>
+                        <p class="profile-bio-simple">
+                            Senior UI/UX Designer & Creative Developer | 8+ лет опыта
+                        </p>
+                        <div class="profile-meta-simple">
+                            <span>🌍 Сан-Франциско, США</span>
+                            <span>📅 Участник с 2022</span>
                         </div>
                     </div>
-                    <p class="profile-bio">
-                        Senior UI/UX Designer & Creative Developer | 8+ лет опыта в создании 
-                        современных интерфейсов | Специализируюсь на Web3, FinTech и SaaS продуктах
-                    </p>
-                    <div class="profile-meta">
-                        <div class="meta-item">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M3 10H17M10 3C11.6569 5.33333 11.6569 8.66667 10 17C8.34315 8.66667 8.34315 5.33333 10 3Z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>Сан-Франциско, США</span>
-                        </div>
-                        <div class="meta-item">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2"/>
-                                <path d="M10 6V10L13 13" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>Участник с 2022</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile-actions">
-                    <button class="btn-primary neon-button">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M3 7L10 2L17 7V16C17 16.5304 16.7893 17.0391 16.4142 17.4142C16.0391 17.7893 15.5304 18 15 18H5C4.46957 18 3.96086 17.7893 3.58579 17.4142C3.21071 17.0391 3 16.5304 3 16V7Z" stroke="currentColor" stroke-width="2"/>
-                            <path d="M7 18V9H13V18" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                        Редактировать профиль
-                    </button>
-                    <button class="btn-icon glass-card">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M17 3L3 17M3 3L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
+                    <button class="btn-edit-simple neon-button">
+                        Редактировать
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Stats Grid -->
-        <div class="profile-stats-grid">
-            <div class="stat-card-profile glass-card">
+        <div class="profile-stats-grid stagger-children">
+            <div class="stat-card-profile glass-card hover-lift">
                 <div class="stat-icon-profile neon-glow-blue">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <path d="M16 4L20 12L28 13.5L22 20L23.5 28L16 23.5L8.5 28L10 20L4 13.5L12 12L16 4Z" stroke="url(#gradient-blue)" stroke-width="2"/>
@@ -161,7 +146,7 @@
                 <div class="stat-value-profile neon-text-blue">4.9</div>
                 <div class="stat-label-profile">Рейтинг</div>
             </div>
-            <div class="stat-card-profile glass-card">
+            <div class="stat-card-profile glass-card hover-lift">
                 <div class="stat-icon-profile neon-glow-pink">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <rect x="6" y="10" width="20" height="16" rx="3" stroke="url(#gradient-pink)" stroke-width="2"/>
@@ -170,7 +155,7 @@
                 <div class="stat-value-profile neon-text-pink">147</div>
                 <div class="stat-label-profile">Проектов</div>
             </div>
-            <div class="stat-card-profile glass-card">
+            <div class="stat-card-profile glass-card hover-lift">
                 <div class="stat-icon-profile neon-glow-purple">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <circle cx="16" cy="12" r="5" stroke="url(#gradient-purple)" stroke-width="2"/>
@@ -180,7 +165,7 @@
                 <div class="stat-value-profile neon-text-purple">892</div>
                 <div class="stat-label-profile">Клиентов</div>
             </div>
-            <div class="stat-card-profile glass-card">
+            <div class="stat-card-profile glass-card hover-lift">
                 <div class="stat-icon-profile neon-glow-cyan">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <rect x="6" y="8" width="20" height="16" rx="3" stroke="url(#gradient-cyan)" stroke-width="2"/>
@@ -193,34 +178,14 @@
         </div>
 
         <!-- Content Tabs (ТЗ) -->
-        <div class="profile-tabs">
+        <div class="profile-tabs glass-card">
             <button class="tab-btn active" data-tab="about">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z"/>
-                    <path d="M10 13V10M10 7H10.01"/>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="10" cy="10" r="7"/>
+                    <line x1="10" y1="13" x2="10" y2="10"/>
+                    <line x1="10" y1="7" x2="10.01" y2="7"/>
                 </svg>
-                🎯 Обо мне
-            </button>
-            <button class="tab-btn" data-tab="portfolio">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="7" width="16" height="10" rx="2"/>
-                    <path d="M14 7V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2"/>
-                </svg>
-                💼 Портфолио
-            </button>
-            <button class="tab-btn" data-tab="stats">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 17L7 10L11 14L17 6"/>
-                    <path d="M12 6H17V11"/>
-                </svg>
-                📊 Статистика
-            </button>
-            <button class="tab-btn" data-tab="settings">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="10" cy="10" r="3"/>
-                    <path d="M10 1v4m0 10v4M4.22 4.22l2.83 2.83m5.66 5.66l2.83 2.83M1 10h4m10 0h4M4.22 15.78l2.83-2.83m5.66-5.66l2.83-2.83"/>
-                </svg>
-                ⚙️ Настройки
+                <span>Обо мне</span>
             </button>
         </div>
 
@@ -342,9 +307,6 @@
                 <div class="portfolio-grid">
                     <div class="portfolio-item glass-card">
                         <div class="portfolio-thumbnail neon-glow-blue">
-                            <div class="thumbnail-overlay">
-                                <button class="view-btn">Просмотр</button>
-                            </div>
                         </div>
                         <div class="portfolio-info">
                             <h3 class="portfolio-title">FinTech Dashboard</h3>
@@ -353,9 +315,6 @@
                     </div>
                     <div class="portfolio-item glass-card">
                         <div class="portfolio-thumbnail neon-glow-pink">
-                            <div class="thumbnail-overlay">
-                                <button class="view-btn">Просмотр</button>
-                            </div>
                         </div>
                         <div class="portfolio-info">
                             <h3 class="portfolio-title">Crypto Wallet App</h3>
@@ -364,9 +323,6 @@
                     </div>
                     <div class="portfolio-item glass-card">
                         <div class="portfolio-thumbnail neon-glow-purple">
-                            <div class="thumbnail-overlay">
-                                <button class="view-btn">Просмотр</button>
-                            </div>
                         </div>
                         <div class="portfolio-info">
                             <h3 class="portfolio-title">AI Platform Interface</h3>
@@ -375,10 +331,6 @@
                     </div>
                     <div class="portfolio-item glass-card">
                         <div class="portfolio-thumbnail neon-glow-cyan">
-                            <div class="thumbnail-overlay">
-                                <button class="view-btn">Просмотр</button>
-                            </div>
-                        </div>
                         <div class="portfolio-info">
                             <h3 class="portfolio-title">E-commerce Platform</h3>
                             <p class="portfolio-category">Full Design</p>

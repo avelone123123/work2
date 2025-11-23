@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="global-header.css">
     <link rel="stylesheet" href="marketplace.css">
     <link rel="stylesheet" href="marketplace-filters.css">
+    <link rel="stylesheet" href="universal-mobile.css">
     <!-- Production: href="styles.css", href="dashboard.css", href="marketplace.css" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,6 +73,20 @@
                 </svg>
                 <span>Сообщения</span>
                 <span class="badge neon-glow-pink">3</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                <span>Обучение</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 1v6m0 6v6m5.656-15.656l-4.242 4.242m-2.828 2.828l-4.242 4.242m16.97-.485l-6 1.071m-6 1.071l-6 1.071m.485-16.97l1.071 6m1.071 6l1.071 6"/>
+                </svg>
+                <span>Настройки</span>
             </a>
         </nav>
         
@@ -158,53 +173,25 @@
 
                 <div class="filter-section glass-card">
                     <h3 class="filter-title">Бюджет</h3>
-                    <div class="filter-options">
-                        <label class="filter-option">
-                            <input type="radio" name="budget">
-                            <span class="checkmark radio"></span>
-                            <span class="filter-label">До $500</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="radio" name="budget" checked>
-                            <span class="checkmark radio"></span>
-                            <span class="filter-label">$500 - $2,000</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="radio" name="budget">
-                            <span class="checkmark radio"></span>
-                            <span class="filter-label">$2,000 - $5,000</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="radio" name="budget">
-                            <span class="checkmark radio"></span>
-                            <span class="filter-label">$5,000+</span>
-                        </label>
+                    <div class="budget-inputs">
+                        <div class="budget-input-group">
+                            <label class="input-label">От</label>
+                            <input type="number" class="budget-input" placeholder="$500" min="0">
+                        </div>
+                        <div class="budget-separator">—</div>
+                        <div class="budget-input-group">
+                            <label class="input-label">До</label>
+                            <input type="number" class="budget-input" placeholder="$5000" min="0">
+                        </div>
                     </div>
                 </div>
 
                 <div class="filter-section glass-card">
                     <h3 class="filter-title">Срок выполнения</h3>
-                    <div class="filter-options">
-                        <label class="filter-option">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                            <span class="filter-label">До 1 недели</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" checked>
-                            <span class="checkmark"></span>
-                            <span class="filter-label">1-2 недели</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                            <span class="filter-label">2-4 недели</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                            <span class="filter-label">1+ месяц</span>
-                        </label>
+                    <div class="deadline-input">
+                        <label class="input-label">Количество дней</label>
+                        <input type="number" class="deadline-input-field" placeholder="14" min="1">
+                        <span class="input-hint">Максимальный срок в днях</span>
                     </div>
                 </div>
                 
