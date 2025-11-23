@@ -349,6 +349,8 @@
     display: flex;
     gap: 12px;
     max-width: 70%;
+    height: auto;
+    overflow: visible;
 }
 
 .msg-message-other {
@@ -377,6 +379,8 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+    height: auto;
+    overflow: visible;
 }
 
 .msg-bubble {
@@ -387,6 +391,10 @@
     white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    overflow: visible;
+    height: auto;
+    min-height: auto;
+    max-height: none;
 }
 
 .msg-message-other .msg-bubble {
@@ -517,6 +525,9 @@
     
     .msg-chat-body {
         padding: 16px;
+        min-height: calc(100vh - 180px);
+        max-height: calc(100vh - 180px);
+        overflow-y: auto;
     }
     
     .msg-chat-footer {
@@ -526,9 +537,37 @@
     .msg-bubble {
         font-size: 0.9rem;
         padding: 10px 14px;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
     .msg-message {
         max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .msg-chat-body {
+        padding: 12px;
+        min-height: calc(100vh - 160px);
+        max-height: calc(100vh - 160px);
+    }
+    
+    .msg-bubble {
+        font-size: 0.875rem;
+        padding: 10px 12px;
+    }
+    
+    .msg-message {
+        max-width: 95%;
+    }
+    
+    .msg-chat-footer {
+        padding: 10px 12px;
+    }
+    
+    .msg-input {
+        font-size: 0.9rem;
     }
 }
