@@ -165,148 +165,179 @@
         <!-- Education Grid (30% + 70%) -->
         <div class="education-grid">
 
-            <!-- LEFT: Course Navigation (30%) -->
-            <aside class="course-nav">
-                <div class="course-nav-card">
-                    <h3 class="course-nav-title">📚 Эффективный фриланс</h3>
-                    <div class="course-progress-mini">
-                        <span>65% завершено</span>
-                        <div class="progress-bar-mini">
-                            <div class="progress-fill-mini" style="width: 65%"></div>
+            <!-- Course Nav Overlay -->
+            <div class="course-nav-overlay" id="courseNavOverlay"></div>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- ... -->
+                <!-- Education Grid (30% + 70%) -->
+                <div class="education-grid">
+
+                    <!-- LEFT: Course Navigation (30%) -->
+                    <aside class="course-nav" id="courseNav">
+                        <div class="course-nav-close">
+                            <span style="color: white; font-weight: 600;">Меню курса</span>
+                            <button class="course-nav-close-btn" id="courseNavClose">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="course-nav-card">
+                            <h3 class="course-nav-title">📚 Эффективный фриланс</h3>
+                            <div class="course-progress-mini">
+                                <span>65% завершено</span>
+                                <div class="progress-bar-mini">
+                                    <div class="progress-fill-mini" style="width: 65%"></div>
+                                </div>
+                            </div>
+
+                            <div class="lessons-list">
+                                <div class="lesson-item completed">
+                                    <span class="lesson-icon">✓</span>
+                                    <span class="lesson-title">Введение в фриланс</span>
+                                </div>
+                                <div class="lesson-item completed">
+                                    <span class="lesson-icon">✓</span>
+                                    <span class="lesson-title">Создание профиля</span>
+                                </div>
+                                <div class="lesson-item active">
+                                    <span class="lesson-icon">▶</span>
+                                    <span class="lesson-title">Поиск клиентов</span>
+                                </div>
+                                <div class="lesson-item">
+                                    <span class="lesson-icon">🔒</span>
+                                    <span class="lesson-title">Ценообразование</span>
+                                </div>
+                                <div class="lesson-item">
+                                    <span class="lesson-icon">🔒</span>
+                                    <span class="lesson-title">Работа с возражениями</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Achievements -->
+                        <div class="achievements-card">
+                            <h3 class="achievements-title">🏆 Достижения</h3>
+                            <div class="badges-grid">
+                                <div class="badge-item earned">
+                                    <div class="badge-icon">🥇</div>
+                                    <span class="badge-name">Первый курс</span>
+                                </div>
+                                <div class="badge-item earned">
+                                    <div class="badge-icon">⭐</div>
+                                    <span class="badge-name">5 уроков</span>
+                                </div>
+                                <div class="badge-item">
+                                    <div class="badge-icon">🎯</div>
+                                    <span class="badge-name">Мастер</span>
+                                </div>
+                                <div class="badge-item">
+                                    <div class="badge-icon">💎</div>
+                                    <span class="badge-name">Эксперт</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- RIGHT: Course Content (70%) -->
+                    <div class="course-content">
+                        <!-- Mobile Course Nav Toggle -->
+                        <button class="mobile-course-nav-toggle" id="courseNavToggle">
+                            <span class="toggle-icon">📂</span>
+                            <span>Содержание курса</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+
+                        <div class="lesson-header">
+                            <h1 class="lesson-title">Урок 3: Поиск клиентов</h1>
+                            <div class="lesson-meta">
+                                <span>📹 15 минут</span>
+                                <span>📝 2 задания</span>
+                            </div>
+                        </div>
+
+                        <!-- Video Player -->
+                        <div class="video-player">
+                            <div class="video-placeholder">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <circle cx="40" cy="40" r="40" fill="rgba(139, 92, 246, 0.2)" />
+                                    <path d="M32 28L56 40L32 52V28Z" fill="white" />
+                                </svg>
+                                <p>Видео: Эффективные стратегии поиска клиентов</p>
+                            </div>
+                        </div>
+
+                        <!-- Lesson Description -->
+                        <div class="lesson-description">
+                            <h3>О чем этот урок</h3>
+                            <p>В этом уроке вы узнаете проверенные стратегии поиска клиентов на фриланс-платформах. Мы
+                                разберем:
+                            </p>
+                            <ul>
+                                <li>Как правильно составить поисковый запрос</li>
+                                <li>Где искать лучшие проекты</li>
+                                <li>Как выделиться среди конкурентов</li>
+                                <li>Техники холодных предложений</li>
+                            </ul>
+                        </div>
+
+                        <!-- Materials -->
+                        <div class="lesson-materials">
+                            <h3>📁 Материалы урока</h3>
+                            <div class="materials-list">
+                                <a href="#" class="material-item">
+                                    <span class="material-icon">📄</span>
+                                    <span class="material-name">Шаблоны предложений.pdf</span>
+                                </a>
+                                <a href="#" class="material-item">
+                                    <span class="material-icon">📊</span>
+                                    <span class="material-name">Чек-лист поиска клиентов.xlsx</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Quiz -->
+                        <div class="lesson-quiz">
+                            <h3>✏️ Проверочный тест</h3>
+                            <div class="quiz-question">
+                                <p><strong>Вопрос 1:</strong> Какой метод поиска клиентов наиболее эффективен?</p>
+                                <div class="quiz-options">
+                                    <label class="quiz-option">
+                                        <input type="radio" name="q1">
+                                        <span>Массовая рассылка предложений</span>
+                                    </label>
+                                    <label class="quiz-option">
+                                        <input type="radio" name="q1">
+                                        <span>Персонализированный подход</span>
+                                    </label>
+                                    <label class="quiz-option">
+                                        <input type="radio" name="q1">
+                                        <span>Ожидание откликов на профиль</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="quiz-submit-btn">Проверить ответы</button>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="lesson-navigation">
+                            <button class="lesson-nav-btn prev">← Предыдущий урок</button>
+                            <button class="lesson-nav-btn next">Следующий урок →</button>
                         </div>
                     </div>
 
-                    <div class="lessons-list">
-                        <div class="lesson-item completed">
-                            <span class="lesson-icon">✓</span>
-                            <span class="lesson-title">Введение в фриланс</span>
-                        </div>
-                        <div class="lesson-item completed">
-                            <span class="lesson-icon">✓</span>
-                            <span class="lesson-title">Создание профиля</span>
-                        </div>
-                        <div class="lesson-item active">
-                            <span class="lesson-icon">▶</span>
-                            <span class="lesson-title">Поиск клиентов</span>
-                        </div>
-                        <div class="lesson-item">
-                            <span class="lesson-icon">🔒</span>
-                            <span class="lesson-title">Ценообразование</span>
-                        </div>
-                        <div class="lesson-item">
-                            <span class="lesson-icon">🔒</span>
-                            <span class="lesson-title">Работа с возражениями</span>
-                        </div>
-                    </div>
                 </div>
+            </main>
 
-                <!-- Achievements -->
-                <div class="achievements-card">
-                    <h3 class="achievements-title">🏆 Достижения</h3>
-                    <div class="badges-grid">
-                        <div class="badge-item earned">
-                            <div class="badge-icon">🥇</div>
-                            <span class="badge-name">Первый курс</span>
-                        </div>
-                        <div class="badge-item earned">
-                            <div class="badge-icon">⭐</div>
-                            <span class="badge-name">5 уроков</span>
-                        </div>
-                        <div class="badge-item">
-                            <div class="badge-icon">🎯</div>
-                            <span class="badge-name">Мастер</span>
-                        </div>
-                        <div class="badge-item">
-                            <div class="badge-icon">💎</div>
-                            <span class="badge-name">Эксперт</span>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- RIGHT: Course Content (70%) -->
-            <div class="course-content">
-                <div class="lesson-header">
-                    <h1 class="lesson-title">Урок 3: Поиск клиентов</h1>
-                    <div class="lesson-meta">
-                        <span>📹 15 минут</span>
-                        <span>📝 2 задания</span>
-                    </div>
-                </div>
-
-                <!-- Video Player -->
-                <div class="video-player">
-                    <div class="video-placeholder">
-                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                            <circle cx="40" cy="40" r="40" fill="rgba(139, 92, 246, 0.2)" />
-                            <path d="M32 28L56 40L32 52V28Z" fill="white" />
-                        </svg>
-                        <p>Видео: Эффективные стратегии поиска клиентов</p>
-                    </div>
-                </div>
-
-                <!-- Lesson Description -->
-                <div class="lesson-description">
-                    <h3>О чем этот урок</h3>
-                    <p>В этом уроке вы узнаете проверенные стратегии поиска клиентов на фриланс-платформах. Мы разберем:
-                    </p>
-                    <ul>
-                        <li>Как правильно составить поисковый запрос</li>
-                        <li>Где искать лучшие проекты</li>
-                        <li>Как выделиться среди конкурентов</li>
-                        <li>Техники холодных предложений</li>
-                    </ul>
-                </div>
-
-                <!-- Materials -->
-                <div class="lesson-materials">
-                    <h3>📁 Материалы урока</h3>
-                    <div class="materials-list">
-                        <a href="#" class="material-item">
-                            <span class="material-icon">📄</span>
-                            <span class="material-name">Шаблоны предложений.pdf</span>
-                        </a>
-                        <a href="#" class="material-item">
-                            <span class="material-icon">📊</span>
-                            <span class="material-name">Чек-лист поиска клиентов.xlsx</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quiz -->
-                <div class="lesson-quiz">
-                    <h3>✏️ Проверочный тест</h3>
-                    <div class="quiz-question">
-                        <p><strong>Вопрос 1:</strong> Какой метод поиска клиентов наиболее эффективен?</p>
-                        <div class="quiz-options">
-                            <label class="quiz-option">
-                                <input type="radio" name="q1">
-                                <span>Массовая рассылка предложений</span>
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="q1">
-                                <span>Персонализированный подход</span>
-                            </label>
-                            <label class="quiz-option">
-                                <input type="radio" name="q1">
-                                <span>Ожидание откликов на профиль</span>
-                            </label>
-                        </div>
-                    </div>
-                    <button class="quiz-submit-btn">Проверить ответы</button>
-                </div>
-
-                <!-- Navigation -->
-                <div class="lesson-navigation">
-                    <button class="lesson-nav-btn prev">← Предыдущий урок</button>
-                    <button class="lesson-nav-btn next">Следующий урок →</button>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <script src="script.js"></script>
+            <script src="script.js"></script>
 </body>
 
 </html>

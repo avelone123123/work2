@@ -2,19 +2,21 @@
    1. LAYOUT & SIDEBAR FIXES (CRITICAL)
    ======================================== */
 
-   :root {
+:root {
     --sidebar-width: 260px;
     --header-height-mobile: 60px;
 }
 
 body.dashboard-page {
-    background: #0f172a; /* Темный фон дашборда */
+    background: #0f172a;
+    /* Темный фон дашборда */
     min-height: 100vh;
     overflow-x: hidden;
 }
 
 /* На больших экранах (ПК, Ноутбуки) */
 @media (min-width: 1024px) {
+
     /* Фиксируем сайдбар */
     .sidebar {
         position: fixed;
@@ -34,7 +36,7 @@ body.dashboard-page {
     }
 
     /* Прячем мобильные элементы */
-    .mobile-header, 
+    .mobile-header,
     .mobile-menu-btn,
     .sidebar-overlay {
         display: none;
@@ -44,7 +46,8 @@ body.dashboard-page {
 /* На планшетах и мобильных (меньше 1024px) */
 @media (max-width: 1023px) {
     .sidebar {
-        transform: translateX(-100%); /* Прячем сайдбар влево */
+        transform: translateX(-100%);
+        /* Прячем сайдбар влево */
         position: fixed;
         top: 0;
         left: 0;
@@ -56,14 +59,17 @@ body.dashboard-page {
     }
 
     .sidebar.active {
-        transform: translateX(0); /* Показываем при клике */
+        transform: translateX(0);
+        /* Показываем при клике */
     }
 
     .main-content {
-        margin-left: 0; /* Убираем отступ */
+        margin-left: 0;
+        /* Убираем отступ */
         width: 100%;
         padding: 20px;
-        padding-top: 80px; /* Место под мобильную шапку */
+        padding-top: 80px;
+        /* Место под мобильную шапку */
     }
 
     /* Мобильная шапка */
@@ -75,7 +81,7 @@ body.dashboard-page {
         height: var(--header-height-mobile);
         background: rgba(15, 23, 42, 0.9);
         backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         display: flex;
         align-items: center;
         padding: 0 20px;
@@ -96,7 +102,7 @@ body.dashboard-page {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.5);
+        background: rgba(0, 0, 0, 0.5);
         z-index: 999;
         opacity: 0;
         visibility: hidden;
@@ -170,7 +176,7 @@ body.dashboard-page {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .balance-label {
@@ -223,46 +229,48 @@ body.dashboard-page {
     margin-bottom: 40px;
 }
 
-.wallet-action-btn {
+.simple-action-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 24px;
-    border: none;
-    cursor: pointer;
-    background: rgba(255,255,255,0.03);
-    border-radius: 20px;
-    transition: all 0.3s ease;
     gap: 12px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    padding: 16px;
+    border-radius: 16px;
 }
 
-.wallet-action-btn:hover {
-    background: rgba(255,255,255,0.08);
-    transform: translateY(-5px);
-}
-
-.action-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0.05);
+.simple-action-btn svg {
+    width: 28px;
+    height: 28px;
     color: white;
+    transition: all 0.3s ease;
 }
 
-.action-label {
-    color: white;
+.simple-action-btn span {
+    font-size: 14px;
     font-weight: 500;
-    font-size: 15px;
+}
+
+.simple-action-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.simple-action-btn:hover svg {
+    transform: scale(1.1);
+    color: #8b5cf6;
+    /* Purple glow on hover */
 }
 
 /* Content Grid (Transactions Left, Sidebar Right) */
 .wallet-content-grid {
     display: grid;
-    grid-template-columns: 1fr 350px; /* Правая колонка фиксирована, левая тянется */
+    grid-template-columns: 1fr 350px;
+    /* Правая колонка фиксирована, левая тянется */
     gap: 30px;
 }
 
@@ -295,14 +303,14 @@ body.dashboard-page {
     display: flex;
     align-items: center;
     padding: 20px;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
     transition: 0.3s;
 }
 
 .transaction-item:hover {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     transform: translateX(5px);
 }
 
@@ -310,7 +318,7 @@ body.dashboard-page {
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -337,8 +345,13 @@ body.dashboard-page {
     font-size: 18px;
 }
 
-.transaction-amount.positive { color: #10b981; }
-.transaction-amount.negative { color: #ef4444; }
+.transaction-amount.positive {
+    color: #10b981;
+}
+
+.transaction-amount.negative {
+    color: #ef4444;
+}
 
 /* Right Sidebar (Cards) */
 .wallet-sidebar {
@@ -370,7 +383,7 @@ body.dashboard-page {
     right: -50px;
     width: 150px;
     height: 150px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
 }
 
@@ -387,7 +400,7 @@ body.dashboard-page {
     letter-spacing: 2px;
     font-family: 'Space Grotesk', monospace;
     margin-bottom: 24px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .card-details {
@@ -412,7 +425,7 @@ body.dashboard-page {
     width: 100%;
     padding: 16px;
     background: transparent;
-    border: 2px dashed rgba(255,255,255,0.2);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     color: var(--text-secondary);
     cursor: pointer;
@@ -432,7 +445,7 @@ body.dashboard-page {
     height: 100px;
     margin-bottom: 12px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .bar {
@@ -455,14 +468,17 @@ body.dashboard-page {
 /* Responsive Fixes for Small Laptops (1024px - 1300px) */
 @media (min-width: 1024px) and (max-width: 1300px) {
     .wallet-content-grid {
-        grid-template-columns: 1fr; /* Правая колонка падает вниз */
+        grid-template-columns: 1fr;
+        /* Правая колонка падает вниз */
     }
-    
+
     .wallet-sidebar {
-        flex-direction: row; /* Элементы сайдбара встают в ряд */
+        flex-direction: row;
+        /* Элементы сайдбара встают в ряд */
     }
-    
-    .payment-methods, .analytics-preview {
+
+    .payment-methods,
+    .analytics-preview {
         flex: 1;
     }
 }
@@ -471,7 +487,7 @@ body.dashboard-page {
     .wallet-content-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .wallet-sidebar {
         flex-direction: column;
     }

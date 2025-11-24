@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кошелек | TalentSphere</title>
+    <title>Выписка | TalentSphere</title>
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="wallet.css">
@@ -117,122 +117,51 @@
     <main class="main-content wallet-content">
         <header class="content-header">
             <div class="header-left">
-                <h1 class="page-title">Мой Кошелек</h1>
-                <p class="page-subtitle">Управляйте балансом и историей транзакций</p>
+                <div class="back-link-container">
+                    <a href="wallet.html" class="back-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        Назад к кошельку
+                    </a>
+                </div>
+                <h1 class="page-title">Выписка по счету</h1>
+                <p class="page-subtitle">Полная история операций</p>
             </div>
             <div class="header-right">
-                <button class="btn-primary neon-button">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                        <line x1="16" y1="5" x2="22" y2="5"></line>
-                        <line x1="19" y1="2" x2="19" y2="8"></line>
+                <button class="btn-secondary glass-card"
+                    style="padding: 12px 24px; color: white; border: 1px solid rgba(255,255,255,0.1);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="margin-right: 8px;">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
                     </svg>
-                    Вывести средства
+                    Скачать PDF
                 </button>
             </div>
         </header>
 
-        <div class="balance-grid">
-            <div class="balance-card glass-card-large">
-                <div class="balance-header">
-                    <div class="balance-icon neon-glow-purple">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="2" y="5" width="20" height="14" rx="2" />
-                            <line x1="2" y1="10" x2="22" y2="10" />
-                        </svg>
-                    </div>
-                    <span class="balance-label">Доступно</span>
-                </div>
-                <div class="balance-amount">
-                    <span class="currency-symbol">$</span>
-                    <span class="amount-value neon-text-purple">12,450</span>
-                    <span class="amount-cents">.00</span>
-                </div>
-                <div class="balance-change positive">
-                    <span>+$2,340 за месяц</span>
-                </div>
-            </div>
-
-            <div class="balance-card glass-card-large">
-                <div class="balance-header">
-                    <div class="balance-icon neon-glow-blue">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg>
-                    </div>
-                    <span class="balance-label">В Escrow</span>
-                </div>
-                <div class="balance-amount">
-                    <span class="currency-symbol">$</span>
-                    <span class="amount-value neon-text-blue">8,700</span>
-                    <span class="amount-cents">.00</span>
-                </div>
-                <div class="balance-info">
-                    <span>5 активных сделок</span>
-                </div>
-            </div>
-
-            <div class="balance-card glass-card-large">
-                <div class="balance-header">
-                    <div class="balance-icon neon-glow-pink">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <polyline points="12 6 12 12 16 14" />
-                        </svg>
-                    </div>
-                    <span class="balance-label">Ожидает</span>
-                </div>
-                <div class="balance-amount">
-                    <span class="currency-symbol">$</span>
-                    <span class="amount-value neon-text-pink">3,250</span>
-                    <span class="amount-cents">.00</span>
-                </div>
-                <div class="balance-info">
-                    <span>Вывод через 24ч</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="quick-actions-wallet">
-            <a href="wallet-topup.html" class="simple-action-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <span>Пополнить</span>
-            </a>
-            <a href="wallet-send.html" class="simple-action-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <span>Отправить</span>
-            </a>
-            <a href="wallet-exchange.html" class="simple-action-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M23 4v6h-6M1 20v-6h6" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <span>Обменять</span>
-            </a>
-            <a href="wallet-statement.html" class="simple-action-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <span>Выписка</span>
-            </a>
-        </div>
-
-        <div class="wallet-content-grid">
-
+        <div class="wallet-content-grid" style="grid-template-columns: 1fr;">
             <section class="transactions-section">
-                <div class="section-header-inline">
-                    <h2 class="section-title-small">История операций</h2>
-                    <a href="#" class="view-all-link">Все транзакции →</a>
+
+                <!-- Filters -->
+                <div class="filters-bar glass-card"
+                    style="padding: 16px; margin-bottom: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
+                    <select
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 16px; color: white;">
+                        <option>Все операции</option>
+                        <option>Пополнения</option>
+                        <option>Выводы</option>
+                        <option>Оплата услуг</option>
+                    </select>
+                    <select
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 16px; color: white;">
+                        <option>За все время</option>
+                        <option>Этот месяц</option>
+                        <option>Прошлый месяц</option>
+                    </select>
                 </div>
 
                 <div class="transactions-list">
@@ -277,36 +206,23 @@
                         </div>
                         <div class="transaction-amount negative">-$25.00</div>
                     </div>
+
+                    <!-- More items for demo -->
+                    <div class="transaction-item glass-card">
+                        <div class="transaction-icon neon-glow-green">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <div class="transaction-title">Проект "Mobile App"</div>
+                            <div class="transaction-date">10 Окт, 2024</div>
+                        </div>
+                        <div class="transaction-amount positive">+$2,800.00</div>
+                    </div>
                 </div>
             </section>
-
-            <aside class="wallet-sidebar">
-                <div class="glass-card payment-methods">
-                    <h3 class="sidebar-title">Мои карты</h3>
-                    <div class="credit-card neon-glow-blue">
-                        <div class="card-chip"></div>
-                        <div class="card-number">•••• •••• •••• 4289</div>
-                        <div class="card-details">
-                            <span>ALEX DESIGN</span>
-                            <span>09/28</span>
-                        </div>
-                        <div class="card-logo">VISA</div>
-                    </div>
-                    <button class="add-card-btn">+ Добавить карту</button>
-                </div>
-
-                <div class="glass-card analytics-preview">
-                    <h3 class="sidebar-title">Аналитика</h3>
-                    <div class="mini-chart">
-                        <div class="bar" style="height: 40%"></div>
-                        <div class="bar" style="height: 60%"></div>
-                        <div class="bar" style="height: 35%"></div>
-                        <div class="bar" style="height: 80%"></div>
-                        <div class="bar active" style="height: 95%"></div>
-                    </div>
-                    <p class="chart-label">Лучший месяц: <span>Октябрь</span></p>
-                </div>
-            </aside>
         </div>
 
     </main>

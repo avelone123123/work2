@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отправить средства | TalentSphere</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="wallet.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="dashboard-page">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar glass-effect" id="dashboardSidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                <div class="logo-icon neon-glow-purple"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="9" rx="1" />
+                    <rect x="14" y="3" width="7" height="5" rx="1" />
+                    <rect x="14" y="12" width="7" height="9" rx="1" />
+                    <rect x="3" y="16" width="7" height="5" rx="1" />
+                </svg>
+                <span>Дашборд</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                <span>Проекты</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+                <span>Профиль</span>
+            </a>
+            <a href="wallet.html" class="nav-item active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                    <line x1="1" y1="10" x2="23" y2="10" />
+                </svg>
+                <span>Кошелек</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                <span>Сообщения</span>
+                <span class="badge neon-glow-pink">3</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
+                <span>Обучение</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M12 1v6m0 6v6m6-11.66l-3 5.2m-6 0l-3-5.2M1.34 18l5.2-3m5.2 0l5.2 3M1.34 6l5.2 3m5.2 0l5.2-3" />
+                </svg>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile glass-card">
+                <div class="user-avatar neon-glow-blue"></div>
+                <div class="user-info">
+                    <div class="user-name">Alex Design</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content wallet-content">
+        <header class="content-header">
+            <div class="header-left">
+                <div class="back-link-container">
+                    <a href="wallet.html" class="back-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        Назад к кошельку
+                    </a>
+                </div>
+                <h1 class="page-title">Отправить средства</h1>
+                <p class="page-subtitle">Перевод другому пользователю или на внешний счет</p>
+            </div>
+        </header>
+
+        <div class="wallet-content-grid">
+            <section class="send-section glass-card" style="padding: 30px;">
+                <h2 class="section-title-small" style="margin-bottom: 24px;">Получатель</h2>
+
+                <div class="form-group" style="margin-bottom: 24px;">
+                    <label style="display: block; color: var(--text-secondary); margin-bottom: 8px;">Email или ID
+                        пользователя</label>
+                    <input type="text" placeholder="user@example.com"
+                        style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; color: white;">
+                </div>
+
+                <h2 class="section-title-small" style="margin-bottom: 24px;">Сумма перевода</h2>
+                <div class="amount-input-container" style="margin-bottom: 32px;">
+                    <div class="input-wrapper" style="position: relative;">
+                        <span class="currency-prefix"
+                            style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 24px; color: var(--text-secondary);">$</span>
+                        <input type="number" placeholder="0.00"
+                            style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 20px 20px 20px 50px; font-size: 24px; color: white; font-family: 'Space Grotesk', sans-serif;">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 32px;">
+                    <label style="display: block; color: var(--text-secondary); margin-bottom: 8px;">Комментарий
+                        (необязательно)</label>
+                    <textarea placeholder="За проект..." rows="3"
+                        style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; color: white;"></textarea>
+                </div>
+
+                <button class="btn-primary neon-button"
+                    style="width: 100%; padding: 16px; font-size: 18px;">Отправить</button>
+            </section>
+
+            <aside class="wallet-sidebar">
+                <div class="glass-card info-card" style="padding: 24px;">
+                    <h3 class="sidebar-title">Важно</h3>
+                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
+                        Внимательно проверяйте данные получателя. Отмененные транзакции не подлежат возврату.
+                    </p>
+                </div>
+            </aside>
+        </div>
+
+    </main>
+
+    <script>
+        const mobileBtn = document.getElementById('mobileSidebarToggle');
+        const sidebar = document.getElementById('dashboardSidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        mobileBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+
+</html>

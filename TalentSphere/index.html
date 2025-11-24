@@ -345,17 +345,18 @@
     <section class="video-demo-section">
         <div class="container">
             <div class="section-header-center">
-                <span class="section-badge">🎥 Смотрите демо</span>
+                <span class="section-badge">🎥 Видео Галерея</span>
                 <h2 class="section-title-large">
-                    Посмотрите как работает <span class="gradient-text">TalentSphere</span>
+                    Живые <span class="gradient-text">истории</span> успеха
                 </h2>
-                <p class="section-subtitle">2-минутное видео о возможностях платформы</p>
+                <p class="section-subtitle">Наведите на миниатюру для предпросмотра, кликните для просмотра видео</p>
             </div>
 
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <!-- Placeholder for video -->
-                    <div class="video-placeholder">
+            <div class="video-gallery-container">
+                <!-- Main Video Preview -->
+                <div class="main-video-preview" id="mainVideoPreview">
+                    <div class="video-placeholder"
+                        data-video-src="https://assets.mixkit.co/videos/preview/mixkit-working-on-a-new-digital-project-12429-large.mp4">
                         <div class="play-button">
                             <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
                                 <circle cx="40" cy="40" r="38" stroke="url(#gradient-purple)" stroke-width="3" />
@@ -363,42 +364,86 @@
                             </svg>
                         </div>
                         <div class="video-overlay"></div>
-                        <!-- Replace with actual video thumbnail -->
-                        <img src="https://via.placeholder.com/1200x675/1a1a2e/8B5CF6?text=TalentSphere+Demo"
-                            alt="Video Demo" class="video-thumbnail">
-                    </div>
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            alt="Main Video" class="video-thumbnail main-thumb">
 
-                    <!-- Uncomment when you have video URL -->
-                    <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                        <div class="video-info-overlay">
+                            <h3 class="video-title">Разработка UX/UI для Финтех стартапа</h3>
+                            <p class="video-author">Alex M. • Senior Designer</p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Video Stats -->
-                <div class="video-stats">
-                    <div class="video-stat-item">
-                        <div class="video-stat-icon">⚡</div>
-                        <div class="video-stat-text">
-                            <div class="video-stat-value">2 минуты</div>
-                            <div class="video-stat-label">Длительность</div>
+                <!-- Video Thumbnails List -->
+                <div class="video-thumbnails-list">
+                    <div class="video-thumbnail-item active"
+                        data-video-src="https://assets.mixkit.co/videos/preview/mixkit-working-on-a-new-digital-project-12429-large.mp4"
+                        data-image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                        data-title="Разработка UX/UI для Финтех стартапа" data-author="Alex M. • Senior Designer">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            alt="Thumb">
+                        <div class="thumb-info">
+                            <h4>UX/UI Design</h4>
+                            <span>02:15</span>
                         </div>
                     </div>
-                    <div class="video-stat-item">
-                        <div class="video-stat-icon">👥</div>
-                        <div class="video-stat-text">
-                            <div class="video-stat-value">50K+</div>
-                            <div class="video-stat-label">Просмотров</div>
+
+                    <div class="video-thumbnail-item"
+                        data-video-src="https://assets.mixkit.co/videos/preview/mixkit-team-working-together-on-a-project-12432-large.mp4"
+                        data-image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                        data-title="Командная разработка React приложения" data-author="Sarah K. • Frontend Lead">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            alt="Thumb">
+                        <div class="thumb-info">
+                            <h4>Frontend Dev</h4>
+                            <span>01:45</span>
                         </div>
                     </div>
-                    <div class="video-stat-item">
-                        <div class="video-stat-icon">⭐</div>
-                        <div class="video-stat-text">
-                            <div class="video-stat-value">4.9/5</div>
-                            <div class="video-stat-label">Рейтинг</div>
+
+                    <div class="video-thumbnail-item"
+                        data-video-src="https://assets.mixkit.co/videos/preview/mixkit-man-working-on-his-laptop-308-large.mp4"
+                        data-image="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                        data-title="Создание 3D персонажа в Blender" data-author="Mike R. • 3D Artist">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            alt="Thumb">
+                        <div class="thumb-info">
+                            <h4>3D Modeling</h4>
+                            <span>03:20</span>
+                        </div>
+                    </div>
+
+                    <div class="video-thumbnail-item"
+                        data-video-src="https://assets.mixkit.co/videos/preview/mixkit-young-woman-working-on-laptop-in-cafe-40546-large.mp4"
+                        data-image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                        data-title="Копирайтинг для Landing Page" data-author="Elena V. • Copywriter">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            alt="Thumb">
+                        <div class="thumb-info">
+                            <h4>Copywriting</h4>
+                            <span>01:30</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-close" id="closeModal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </div>
+        <div class="modal-content">
+            <video class="modal-video-player" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 
     <!-- Benefits Section (3 columns) -->
     <section id="benefits" class="benefits-section">

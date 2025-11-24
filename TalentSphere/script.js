@@ -30,12 +30,12 @@ function addRippleEffect(button, event) {
     const size = Math.max(rect.width, rect.height);
     const x = event.clientX - rect.left - size / 2;
     const y = event.clientY - rect.top - size / 2;
-    
+
     ripple.style.width = ripple.style.height = size + 'px';
     ripple.style.left = x + 'px';
     ripple.style.top = y + 'px';
     ripple.classList.add('ripple');
-    
+
     button.appendChild(ripple);
     setTimeout(() => ripple.remove(), 600);
 }
@@ -44,14 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
-    
+
     if (mobileMenuToggle && mobileMenu) {
         mobileMenuToggle.addEventListener('click', () => {
             mobileMenuToggle.classList.toggle('active');
             mobileMenu.classList.toggle('active');
             document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
-        
+
         // Close menu when clicking on links
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = '';
             });
         });
-        
+
         // Close menu on window resize
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -88,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add hover effects to cards
     const cards = document.querySelectorAll('.glass-card, .marketplace-card, .project-card');
     cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-4px)';
         });
-        card.addEventListener('mouseleave', function() {
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0)';
         });
     });
@@ -99,20 +99,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animate stats on scroll
     const animateStats = () => {
         const statValues = document.querySelectorAll('.stat-value, .stat-value-profile');
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const target = entry.target;
                     const finalValue = target.textContent;
-                    
+
                     // Simple animation for demonstration
                     target.style.opacity = '0';
                     setTimeout(() => {
                         target.style.transition = 'opacity 0.5s ease';
                         target.style.opacity = '1';
                     }, 100);
-                    
+
                     observer.unobserve(target);
                 }
             });
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Progress bars animation
     const animateProgressBars = () => {
         const progressBars = document.querySelectorAll('.progress-fill, .skill-progress');
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -160,12 +160,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tab functionality
     const tabs = document.querySelectorAll('.tab-btn');
     tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
+        tab.addEventListener('click', function () {
             // Remove active class from all tabs
             tabs.forEach(t => t.classList.remove('active'));
             // Add active class to clicked tab
             this.classList.add('active');
-            
+
             // Add smooth transition effect
             this.style.transform = 'scale(1.05)';
             setTimeout(() => {
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Filter checkboxes
     const filterCheckboxes = document.querySelectorAll('.filter-option input');
     filterCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
+        checkbox.addEventListener('change', function () {
             const label = this.closest('.filter-option');
             if (this.checked) {
                 label.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
@@ -207,22 +207,22 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="message-time">${new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' })}</span>
                     </div>
                 `;
-                
+
                 // Remove typing indicator if exists
                 const typingIndicator = document.querySelector('.typing-indicator');
                 if (typingIndicator) {
                     typingIndicator.remove();
                 }
-                
+
                 // Add message to chat
                 if (messagesArea) {
                     messagesArea.appendChild(messageDiv);
                     messagesArea.scrollTop = messagesArea.scrollHeight;
                 }
-                
+
                 // Clear input
                 messageInput.value = '';
-                
+
                 // Simulate typing indicator after 2 seconds
                 setTimeout(() => {
                     const typingDiv = document.createElement('div');
@@ -257,10 +257,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Chat list item click
     const chatItems = document.querySelectorAll('.chat-item');
     chatItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             chatItems.forEach(i => i.classList.remove('active'));
             this.classList.add('active');
-            
+
             // Remove unread badge
             const badge = this.querySelector('.unread-badge');
             if (badge) {
@@ -273,10 +273,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply button hover effects
     const applyButtons = document.querySelectorAll('.apply-btn, .neon-button');
     applyButtons.forEach(btn => {
-        btn.addEventListener('mouseenter', function() {
+        btn.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-2px) scale(1.02)';
         });
-        btn.addEventListener('mouseleave', function() {
+        btn.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
@@ -284,13 +284,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Portfolio item hover
     const portfolioItems = document.querySelectorAll('.portfolio-item');
     portfolioItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
+        item.addEventListener('mouseenter', function () {
             const overlay = this.querySelector('.thumbnail-overlay');
             if (overlay) {
                 overlay.style.opacity = '1';
             }
         });
-        item.addEventListener('mouseleave', function() {
+        item.addEventListener('mouseleave', function () {
             const overlay = this.querySelector('.thumbnail-overlay');
             if (overlay) {
                 overlay.style.opacity = '0';
@@ -301,11 +301,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Search functionality
     const searchInputs = document.querySelectorAll('input[type="text"][placeholder*="Поиск"]');
     searchInputs.forEach(input => {
-        input.addEventListener('focus', function() {
+        input.addEventListener('focus', function () {
             this.parentElement.style.borderColor = 'rgba(176, 0, 255, 0.5)';
             this.parentElement.style.boxShadow = '0 0 20px rgba(176, 0, 255, 0.2)';
         });
-        input.addEventListener('blur', function() {
+        input.addEventListener('blur', function () {
             this.parentElement.style.borderColor = 'rgba(255, 255, 255, 0.1)';
             this.parentElement.style.boxShadow = 'none';
         });
@@ -337,19 +337,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animate elements on scroll
     const animateOnScroll = () => {
         const elements = document.querySelectorAll('.feature-card, .marketplace-card, .stat-card');
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '0';
                     entry.target.style.transform = 'translateY(30px)';
-                    
+
                     setTimeout(() => {
                         entry.target.style.transition = 'all 0.6s ease';
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
                     }, 100);
-                    
+
                     observer.unobserve(entry.target);
                 }
             });
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatWindow = document.querySelector('.chat-window');
     const messagesContainer = document.querySelector('.messages-container');
     const backToContactsBtn = document.getElementById('backToContacts');
-    
+
     if (mobileChatItems.length > 0 && chatWindow && window.innerWidth <= 768) {
         // При клике на контакт - открываем чат
         mobileChatItems.forEach(item => {
@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
-        
+
         // Кнопка "Назад" - возвращаемся к списку
         if (backToContactsBtn) {
             backToContactsBtn.addEventListener('click', (e) => {
@@ -393,23 +393,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-    
+
     // Dashboard/Pages Mobile Sidebar Toggle
     const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
     const dashboardSidebar = document.getElementById('dashboardSidebar');
     const dashboardOverlay = document.getElementById('sidebarOverlay');
-    
+
     if (mobileSidebarToggle && dashboardSidebar && dashboardOverlay) {
         mobileSidebarToggle.addEventListener('click', () => {
             dashboardSidebar.classList.toggle('active');
             dashboardOverlay.classList.toggle('active');
         });
-        
+
         dashboardOverlay.addEventListener('click', () => {
             dashboardSidebar.classList.remove('active');
             dashboardOverlay.classList.remove('active');
         });
-        
+
         // Close on nav item click
         dashboardSidebar.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', () => {
@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-    
+
     // Sidebar toggle for messages page (separate from main mobile menu)
     const sidebarToggle = document.getElementById('mobileMenuToggle');
     const sidebar = document.getElementById('sidebar');
@@ -469,7 +469,7 @@ document.addEventListener('mousemove', (e) => {
         const rect = el.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
         if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
             const intensity = 1 - (Math.abs(x - rect.width / 2) / rect.width + Math.abs(y - rect.height / 2) / rect.height) / 2;
             el.style.filter = `brightness(${1 + intensity * 0.3})`;
@@ -477,4 +477,109 @@ document.addEventListener('mousemove', (e) => {
             el.style.filter = 'brightness(1)';
         }
     });
+});
+
+// Interactive Video Gallery Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const videoModal = document.getElementById('videoModal');
+    const closeModal = document.getElementById('closeModal');
+    const videoPlayer = videoModal ? videoModal.querySelector('video') : null;
+
+    // Main Preview Elements
+    const mainPreview = document.querySelector('.video-placeholder');
+    const mainImage = document.querySelector('.main-thumb');
+    const mainTitle = document.querySelector('.video-title');
+    const mainAuthor = document.querySelector('.video-author');
+
+    // Thumbnails
+    const thumbnails = document.querySelectorAll('.video-thumbnail-item');
+
+    // 1. Hover Interaction (Switch Main Video)
+    if (thumbnails.length > 0 && mainPreview) {
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('mouseenter', () => {
+                // Update active state
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+
+                // Get data from hovered thumbnail
+                const videoSrc = thumb.getAttribute('data-video-src');
+                const imageSrc = thumb.getAttribute('data-image');
+                const title = thumb.getAttribute('data-title');
+                const author = thumb.getAttribute('data-author');
+
+                // Update Main Preview
+                if (mainPreview) mainPreview.setAttribute('data-video-src', videoSrc);
+                if (mainImage) mainImage.src = imageSrc;
+                if (mainTitle) mainTitle.textContent = title;
+                if (mainAuthor) mainAuthor.textContent = author;
+            });
+        });
+    }
+
+    // 2. Modal Logic (Click Main Video)
+    if (videoModal && videoPlayer && mainPreview) {
+        // Open Modal
+        mainPreview.addEventListener('click', () => {
+            const videoSrc = mainPreview.getAttribute('data-video-src');
+            if (videoSrc) {
+                videoPlayer.src = videoSrc;
+                videoModal.classList.add('active');
+                videoPlayer.play();
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+        });
+
+        // Close Modal Function
+        const closeVideoModal = () => {
+            videoModal.classList.remove('active');
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+            videoPlayer.src = ''; // Clear source
+            document.body.style.overflow = ''; // Restore scrolling
+        };
+
+        // Close on button click
+        if (closeModal) closeModal.addEventListener('click', closeVideoModal);
+
+        // Close on click outside
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                closeVideoModal();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                closeVideoModal();
+            }
+        });
+    }
+});
+
+// Mobile Course Navigation Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const courseNavToggle = document.getElementById('courseNavToggle');
+    const courseNav = document.getElementById('courseNav');
+    const courseNavOverlay = document.getElementById('courseNavOverlay');
+    const courseNavClose = document.getElementById('courseNavClose');
+
+    if (courseNavToggle && courseNav && courseNavOverlay) {
+        const openNav = () => {
+            courseNav.classList.add('active');
+            courseNavOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeNav = () => {
+            courseNav.classList.remove('active');
+            courseNavOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        courseNavToggle.addEventListener('click', openNav);
+        if (courseNavClose) courseNavClose.addEventListener('click', closeNav);
+        courseNavOverlay.addEventListener('click', closeNav);
+    }
 });

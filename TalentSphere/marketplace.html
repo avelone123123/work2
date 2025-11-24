@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,11 @@
     <!-- Production: href="styles.css", href="dashboard.css", href="marketplace.css" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="dashboard-page marketplace-page">
     <!-- Mobile Menu Button -->
     <button class="mobile-menu-btn" id="mobileSidebarToggle">
@@ -26,7 +30,7 @@
         </svg>
     </button>
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    
+
     <!-- Sidebar Navigation -->
     <aside class="sidebar glass-effect" id="dashboardSidebar">
         <div class="sidebar-header">
@@ -35,61 +39,69 @@
                 <span class="logo-text">TalentSphere</span>
             </a>
         </div>
-        
+
         <nav class="sidebar-nav">
             <a href="dashboard.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="7" height="9" rx="1"/>
-                    <rect x="14" y="3" width="7" height="5" rx="1"/>
-                    <rect x="14" y="12" width="7" height="9" rx="1"/>
-                    <rect x="3" y="16" width="7" height="5" rx="1"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="9" rx="1" />
+                    <rect x="14" y="3" width="7" height="5" rx="1" />
+                    <rect x="14" y="12" width="7" height="9" rx="1" />
+                    <rect x="3" y="16" width="7" height="5" rx="1" />
                 </svg>
                 <span>Дашборд</span>
             </a>
             <a href="marketplace.html" class="nav-item active">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
                 <span>Проекты</span>
             </a>
             <a href="profile.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
                 </svg>
                 <span>Профиль</span>
             </a>
             <a href="wallet.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
-                    <line x1="1" y1="10" x2="23" y2="10"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                    <line x1="1" y1="10" x2="23" y2="10" />
                 </svg>
                 <span>Кошелек</span>
             </a>
             <a href="messages.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 <span>Сообщения</span>
                 <span class="badge neon-glow-pink">3</span>
             </a>
             <a href="education.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
                 </svg>
                 <span>Обучение</span>
             </a>
             <a href="settings.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M12 1v6m0 6v6m5.656-15.656l-4.242 4.242m-2.828 2.828l-4.242 4.242m16.97-.485l-6 1.071m-6 1.071l-6 1.071m.485-16.97l1.071 6m1.071 6l1.071 6"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M12 1v6m0 6v6m5.656-15.656l-4.242 4.242m-2.828 2.828l-4.242 4.242m16.97-.485l-6 1.071m-6 1.071l-6 1.071m.485-16.97l1.071 6m1.071 6l1.071 6" />
                 </svg>
                 <span>Настройки</span>
             </a>
         </nav>
-        
+
         <div class="sidebar-footer">
             <div class="user-profile glass-card">
                 <div class="user-avatar neon-glow-blue"></div>
@@ -111,10 +123,12 @@
             </div>
             <div class="header-right">
                 <button class="btn-primary neon-button">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    Создать проект
+                    <a href="create-project.html">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        Создать проект
+                    </a>
                 </button>
             </div>
         </header>
@@ -123,8 +137,8 @@
         <div class="search-section">
             <div class="search-bar glass-card">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
-                    <path d="M20 20L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+                    <path d="M20 20L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                 </svg>
                 <input type="text" placeholder="Поиск проектов по ключевым словам...">
                 <button class="search-btn neon-button">Найти</button>
@@ -194,12 +208,12 @@
                         <span class="input-hint">Максимальный срок в днях</span>
                     </div>
                 </div>
-                
+
                 <!-- AI-рекомендации -->
                 <div class="filter-section ai-recommendations-filter glass-card">
                     <h3 class="filter-title">🤖 AI-рекомендации</h3>
                     <p class="ai-subtitle">Идеально подходит вам</p>
-                    
+
                     <div class="ai-project-mini">
                         <div class="ai-match">95% Match</div>
                         <h4 class="ai-project-title">E-commerce Redesign</h4>
@@ -210,7 +224,7 @@
                         </div>
                         <button class="ai-apply-btn">Посмотреть</button>
                     </div>
-                    
+
                     <div class="ai-project-mini">
                         <div class="ai-match">88% Match</div>
                         <h4 class="ai-project-title">Mobile App Design</h4>
@@ -249,7 +263,8 @@
                         </div>
                         <h3 class="card-title">Редизайн Dashboard для SaaS платформы</h3>
                         <p class="card-description">
-                            Требуется создать современный интерфейс для B2B SaaS платформы с акцентом на аналитику и визуализацию данных
+                            Требуется создать современный интерфейс для B2B SaaS платформы с акцентом на аналитику и
+                            визуализацию данных
                         </p>
                         <div class="card-tags">
                             <span class="tag">Figma</span>
@@ -264,14 +279,16 @@
                             <div class="card-meta">
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" />
                                     </svg>
                                     <span>14 дней</span>
                                 </div>
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
                                     </svg>
                                     <span>12 откликов</span>
                                 </div>
@@ -302,14 +319,16 @@
                             <div class="card-meta">
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" />
                                     </svg>
                                     <span>21 день</span>
                                 </div>
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
                                     </svg>
                                     <span>8 откликов</span>
                                 </div>
@@ -341,14 +360,16 @@
                             <div class="card-meta">
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" />
                                     </svg>
                                     <span>30 дней</span>
                                 </div>
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
                                     </svg>
                                     <span>5 откликов</span>
                                 </div>
@@ -379,14 +400,16 @@
                             <div class="card-meta">
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" />
                                     </svg>
                                     <span>18 дней</span>
                                 </div>
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
                                     </svg>
                                     <span>15 откликов</span>
                                 </div>
@@ -418,14 +441,16 @@
                             <div class="card-meta">
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" />
                                     </svg>
                                     <span>25 дней</span>
                                 </div>
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
                                     </svg>
                                     <span>9 откликов</span>
                                 </div>
@@ -456,14 +481,16 @@
                             <div class="card-meta">
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M8 2V8L11 11" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" />
                                     </svg>
                                     <span>45 дней</span>
                                 </div>
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M12 7L8 3L4 7M4 9L8 13L12 9" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
                                     </svg>
                                     <span>18 откликов</span>
                                 </div>
@@ -477,7 +504,7 @@
                 <div class="pagination">
                     <button class="page-btn glass-card">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M12 5L7 10L12 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 5L7 10L12 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                         </svg>
                     </button>
                     <button class="page-btn glass-card active">1</button>
@@ -487,7 +514,7 @@
                     <button class="page-btn glass-card">12</button>
                     <button class="page-btn glass-card">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                         </svg>
                     </button>
                 </div>
@@ -527,4 +554,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
