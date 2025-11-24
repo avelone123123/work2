@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,20 +11,29 @@
     <link rel="stylesheet" href="global-header.css">
     <link rel="stylesheet" href="messages-new.css">
     <link rel="stylesheet" href="universal-mobile.css">
+    <link rel="stylesheet" href="mobile-header.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="dashboard-page messages-page">
 
-    <!-- Mobile Menu Button -->
-    <button class="mobile-menu-btn" id="mobileSidebarToggle">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-    </button>
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <!-- Sidebar Navigation -->
@@ -34,61 +44,69 @@
                 <span class="logo-text">TalentSphere</span>
             </a>
         </div>
-        
+
         <nav class="sidebar-nav">
             <a href="dashboard.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="7" height="9" rx="1"/>
-                    <rect x="14" y="3" width="7" height="5" rx="1"/>
-                    <rect x="14" y="12" width="7" height="9" rx="1"/>
-                    <rect x="3" y="16" width="7" height="5" rx="1"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="9" rx="1" />
+                    <rect x="14" y="3" width="7" height="5" rx="1" />
+                    <rect x="14" y="12" width="7" height="9" rx="1" />
+                    <rect x="3" y="16" width="7" height="5" rx="1" />
                 </svg>
                 <span>Дашборд</span>
             </a>
             <a href="marketplace.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
                 <span>Проекты</span>
             </a>
             <a href="profile.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
                 </svg>
                 <span>Профиль</span>
             </a>
             <a href="wallet.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
-                    <line x1="1" y1="10" x2="23" y2="10"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                    <line x1="1" y1="10" x2="23" y2="10" />
                 </svg>
                 <span>Кошелек</span>
             </a>
             <a href="messages.html" class="nav-item active">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 <span>Сообщения</span>
                 <span class="badge neon-glow-pink">3</span>
             </a>
             <a href="education.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
                 </svg>
                 <span>Обучение</span>
             </a>
             <a href="settings.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24" />
                 </svg>
                 <span>Настройки</span>
             </a>
         </nav>
-        
+
         <div class="sidebar-footer">
             <div class="user-profile glass-card">
                 <div class="user-avatar neon-glow-blue"></div>
@@ -102,18 +120,18 @@
 
     <!-- Main Messages Container -->
     <div class="msg-main">
-        
+
         <!-- Chat List -->
         <div class="msg-chat-list" id="msgChatList">
             <div class="msg-chat-list-header">
                 <h2>Сообщения</h2>
                 <button class="msg-new-chat-btn">✏️</button>
             </div>
-            
+
             <div class="msg-search">
                 <input type="text" placeholder="Поиск..." class="msg-search-input">
             </div>
-            
+
             <div class="msg-chats">
                 <!-- Chat Item 1 -->
                 <div class="msg-chat-item active" data-chat="1">
@@ -127,7 +145,7 @@
                     </div>
                     <div class="msg-chat-badge">2</div>
                 </div>
-                
+
                 <!-- Chat Item 2 -->
                 <div class="msg-chat-item" data-chat="2">
                     <div class="msg-chat-avatar">MK</div>
@@ -139,7 +157,7 @@
                         <p class="msg-chat-preview">Спасибо за быстрый ответ!</p>
                     </div>
                 </div>
-                
+
                 <!-- Chat Item 3 -->
                 <div class="msg-chat-item" data-chat="3">
                     <div class="msg-chat-avatar">AL</div>
@@ -166,52 +184,58 @@
                 </div>
                 <div class="msg-chat-actions">
                     <button class="msg-action-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                         </svg>
                     </button>
                     <button class="msg-action-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="12" y1="16" x2="12" y2="12"/>
-                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="16" x2="12" y2="12" />
+                            <line x1="12" y1="8" x2="12.01" y2="8" />
                         </svg>
                     </button>
                 </div>
             </div>
-            
+
             <div class="msg-chat-body">
                 <div class="msg-date-divider">Сегодня</div>
-                
+
                 <!-- Message from other -->
                 <div class="msg-message msg-message-other">
                     <div class="msg-message-avatar">SJ</div>
                     <div class="msg-message-content">
-                        <div class="msg-bubble">Привет! Просмотрела ваше портфолио. Хотела бы обсудить проект по редизайну нашего приложения.</div>
+                        <div class="msg-bubble">Привет! Просмотрела ваше портфолио. Хотела бы обсудить проект по
+                            редизайну нашего приложения.</div>
                         <span class="msg-message-time">14:32</span>
                     </div>
                 </div>
-                
+
                 <!-- Message from me -->
                 <div class="msg-message msg-message-me">
                     <div class="msg-message-content">
-                        <div class="msg-bubble">Добрый день! Спасибо за интерес к моим работам. С удовольствием обсужу проект. Можете рассказать подробнее?</div>
+                        <div class="msg-bubble">Добрый день! Спасибо за интерес к моим работам. С удовольствием обсужу
+                            проект. Можете рассказать подробнее?</div>
                         <div class="msg-meta">
                             <span class="msg-message-time">14:35</span>
                             <span class="msg-read-receipt">✓✓</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Message from other -->
                 <div class="msg-message msg-message-other">
                     <div class="msg-message-avatar">SJ</div>
                     <div class="msg-message-content">
-                        <div class="msg-bubble">Конечно! У нас финтех приложение для управления личными финансами. Нужен современный UI/UX редизайн.</div>
+                        <div class="msg-bubble">Конечно! У нас финтех приложение для управления личными финансами. Нужен
+                            современный UI/UX редизайн.</div>
                         <span class="msg-message-time">14:38</span>
                     </div>
                 </div>
-                
+
                 <div class="msg-message msg-message-other">
                     <div class="msg-message-avatar">SJ</div>
                     <div class="msg-message-content">
@@ -219,11 +243,12 @@
                         <span class="msg-message-time">14:39</span>
                     </div>
                 </div>
-                
+
                 <!-- Message from me -->
                 <div class="msg-message msg-message-me">
                     <div class="msg-message-content">
-                        <div class="msg-bubble">Отличные условия! Да, я готов взяться за проект. Когда можем созвониться для обсуждения деталей?</div>
+                        <div class="msg-bubble">Отличные условия! Да, я готов взяться за проект. Когда можем созвониться
+                            для обсуждения деталей?</div>
                         <div class="msg-meta">
                             <span class="msg-message-time">14:42</span>
                             <span class="msg-read-receipt read">✓✓</span>
@@ -231,13 +256,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="msg-chat-footer">
                 <button class="msg-attach-btn">📎</button>
                 <input type="text" placeholder="Напишите сообщение..." class="msg-input">
                 <button class="msg-send-btn">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
                     </svg>
                 </button>
             </div>
@@ -250,21 +276,21 @@
         const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
         const dashboardSidebar = document.getElementById('dashboardSidebar');
         const sidebarOverlay = document.getElementById('sidebarOverlay');
-        
+
         if (mobileSidebarToggle) {
             mobileSidebarToggle.addEventListener('click', () => {
                 dashboardSidebar.classList.toggle('active');
                 sidebarOverlay.classList.toggle('active');
             });
         }
-        
+
         if (sidebarOverlay) {
             sidebarOverlay.addEventListener('click', () => {
                 dashboardSidebar.classList.remove('active');
                 sidebarOverlay.classList.remove('active');
             });
         }
-        
+
         // Chat selection
         const chatItems = document.querySelectorAll('.msg-chat-item');
         chatItems.forEach(item => {
@@ -276,4 +302,5 @@
     </script>
 
 </body>
+
 </html>

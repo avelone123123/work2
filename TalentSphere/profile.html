@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +11,30 @@
     <link rel="stylesheet" href="profile-variables.css">
     <link rel="stylesheet" href="profile-enhanced.css">
     <link rel="stylesheet" href="profile-animations.css">
+    <link rel="stylesheet" href="mobile-header.css">
     <!-- Production: href="styles.css", href="dashboard.css" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="dashboard-page">
-    <button class="mobile-menu-btn" id="mobileSidebarToggle">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-    </button>
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <aside class="sidebar glass-effect" id="dashboardSidebar">
         <div class="sidebar-header">
@@ -31,62 +43,69 @@
                 <span class="logo-text">TalentSphere</span>
             </a>
         </div>
-        
+
         <nav class="sidebar-nav">
             <a href="dashboard.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="7" height="9" rx="1"/>
-                    <rect x="14" y="3" width="7" height="5" rx="1"/>
-                    <rect x="14" y="12" width="7" height="9" rx="1"/>
-                    <rect x="3" y="16" width="7" height="5" rx="1"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="9" rx="1" />
+                    <rect x="14" y="3" width="7" height="5" rx="1" />
+                    <rect x="14" y="12" width="7" height="9" rx="1" />
+                    <rect x="3" y="16" width="7" height="5" rx="1" />
                 </svg>
                 <span>Дашборд</span>
             </a>
             <a href="marketplace.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
                 <span>Проекты</span>
             </a>
             <a href="profile.html" class="nav-item active">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
                 </svg>
                 <span>Профиль</span>
             </a>
             <a href="wallet.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
-                    <line x1="1" y1="10" x2="23" y2="10"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                    <line x1="1" y1="10" x2="23" y2="10" />
                 </svg>
                 <span>Кошелек</span>
             </a>
             <a href="messages.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 <span>Сообщения</span>
                 <span class="badge neon-glow-pink">3</span>
             </a>
             <a href="education.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
                 </svg>
                 <span>Обучение</span>
             </a>
-
             <a href="settings.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M12 1v6m0 6v6m5.656-15.656l-4.242 4.242m-2.828 2.828l-4.242 4.242m16.97-.485l-6 1.071m-6 1.071l-6 1.071m.485-16.97l1.071 6m1.071 6l1.071 6"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M12 1v6m0 6v6m5.656-15.656l-4.242 4.242m-2.828 2.828l-4.242 4.242m16.97-.485l-6 1.071m-6 1.071l-6 1.071m.485-16.97l1.071 6m1.071 6l1.071 6" />
                 </svg>
                 <span>Настройки</span>
             </a>
         </nav>
-        
+
         <div class="sidebar-footer">
             <div class="user-profile glass-card">
                 <div class="user-avatar neon-glow-blue"></div>
@@ -105,7 +124,7 @@
             <div class="profile-cover-simple">
                 <div class="cover-gradient"></div>
             </div>
-            
+
             <div class="profile-content-simple">
                 <div class="profile-top">
                     <div class="profile-avatar-simple neon-glow-purple avatar-entrance animate-shimmer">
@@ -140,7 +159,8 @@
             <div class="stat-card-profile glass-card hover-lift">
                 <div class="stat-icon-profile neon-glow-blue">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <path d="M16 4L20 12L28 13.5L22 20L23.5 28L16 23.5L8.5 28L10 20L4 13.5L12 12L16 4Z" stroke="url(#gradient-blue)" stroke-width="2"/>
+                        <path d="M16 4L20 12L28 13.5L22 20L23.5 28L16 23.5L8.5 28L10 20L4 13.5L12 12L16 4Z"
+                            stroke="url(#gradient-blue)" stroke-width="2" />
                     </svg>
                 </div>
                 <div class="stat-value-profile neon-text-blue">4.9</div>
@@ -149,7 +169,8 @@
             <div class="stat-card-profile glass-card hover-lift">
                 <div class="stat-icon-profile neon-glow-pink">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <rect x="6" y="10" width="20" height="16" rx="3" stroke="url(#gradient-pink)" stroke-width="2"/>
+                        <rect x="6" y="10" width="20" height="16" rx="3" stroke="url(#gradient-pink)"
+                            stroke-width="2" />
                     </svg>
                 </div>
                 <div class="stat-value-profile neon-text-pink">147</div>
@@ -158,8 +179,9 @@
             <div class="stat-card-profile glass-card hover-lift">
                 <div class="stat-icon-profile neon-glow-purple">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <circle cx="16" cy="12" r="5" stroke="url(#gradient-purple)" stroke-width="2"/>
-                        <path d="M8 28C8 23.5817 11.5817 20 16 20C20.4183 20 24 23.5817 24 28" stroke="url(#gradient-purple)" stroke-width="2"/>
+                        <circle cx="16" cy="12" r="5" stroke="url(#gradient-purple)" stroke-width="2" />
+                        <path d="M8 28C8 23.5817 11.5817 20 16 20C20.4183 20 24 23.5817 24 28"
+                            stroke="url(#gradient-purple)" stroke-width="2" />
                     </svg>
                 </div>
                 <div class="stat-value-profile neon-text-purple">892</div>
@@ -168,8 +190,8 @@
             <div class="stat-card-profile glass-card hover-lift">
                 <div class="stat-icon-profile neon-glow-cyan">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <rect x="6" y="8" width="20" height="16" rx="3" stroke="url(#gradient-cyan)" stroke-width="2"/>
-                        <path d="M6 13H26" stroke="url(#gradient-cyan)" stroke-width="2"/>
+                        <rect x="6" y="8" width="20" height="16" rx="3" stroke="url(#gradient-cyan)" stroke-width="2" />
+                        <path d="M6 13H26" stroke="url(#gradient-cyan)" stroke-width="2" />
                     </svg>
                 </div>
                 <div class="stat-value-profile" style="color: var(--neon-cyan);">$547K</div>
@@ -180,10 +202,11 @@
         <!-- Content Tabs (ТЗ) -->
         <div class="profile-tabs glass-card">
             <button class="tab-btn active" data-tab="about">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="10" cy="10" r="7"/>
-                    <line x1="10" y1="13" x2="10" y2="10"/>
-                    <line x1="10" y1="7" x2="10.01" y2="7"/>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="10" cy="10" r="7" />
+                    <line x1="10" y1="13" x2="10" y2="10" />
+                    <line x1="10" y1="7" x2="10.01" y2="7" />
                 </svg>
                 <span>Обо мне</span>
             </button>
@@ -191,7 +214,7 @@
 
         <!-- Tab Content Container -->
         <div class="tab-content-container">
-            
+
             <!-- TAB 1: Обо мне -->
             <div class="tab-content active" data-content="about">
                 <section class="about-section">
@@ -200,215 +223,229 @@
                     </div>
                     <div class="about-content glass-card">
                         <p class="about-text">
-                            Senior UI/UX дизайнер с 8+ годами опыта в создании современных интерфейсов для Web3, FinTech и SaaS продуктов. 
-                            Специализируюсь на создании интуитивных и красивых пользовательских интерфейсов, которые решают бизнес-задачи.
+                            Senior UI/UX дизайнер с 8+ годами опыта в создании современных интерфейсов для Web3, FinTech
+                            и SaaS продуктов.
+                            Специализируюсь на создании интуитивных и красивых пользовательских интерфейсов, которые
+                            решают бизнес-задачи.
                         </p>
                     </div>
                 </section>
-                
+
                 <!-- Skills Section -->
                 <section class="skills-section">
-                <div class="section-header-profile">
-                    <h2 class="section-title-profile">Навыки & Технологии</h2>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-category glass-card">
-                        <h3 class="skill-category-title">
-                            <span class="skill-icon">🎨</span>
-                            Design Tools
-                        </h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">Figma</span>
-                                    <span class="skill-level neon-text-blue">Expert</span>
+                    <div class="section-header-profile">
+                        <h2 class="section-title-profile">Навыки & Технологии</h2>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category glass-card">
+                            <h3 class="skill-category-title">
+                                <span class="skill-icon">🎨</span>
+                                Design Tools
+                            </h3>
+                            <div class="skills-list">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">Figma</span>
+                                        <span class="skill-level neon-text-blue">Expert</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress"
+                                            style="width: 95%; background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 95%; background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));"></div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">Adobe XD</span>
+                                        <span class="skill-level neon-text-purple">Advanced</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress"
+                                            style="width: 85%; background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">Sketch</span>
+                                        <span class="skill-level neon-text-pink">Advanced</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress"
+                                            style="width: 80%; background: linear-gradient(90deg, var(--neon-pink), var(--neon-orange));">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">Adobe XD</span>
-                                    <span class="skill-level neon-text-purple">Advanced</span>
+                        </div>
+
+                        <div class="skill-category glass-card">
+                            <h3 class="skill-category-title">
+                                <span class="skill-icon">💻</span>
+                                Development
+                            </h3>
+                            <div class="skills-list">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">HTML/CSS</span>
+                                        <span class="skill-level neon-text-blue">Expert</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress"
+                                            style="width: 90%; background: linear-gradient(90deg, var(--neon-blue), var(--neon-cyan));">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 85%; background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));"></div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">JavaScript</span>
+                                        <span class="skill-level neon-text-purple">Advanced</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress"
+                                            style="width: 75%; background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">React</span>
+                                        <span class="skill-level neon-text-pink">Intermediate</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress"
+                                            style="width: 65%; background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple));">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">Sketch</span>
-                                    <span class="skill-level neon-text-pink">Advanced</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 80%; background: linear-gradient(90deg, var(--neon-pink), var(--neon-orange));"></div>
-                                </div>
+                        </div>
+
+                        <div class="skill-category glass-card">
+                            <h3 class="skill-category-title">
+                                <span class="skill-icon">⚡</span>
+                                Specializations
+                            </h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag neon-glow-blue">UI/UX Design</span>
+                                <span class="skill-tag neon-glow-pink">Web Design</span>
+                                <span class="skill-tag neon-glow-purple">Mobile Design</span>
+                                <span class="skill-tag neon-glow-cyan">Prototyping</span>
+                                <span class="skill-tag neon-glow-orange">Brand Identity</span>
+                                <span class="skill-tag neon-glow-green">Design Systems</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="skill-category glass-card">
-                        <h3 class="skill-category-title">
-                            <span class="skill-icon">💻</span>
-                            Development
-                        </h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">HTML/CSS</span>
-                                    <span class="skill-level neon-text-blue">Expert</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 90%; background: linear-gradient(90deg, var(--neon-blue), var(--neon-cyan));"></div>
+                    <!-- Portfolio Section -->
+                    <div class="section-header-profile" style="margin-top: 48px;">
+                        <h2 class="section-title-profile">Последние работы</h2>
+                    </div>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item glass-card">
+                            <div class="portfolio-thumbnail neon-glow-blue">
+                            </div>
+                            <div class="portfolio-info">
+                                <h3 class="portfolio-title">FinTech Dashboard</h3>
+                                <p class="portfolio-category">UI/UX Design</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item glass-card">
+                            <div class="portfolio-thumbnail neon-glow-pink">
+                            </div>
+                            <div class="portfolio-info">
+                                <h3 class="portfolio-title">Crypto Wallet App</h3>
+                                <p class="portfolio-category">Mobile Design</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item glass-card">
+                            <div class="portfolio-thumbnail neon-glow-purple">
+                            </div>
+                            <div class="portfolio-info">
+                                <h3 class="portfolio-title">AI Platform Interface</h3>
+                                <p class="portfolio-category">Web Design</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item glass-card">
+                            <div class="portfolio-thumbnail neon-glow-cyan">
+                                <div class="portfolio-info">
+                                    <h3 class="portfolio-title">E-commerce Platform</h3>
+                                    <p class="portfolio-category">Full Design</p>
                                 </div>
                             </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">JavaScript</span>
-                                    <span class="skill-level neon-text-purple">Advanced</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 75%; background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));"></div>
-                                </div>
+                        </div>
+                </section>
+
+                <!-- Reviews Section -->
+                <aside class="reviews-section">
+                    <div class="reviews-header glass-card">
+                        <h3 class="reviews-title">Отзывы клиентов</h3>
+                        <div class="reviews-rating">
+                            <div class="rating-value neon-text-purple">4.9</div>
+                            <div class="rating-stars">
+                                ⭐⭐⭐⭐⭐
                             </div>
-                            <div class="skill-item">
-                                <div class="skill-header">
-                                    <span class="skill-name">React</span>
-                                    <span class="skill-level neon-text-pink">Intermediate</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 65%; background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple));"></div>
-                                </div>
-                            </div>
+                            <div class="rating-count">243 отзыва</div>
                         </div>
                     </div>
 
-                    <div class="skill-category glass-card">
-                        <h3 class="skill-category-title">
-                            <span class="skill-icon">⚡</span>
-                            Specializations
-                        </h3>
-                        <div class="skills-tags">
-                            <span class="skill-tag neon-glow-blue">UI/UX Design</span>
-                            <span class="skill-tag neon-glow-pink">Web Design</span>
-                            <span class="skill-tag neon-glow-purple">Mobile Design</span>
-                            <span class="skill-tag neon-glow-cyan">Prototyping</span>
-                            <span class="skill-tag neon-glow-orange">Brand Identity</span>
-                            <span class="skill-tag neon-glow-green">Design Systems</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Section -->
-                <div class="section-header-profile" style="margin-top: 48px;">
-                    <h2 class="section-title-profile">Последние работы</h2>
-                </div>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item glass-card">
-                        <div class="portfolio-thumbnail neon-glow-blue">
-                        </div>
-                        <div class="portfolio-info">
-                            <h3 class="portfolio-title">FinTech Dashboard</h3>
-                            <p class="portfolio-category">UI/UX Design</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item glass-card">
-                        <div class="portfolio-thumbnail neon-glow-pink">
-                        </div>
-                        <div class="portfolio-info">
-                            <h3 class="portfolio-title">Crypto Wallet App</h3>
-                            <p class="portfolio-category">Mobile Design</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item glass-card">
-                        <div class="portfolio-thumbnail neon-glow-purple">
-                        </div>
-                        <div class="portfolio-info">
-                            <h3 class="portfolio-title">AI Platform Interface</h3>
-                            <p class="portfolio-category">Web Design</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item glass-card">
-                        <div class="portfolio-thumbnail neon-glow-cyan">
-                        <div class="portfolio-info">
-                            <h3 class="portfolio-title">E-commerce Platform</h3>
-                            <p class="portfolio-category">Full Design</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Reviews Section -->
-            <aside class="reviews-section">
-                <div class="reviews-header glass-card">
-                    <h3 class="reviews-title">Отзывы клиентов</h3>
-                    <div class="reviews-rating">
-                        <div class="rating-value neon-text-purple">4.9</div>
-                        <div class="rating-stars">
-                            ⭐⭐⭐⭐⭐
-                        </div>
-                        <div class="rating-count">243 отзыва</div>
-                    </div>
-                </div>
-
-                <div class="reviews-list">
-                    <div class="review-item glass-card">
-                        <div class="review-header">
-                            <div class="reviewer-avatar neon-glow-blue"></div>
-                            <div class="reviewer-info">
-                                <div class="reviewer-name">Sarah Johnson</div>
-                                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="reviews-list">
+                        <div class="review-item glass-card">
+                            <div class="review-header">
+                                <div class="reviewer-avatar neon-glow-blue"></div>
+                                <div class="reviewer-info">
+                                    <div class="reviewer-name">Sarah Johnson</div>
+                                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <p class="review-text">
+                                Невероятный дизайнер! Проект выполнен качественно и в срок.
+                                Отличное понимание современных трендов и потребностей бизнеса.
+                            </p>
+                            <div class="review-footer">
+                                <span class="review-project">UI/UX для SaaS</span>
+                                <span class="review-date">2 дня назад</span>
                             </div>
                         </div>
-                        <p class="review-text">
-                            Невероятный дизайнер! Проект выполнен качественно и в срок. 
-                            Отличное понимание современных трендов и потребностей бизнеса.
-                        </p>
-                        <div class="review-footer">
-                            <span class="review-project">UI/UX для SaaS</span>
-                            <span class="review-date">2 дня назад</span>
-                        </div>
-                    </div>
 
-                    <div class="review-item glass-card">
-                        <div class="review-header">
-                            <div class="reviewer-avatar neon-glow-pink"></div>
-                            <div class="reviewer-info">
-                                <div class="reviewer-name">Michael Chen</div>
-                                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                        <div class="review-item glass-card">
+                            <div class="review-header">
+                                <div class="reviewer-avatar neon-glow-pink"></div>
+                                <div class="reviewer-info">
+                                    <div class="reviewer-name">Michael Chen</div>
+                                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <p class="review-text">
+                                Профессионал высочайшего уровня. Создал потрясающий дизайн
+                                нашего приложения. Рекомендую!
+                            </p>
+                            <div class="review-footer">
+                                <span class="review-project">Mobile App Design</span>
+                                <span class="review-date">1 неделя назад</span>
                             </div>
                         </div>
-                        <p class="review-text">
-                            Профессионал высочайшего уровня. Создал потрясающий дизайн 
-                            нашего приложения. Рекомендую!
-                        </p>
-                        <div class="review-footer">
-                            <span class="review-project">Mobile App Design</span>
-                            <span class="review-date">1 неделя назад</span>
-                        </div>
-                    </div>
 
-                    <div class="review-item glass-card">
-                        <div class="review-header">
-                            <div class="reviewer-avatar neon-glow-purple"></div>
-                            <div class="reviewer-info">
-                                <div class="reviewer-name">Emma Davis</div>
-                                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                        <div class="review-item glass-card">
+                            <div class="review-header">
+                                <div class="reviewer-avatar neon-glow-purple"></div>
+                                <div class="reviewer-info">
+                                    <div class="reviewer-name">Emma Davis</div>
+                                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                            <p class="review-text">
+                                Быстро, качественно, креативно. Именно то, что нужно для
+                                успешного проекта!
+                            </p>
+                            <div class="review-footer">
+                                <span class="review-project">Web Design</span>
+                                <span class="review-date">2 недели назад</span>
                             </div>
                         </div>
-                        <p class="review-text">
-                            Быстро, качественно, креативно. Именно то, что нужно для 
-                            успешного проекта!
-                        </p>
-                        <div class="review-footer">
-                            <span class="review-project">Web Design</span>
-                            <span class="review-date">2 недели назад</span>
-                        </div>
                     </div>
-                </div>
-            </aside>
-        </div>
+                </aside>
+            </div>
     </main>
 
     <div class="tab-content-container">
@@ -417,8 +454,8 @@
             <div class="about-section glass-card">
                 <h3 class="about-title">Обо мне</h3>
                 <p class="about-text">
-                    Я - опытный дизайнер с большим опытом работы в различных областях. 
-                    Моя цель - создавать качественные и современные дизайны, которые 
+                    Я - опытный дизайнер с большим опытом работы в различных областях.
+                    Моя цель - создавать качественные и современные дизайны, которые
                     удовлетворяют потребности клиентов.
                 </p>
             </div>
@@ -429,14 +466,16 @@
         <div class="tab-content" data-content="portfolio">
             <div class="portfolio-grid-full">
                 <div class="portfolio-item-large glass-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #8B5CF6, #EC4899); height: 300px;"></div>
+                    <div class="portfolio-image"
+                        style="background: linear-gradient(135deg, #8B5CF6, #EC4899); height: 300px;"></div>
                     <div class="portfolio-details">
                         <h3>Проект 1: FinTech Dashboard</h3>
                         <p>UI/UX дизайн для финансовой платформы</p>
                     </div>
                 </div>
                 <div class="portfolio-item-large glass-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #EC4899, #F59E0B); height: 300px;"></div>
+                    <div class="portfolio-image"
+                        style="background: linear-gradient(135deg, #EC4899, #F59E0B); height: 300px;"></div>
                     <div class="portfolio-details">
                         <h3>Проект 2: E-commerce Platform</h3>
                         <p>Полный дизайн интернет-магазина</p>
@@ -450,7 +489,8 @@
         <div class="tab-content" data-content="stats">
             <div class="stats-dashboard glass-card">
                 <h3>График доходов</h3>
-                <div class="chart-placeholder" style="height: 300px; background: rgba(139, 92, 246, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                <div class="chart-placeholder"
+                    style="height: 300px; background: rgba(139, 92, 246, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
                     <p style="color: #9CA3AF;">📈 Здесь будет график доходов</p>
                 </div>
             </div>
@@ -537,4 +577,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

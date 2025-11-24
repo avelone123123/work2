@@ -22,11 +22,20 @@
     flex-direction: column;
     border-right: 1px solid rgba(255, 255, 255, 0.08);
     z-index: 100;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 .sidebar-header {
     margin-bottom: var(--spacing-xl);
+    flex-shrink: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .sidebar-nav {
@@ -34,6 +43,29 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+    min-height: 0;
+}
+
+/* Custom Scrollbar for sidebar-nav */
+.sidebar-nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.3);
+    border-radius: 10px;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.5);
 }
 
 .nav-item {
@@ -174,6 +206,65 @@
     transform: translateY(-2px);
 }
 
+/* Styles for top right buttons */
+.notification-btn,
+.account-btn,
+.ad-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-md);
+    background: var(--bg-card);
+    backdrop-filter: var(--blur-md);
+    border: 1px solid var(--border-color);
+    color: var(--color-white);
+    font-weight: var(--font-semibold);
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+    margin-left: 10px;
+}
+
+.notification-btn:hover,
+.account-btn:hover,
+.ad-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-color-hover);
+}
+
+.notification-btn {
+    background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-pink));
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.account-btn {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-orange));
+}
+
+.ad-btn {
+    background: linear-gradient(135deg, var(--color-accent-cyan), var(--color-primary));
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Ensure buttons are positioned correctly in header */
+.dashboard-header .buttons-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+
+    .notification-btn,
+    .account-btn,
+    .ad-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}
+
 /* ========================================
    STATS SECTION
    ======================================== */
@@ -188,8 +279,11 @@
     gap: var(--spacing-lg);
 }
 
-.stat-card {
-    padding: var(--spacing-lg);
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: var(--spacing-md) 0;
 }
 
 .stat-header {
@@ -254,31 +348,31 @@
 }
 
 .mini-chart.blue {
-    background: linear-gradient(90deg, 
-        rgba(0, 212, 255, 0.2) 0%, 
-        rgba(0, 212, 255, 0.4) 50%, 
-        rgba(0, 212, 255, 0.2) 100%);
+    background: linear-gradient(90deg,
+            rgba(0, 212, 255, 0.2) 0%,
+            rgba(0, 212, 255, 0.4) 50%,
+            rgba(0, 212, 255, 0.2) 100%);
 }
 
 .mini-chart.pink {
-    background: linear-gradient(90deg, 
-        rgba(255, 0, 128, 0.2) 0%, 
-        rgba(255, 0, 128, 0.4) 50%, 
-        rgba(255, 0, 128, 0.2) 100%);
+    background: linear-gradient(90deg,
+            rgba(255, 0, 128, 0.2) 0%,
+            rgba(255, 0, 128, 0.4) 50%,
+            rgba(255, 0, 128, 0.2) 100%);
 }
 
 .mini-chart.purple {
-    background: linear-gradient(90deg, 
-        rgba(176, 0, 255, 0.2) 0%, 
-        rgba(176, 0, 255, 0.4) 50%, 
-        rgba(176, 0, 255, 0.2) 100%);
+    background: linear-gradient(90deg,
+            rgba(176, 0, 255, 0.2) 0%,
+            rgba(176, 0, 255, 0.4) 50%,
+            rgba(176, 0, 255, 0.2) 100%);
 }
 
 .mini-chart.cyan {
-    background: linear-gradient(90deg, 
-        rgba(0, 255, 245, 0.2) 0%, 
-        rgba(0, 255, 245, 0.4) 50%, 
-        rgba(0, 255, 245, 0.2) 100%);
+    background: linear-gradient(90deg,
+            rgba(0, 255, 245, 0.2) 0%,
+            rgba(0, 255, 245, 0.4) 50%,
+            rgba(0, 255, 245, 0.2) 100%);
 }
 
 /* ========================================
@@ -609,6 +703,21 @@
     display: block;
 }
 
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: rgba(20, 20, 35, 0.95);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
 /* Sidebar Overlay */
 .sidebar-overlay {
     display: none;
@@ -637,7 +746,7 @@
     .content-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .sidebar-content {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         display: grid;
@@ -650,30 +759,35 @@
         align-items: center;
         justify-content: center;
     }
-    
+
     .main-content {
         margin-left: 0;
         width: 100%;
         padding: var(--spacing-lg);
         padding-top: 80px;
     }
-    
+
     .mobile-menu-btn {
         display: block;
     }
-    
+
     .sidebar {
         position: fixed;
-        transform: translateX(-100%);
+        left: -280px;
+        top: 0;
+        width: 280px;
+        height: 100vh;
+        max-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        z-index: 1001;
         transition: transform 0.3s ease;
-        z-index: 1000;
-        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     .sidebar.active {
-        transform: translateX(0);
+        transform: translateX(280px);
     }
-    
+
     .stats-grid {
         grid-template-columns: 1fr;
     }
@@ -684,31 +798,31 @@
         padding: 18px 24px;
         font-size: 16px;
     }
-    
+
     .nav-item svg {
         width: 32px;
         height: 32px;
         min-width: 32px;
         min-height: 32px;
     }
-    
+
     .logo-text {
-        font-size: 24px;
+        font-size: 18px;
     }
-    
+
     .logo-icon {
-        width: 48px;
-        height: 48px;
+        width: 38px;
+        height: 38px;
     }
-    
+
     .dashboard-header h1 {
         font-size: 28px;
     }
-    
+
     .stat-card {
         padding: var(--spacing-lg);
     }
-    
+
     .activity-feed {
         padding: var(--spacing-lg);
     }

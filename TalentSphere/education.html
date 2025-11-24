@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,79 +10,91 @@
     <link rel="stylesheet" href="dashboard-fixes.css">
     <link rel="stylesheet" href="global-header.css">
     <link rel="stylesheet" href="education.css">
+    <link rel="stylesheet" href="mobile-header.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="dashboard-page education-page">
-    <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 12H21M3 6H21M3 18H21" stroke-linecap="round"/>
-        </svg>
-    </button>
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
 
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <!-- Sidebar Navigation -->
-    <aside class="sidebar glass-effect" id="sidebar">
+    <aside class="sidebar glass-effect" id="dashboardSidebar">
         <div class="sidebar-header">
             <a href="index.html" class="logo">
                 <div class="logo-icon neon-glow-purple"></div>
                 <span class="logo-text">TalentSphere</span>
             </a>
         </div>
-        
+
         <nav class="sidebar-nav">
             <a href="dashboard.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="7" height="9" rx="1"/>
-                    <rect x="14" y="3" width="7" height="5" rx="1"/>
-                    <rect x="14" y="12" width="7" height="9" rx="1"/>
-                    <rect x="3" y="16" width="7" height="5" rx="1"/>
+                    <rect x="3" y="3" width="7" height="9" rx="1" />
+                    <rect x="14" y="3" width="7" height="5" rx="1" />
+                    <rect x="14" y="12" width="7" height="9" rx="1" />
+                    <rect x="3" y="16" width="7" height="5" rx="1" />
                 </svg>
                 <span>Дашборд</span>
             </a>
             <a href="marketplace.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
                 <span>Проекты</span>
             </a>
             <a href="profile.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
                 </svg>
                 <span>Профиль</span>
             </a>
             <a href="wallet.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
-                    <line x1="1" y1="10" x2="23" y2="10"/>
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                    <line x1="1" y1="10" x2="23" y2="10" />
                 </svg>
                 <span>Кошелек</span>
             </a>
             <a href="messages.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 <span>Сообщения</span>
                 <span class="badge neon-glow-pink">3</span>
             </a>
             <a href="education.html" class="nav-item active">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
                 </svg>
                 <span>Обучение</span>
             </a>
             <a href="settings.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24" />
                 </svg>
                 <span>Настройки</span>
             </a>
@@ -95,36 +108,36 @@
             <div class="global-header-left">
                 <div class="global-search-bar">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="search-icon">
-                        <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
-                        <path d="M17 17L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2" />
+                        <path d="M17 17L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
                     <input type="text" placeholder="Поиск курсов..." class="global-search-input">
                 </div>
             </div>
-            
+
             <div class="global-header-right">
                 <button class="header-icon-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-                        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
                     </svg>
                     <span class="notification-badge">3</span>
                 </button>
-                
+
                 <button class="header-icon-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
-                        <line x1="1" y1="10" x2="23" y2="10"/>
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                        <line x1="1" y1="10" x2="23" y2="10" />
                     </svg>
                     <span class="wallet-balance">$2,450</span>
                 </button>
-                
+
                 <div class="header-user-avatar">
                     <div class="avatar-image">AD</div>
                 </div>
             </div>
         </header>
-        
+
         <!-- Progress Header -->
         <div class="education-progress-header">
             <div class="progress-info">
@@ -151,7 +164,7 @@
 
         <!-- Education Grid (30% + 70%) -->
         <div class="education-grid">
-            
+
             <!-- LEFT: Course Navigation (30%) -->
             <aside class="course-nav">
                 <div class="course-nav-card">
@@ -162,7 +175,7 @@
                             <div class="progress-fill-mini" style="width: 65%"></div>
                         </div>
                     </div>
-                    
+
                     <div class="lessons-list">
                         <div class="lesson-item completed">
                             <span class="lesson-icon">✓</span>
@@ -186,7 +199,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Achievements -->
                 <div class="achievements-card">
                     <h3 class="achievements-title">🏆 Достижения</h3>
@@ -210,7 +223,7 @@
                     </div>
                 </div>
             </aside>
-            
+
             <!-- RIGHT: Course Content (70%) -->
             <div class="course-content">
                 <div class="lesson-header">
@@ -220,22 +233,23 @@
                         <span>📝 2 задания</span>
                     </div>
                 </div>
-                
+
                 <!-- Video Player -->
                 <div class="video-player">
                     <div class="video-placeholder">
                         <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                            <circle cx="40" cy="40" r="40" fill="rgba(139, 92, 246, 0.2)"/>
-                            <path d="M32 28L56 40L32 52V28Z" fill="white"/>
+                            <circle cx="40" cy="40" r="40" fill="rgba(139, 92, 246, 0.2)" />
+                            <path d="M32 28L56 40L32 52V28Z" fill="white" />
                         </svg>
                         <p>Видео: Эффективные стратегии поиска клиентов</p>
                     </div>
                 </div>
-                
+
                 <!-- Lesson Description -->
                 <div class="lesson-description">
                     <h3>О чем этот урок</h3>
-                    <p>В этом уроке вы узнаете проверенные стратегии поиска клиентов на фриланс-платформах. Мы разберем:</p>
+                    <p>В этом уроке вы узнаете проверенные стратегии поиска клиентов на фриланс-платформах. Мы разберем:
+                    </p>
                     <ul>
                         <li>Как правильно составить поисковый запрос</li>
                         <li>Где искать лучшие проекты</li>
@@ -243,7 +257,7 @@
                         <li>Техники холодных предложений</li>
                     </ul>
                 </div>
-                
+
                 <!-- Materials -->
                 <div class="lesson-materials">
                     <h3>📁 Материалы урока</h3>
@@ -258,7 +272,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Quiz -->
                 <div class="lesson-quiz">
                     <h3>✏️ Проверочный тест</h3>
@@ -281,34 +295,18 @@
                     </div>
                     <button class="quiz-submit-btn">Проверить ответы</button>
                 </div>
-                
+
                 <!-- Navigation -->
                 <div class="lesson-navigation">
                     <button class="lesson-nav-btn prev">← Предыдущий урок</button>
                     <button class="lesson-nav-btn next">Следующий урок →</button>
                 </div>
             </div>
-            
+
         </div>
     </main>
 
-    <script>
-        // Burger menu toggle
-        const burger = document.getElementById('mobileMenuToggle');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('sidebarOverlay');
-        
-        if (burger && sidebar && overlay) {
-            burger.addEventListener('click', () => {
-                sidebar.classList.toggle('active');
-                overlay.classList.toggle('active');
-            });
-            
-            overlay.addEventListener('click', () => {
-                sidebar.classList.remove('active');
-                overlay.classList.remove('active');
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
