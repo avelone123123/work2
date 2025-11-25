@@ -109,7 +109,7 @@
                         </svg>
                         <span>Найти специалиста</span>
                     </a>
-                    <a href="register.html?role=investor" class="btn-hero-tertiary">
+                    <a href="javascript:void(0)" class="btn-hero-tertiary" onclick="openStartupModal()">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="12" y1="2" x2="12" y2="22" />
@@ -1198,6 +1198,52 @@
         // Observe all stat values
         document.querySelectorAll('.stat-value[data-target]').forEach(stat => {
             observer.observe(stat);
+        });
+    </script>
+    <!-- Startup Investment Modal -->
+    <div class="startup-modal" id="startupModal">
+        <div class="startup-content">
+            <button class="startup-close" onclick="closeStartupModal()">×</button>
+            <div class="startup-icon">🦄</div>
+            <h2 style="font-size: 28px; margin-bottom: 16px; font-family: 'Space Grotesk', sans-serif; color: white;">
+                Инвестируйте в будущее</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6;">
+                TalentSphere — это быстрорастущая платформа. Мы открываем раунд инвестиций для ангелов и венчурных
+                фондов.
+                Присоединяйтесь к нам на ранней стадии.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <a href="mailto:invest@talentsphere.com" class="btn-primary neon-button"
+                    style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Связаться
+                    с нами</a>
+                <button class="btn-secondary" onclick="closeStartupModal()"
+                    style="padding: 12px 24px; border-radius: 12px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); cursor: pointer;">Позже</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openStartupModal() {
+            const modal = document.getElementById('startupModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeStartupModal() {
+            const modal = document.getElementById('startupModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close on outside click
+        document.getElementById('startupModal')?.addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeStartupModal();
+            }
         });
     </script>
 </body>
