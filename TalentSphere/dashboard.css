@@ -763,7 +763,7 @@
     .main-content {
         margin-left: 0;
         width: 100%;
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
         padding-top: 80px;
     }
 
