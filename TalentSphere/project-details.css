@@ -6,6 +6,7 @@
 }
 
 .project-header {
+    display: block;
     margin-bottom: var(--spacing-xl);
 }
 
@@ -279,4 +280,84 @@
 
 .similar-price {
     font-weight: 700;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .project-content-grid {
+        grid-template-columns: 1fr 320px;
+        gap: var(--spacing-lg);
+    }
+
+    .project-title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-details-container {
+        margin-top: 80px;
+        padding: var(--spacing-md);
+    }
+
+    .project-content-grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .project-main {
+        order: 1;
+    }
+
+    .project-sidebar {
+        order: 2;
+    }
+
+    /* Move Price Card to top on mobile if desired, or keep at bottom. 
+       Usually price/action is good to have accessible. 
+       Let's keep it at bottom for now as per plan, but maybe consider a sticky action bar later.
+       For now, standard stacking.
+    */
+
+    .project-title {
+        font-size: 28px;
+    }
+
+    .project-meta {
+        gap: var(--spacing-sm);
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .content-section {
+        padding: var(--spacing-lg);
+    }
+
+    .price-value {
+        font-size: 36px;
+    }
+
+    .client-stats {
+        gap: var(--spacing-sm);
+    }
+
+    .stat-value {
+        font-size: 20px;
+    }
+
+    .attachment-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .attachment-icon {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .attachment-download {
+        width: 100%;
+        margin-top: var(--spacing-sm);
+    }
 }

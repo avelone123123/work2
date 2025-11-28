@@ -12,24 +12,19 @@
     <link rel="stylesheet" href="profile-enhanced.css">
     <link rel="stylesheet" href="profile-animations.css">
     <link rel="stylesheet" href="mobile-header.css">
-    <!-- Production: href="styles.css", href="dashboard.css" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="dashboard-page">
 
     <div class="mobile-header">
         <button class="mobile-menu-btn" id="mobileSidebarToggle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
+            <i class="fas fa-bars"></i>
         </button>
         <span class="mobile-logo-text">TalentSphere</span>
         <div class="mobile-avatar"></div>
@@ -48,25 +43,51 @@
             <a href="dashboard.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="7" height="9" rx="1" />
-                    <rect x="14" y="3" width="7" height="5" rx="1" />
-                    <rect x="14" y="12" width="7" height="9" rx="1" />
-                    <rect x="3" y="16" width="7" height="5" rx="1" />
+                    <rect width="7" height="9" x="3" y="3" rx="1" />
+                    <rect width="7" height="5" x="14" y="3" rx="1" />
+                    <rect width="7" height="9" x="14" y="12" rx="1" />
+                    <rect width="7" height="5" x="3" y="16" rx="1" />
                 </svg>
                 <span>Дашборд</span>
+            </a>
+            <a href="find-executors.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Командный проект</span>
             </a>
             <a href="marketplace.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
                     <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
                 <span>Проекты</span>
             </a>
+            <a href="my-work.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Управление работой</span>
+            </a>
             <a href="profile.html" class="nav-item active">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                     <circle cx="12" cy="7" r="4" />
                 </svg>
                 <span>Профиль</span>
@@ -74,8 +95,9 @@
             <a href="wallet.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
-                    <line x1="1" y1="10" x2="23" y2="10" />
+                    <path
+                        d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+                    <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
                 </svg>
                 <span>Кошелек</span>
             </a>
@@ -90,17 +112,19 @@
             <a href="education.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    <path
+                        d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                    <path d="M22 10v6" />
+                    <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
                 </svg>
                 <span>Обучение</span>
             </a>
             <a href="settings.html" class="nav-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3" />
                     <path
-                        d="M12 1v6m0 6v6m5.656-15.656l-4.242 4.242m-2.828 2.828l-4.242 4.242m16.97-.485l-6 1.071m-6 1.071l-6 1.071m.485-16.97l1.071 6m1.071 6l1.071 6" />
+                        d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                    <circle cx="12" cy="12" r="3" />
                 </svg>
                 <span>Настройки</span>
             </a>
@@ -119,7 +143,7 @@
 
     <!-- Main Content -->
     <main class="main-content profile-content">
-        <!-- Profile Header - Simplified -->
+        <!-- Profile Header -->
         <div class="profile-header-simple glass-card animate-fade-in">
             <div class="profile-cover-simple">
                 <div class="cover-gradient"></div>
@@ -129,429 +153,346 @@
                 <div class="profile-top">
                     <div class="profile-avatar-simple neon-glow-purple avatar-entrance animate-shimmer">
                         AD
+                        <div class="availability-indicator status-available"></div>
                     </div>
                     <div class="profile-info-simple entrance-2">
                         <h1 class="profile-name-simple">
                             Alex <span class="gradient-text">Designer</span>
                         </h1>
                         <div class="profile-badges-simple">
-                            <span class="badge-simple neon-glow-blue">Pro</span>
-                            <span class="badge-simple neon-glow-purple">Verified</span>
-                            <span class="badge-simple neon-glow-pink">Top Rated</span>
+                            <span class="badge-simple neon-glow-blue">UI/UX</span>
+                            <span class="badge-simple neon-glow-purple">Web Design</span>
+                            <span class="badge-simple neon-glow-pink">Prototyping</span>
                         </div>
-                        <p class="profile-bio-simple">
-                            Senior UI/UX Designer & Creative Developer | 8+ лет опыта
-                        </p>
-                        <div class="profile-meta-simple">
-                            <span>🌍 Сан-Франциско, США</span>
-                            <span>📅 Участник с 2022</span>
+
+                        <div class="profile-stats-row">
+                            <span class="stat-item"><i class="fas fa-star" style="color: gold;"></i> 4.9 (243
+                                отзыва)</span>
+                            <span class="stat-item separator">•</span>
+                            <span class="stat-item status-text-available">🟢 Доступен для заказов</span>
+                        </div>
+
+                        <div class="profile-quick-contacts">
+                            <button class="btn-icon-circle"><i class="fab fa-telegram"></i></button>
+                            <button class="btn-icon-circle"><i class="fab fa-whatsapp"></i></button>
+                            <button class="btn-icon-circle"><i class="far fa-envelope"></i></button>
                         </div>
                     </div>
-                    <button class="btn-edit-simple neon-button">
-                        Редактировать
-                    </button>
+
+                    <div class="profile-actions-top">
+                        <button class="btn-edit-simple neon-button">Редактировать</button>
+                        <button class="btn-share-simple"><i class="fas fa-share-alt"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Stats Grid -->
-        <div class="profile-stats-grid stagger-children">
-            <div class="stat-card-profile glass-card hover-lift">
-                <div class="stat-icon-profile neon-glow-blue">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <path d="M16 4L20 12L28 13.5L22 20L23.5 28L16 23.5L8.5 28L10 20L4 13.5L12 12L16 4Z"
-                            stroke="url(#gradient-blue)" stroke-width="2" />
-                    </svg>
-                </div>
-                <div class="stat-value-profile neon-text-blue">4.9</div>
-                <div class="stat-label-profile">Рейтинг</div>
-            </div>
-            <div class="stat-card-profile glass-card hover-lift">
-                <div class="stat-icon-profile neon-glow-pink">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <rect x="6" y="10" width="20" height="16" rx="3" stroke="url(#gradient-pink)"
-                            stroke-width="2" />
-                    </svg>
-                </div>
-                <div class="stat-value-profile neon-text-pink">147</div>
-                <div class="stat-label-profile">Проектов</div>
-            </div>
-            <div class="stat-card-profile glass-card hover-lift">
-                <div class="stat-icon-profile neon-glow-purple">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <circle cx="16" cy="12" r="5" stroke="url(#gradient-purple)" stroke-width="2" />
-                        <path d="M8 28C8 23.5817 11.5817 20 16 20C20.4183 20 24 23.5817 24 28"
-                            stroke="url(#gradient-purple)" stroke-width="2" />
-                    </svg>
-                </div>
-                <div class="stat-value-profile neon-text-purple">892</div>
-                <div class="stat-label-profile">Клиентов</div>
-            </div>
-            <div class="stat-card-profile glass-card hover-lift">
-                <div class="stat-icon-profile neon-glow-cyan">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <rect x="6" y="8" width="20" height="16" rx="3" stroke="url(#gradient-cyan)" stroke-width="2" />
-                        <path d="M6 13H26" stroke="url(#gradient-cyan)" stroke-width="2" />
-                    </svg>
-                </div>
-                <div class="stat-value-profile" style="color: var(--neon-cyan);">$547K</div>
-                <div class="stat-label-profile">Заработано</div>
-            </div>
-        </div>
-
-        <!-- Content Tabs (ТЗ) -->
+        <!-- Content Tabs -->
         <div class="profile-tabs glass-card">
-            <button class="tab-btn active" data-tab="about">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="10" y1="13" x2="10" y2="10" />
-                    <line x1="10" y1="7" x2="10.01" y2="7" />
-                </svg>
-                <span>Обо мне</span>
+            <button class="tab-btn active" data-tab="video-card">
+                <i class="fas fa-video"></i>
+                <span>Видео-визитка</span>
+            </button>
+            <button class="tab-btn" data-tab="activity">
+                <i class="fas fa-stream"></i>
+                <span>Лента активности</span>
+            </button>
+            <button class="tab-btn" data-tab="portfolio">
+                <i class="fas fa-layer-group"></i>
+                <span>Портфолио</span>
+            </button>
+            <button class="tab-btn" data-tab="call-settings">
+                <i class="fas fa-headset"></i>
+                <span>Настройки звонков</span>
             </button>
         </div>
 
         <!-- Tab Content Container -->
         <div class="tab-content-container">
 
-            <!-- TAB 1: Обо мне -->
-            <div class="tab-content active" data-content="about">
-                <section class="about-section">
-                    <div class="section-header-profile">
-                        <h2 class="section-title-profile">О профессионале</h2>
-                    </div>
-                    <div class="about-content glass-card">
-                        <p class="about-text">
-                            Senior UI/UX дизайнер с 8+ годами опыта в создании современных интерфейсов для Web3, FinTech
-                            и SaaS продуктов.
-                            Специализируюсь на создании интуитивных и красивых пользовательских интерфейсов, которые
-                            решают бизнес-задачи.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Skills Section -->
-                <section class="skills-section">
-                    <div class="section-header-profile">
-                        <h2 class="section-title-profile">Навыки & Технологии</h2>
-                    </div>
-                    <div class="skills-grid">
-                        <div class="skill-category glass-card">
-                            <h3 class="skill-category-title">
-                                <span class="skill-icon">🎨</span>
-                                Design Tools
-                            </h3>
-                            <div class="skills-list">
-                                <div class="skill-item">
-                                    <div class="skill-header">
-                                        <span class="skill-name">Figma</span>
-                                        <span class="skill-level neon-text-blue">Expert</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress"
-                                            style="width: 95%; background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="skill-header">
-                                        <span class="skill-name">Adobe XD</span>
-                                        <span class="skill-level neon-text-purple">Advanced</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress"
-                                            style="width: 85%; background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="skill-header">
-                                        <span class="skill-name">Sketch</span>
-                                        <span class="skill-level neon-text-pink">Advanced</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress"
-                                            style="width: 80%; background: linear-gradient(90deg, var(--neon-pink), var(--neon-orange));">
-                                        </div>
-                                    </div>
-                                </div>
+            <!-- TAB 1: Видео-визитка -->
+            <div class="tab-content active" data-content="video-card">
+                <div class="video-card-layout">
+                    <!-- Main Video -->
+                    <div class="main-video-section glass-card">
+                        <div class="video-player-container">
+                            <div class="video-placeholder">
+                                <i class="fas fa-play-circle play-btn-large"></i>
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800"
+                                    alt="Video Cover" class="video-cover">
+                            </div>
+                            <div class="video-controls-overlay">
+                                <span class="video-duration">02:45</span>
+                                <span class="video-views"><i class="fas fa-eye"></i> 1.2k</span>
                             </div>
                         </div>
-
-                        <div class="skill-category glass-card">
-                            <h3 class="skill-category-title">
-                                <span class="skill-icon">💻</span>
-                                Development
-                            </h3>
-                            <div class="skills-list">
-                                <div class="skill-item">
-                                    <div class="skill-header">
-                                        <span class="skill-name">HTML/CSS</span>
-                                        <span class="skill-level neon-text-blue">Expert</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress"
-                                            style="width: 90%; background: linear-gradient(90deg, var(--neon-blue), var(--neon-cyan));">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="skill-header">
-                                        <span class="skill-name">JavaScript</span>
-                                        <span class="skill-level neon-text-purple">Advanced</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress"
-                                            style="width: 75%; background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="skill-header">
-                                        <span class="skill-name">React</span>
-                                        <span class="skill-level neon-text-pink">Intermediate</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress"
-                                            style="width: 65%; background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple));">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="skill-category glass-card">
-                            <h3 class="skill-category-title">
-                                <span class="skill-icon">⚡</span>
-                                Specializations
-                            </h3>
-                            <div class="skills-tags">
-                                <span class="skill-tag neon-glow-blue">UI/UX Design</span>
-                                <span class="skill-tag neon-glow-pink">Web Design</span>
-                                <span class="skill-tag neon-glow-purple">Mobile Design</span>
-                                <span class="skill-tag neon-glow-cyan">Prototyping</span>
-                                <span class="skill-tag neon-glow-orange">Brand Identity</span>
-                                <span class="skill-tag neon-glow-green">Design Systems</span>
+                        <div class="video-info-row">
+                            <h3>Приветствие и обзор навыков</h3>
+                            <div class="video-actions">
+                                <button class="btn-small-outline"><i class="fas fa-pen"></i> Редактировать</button>
+                                <button class="btn-small-outline"><i class="fas fa-lock"></i> Приватность</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Portfolio Section -->
-                    <div class="section-header-profile" style="margin-top: 48px;">
-                        <h2 class="section-title-profile">Последние работы</h2>
-                    </div>
-                    <div class="portfolio-grid">
-                        <div class="portfolio-item glass-card">
-                            <div class="portfolio-thumbnail neon-glow-blue">
+                    <!-- Video Cases Grid -->
+                    <h3 class="section-subtitle">Видео-кейсы</h3>
+                    <div class="video-cases-grid">
+                        <!-- Case 1 -->
+                        <div class="video-case-item glass-card">
+                            <div class="case-preview">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" alt="Case 1">
+                                <div class="play-icon-small"><i class="fas fa-play"></i></div>
                             </div>
-                            <div class="portfolio-info">
-                                <h3 class="portfolio-title">FinTech Dashboard</h3>
-                                <p class="portfolio-category">UI/UX Design</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-item glass-card">
-                            <div class="portfolio-thumbnail neon-glow-pink">
-                            </div>
-                            <div class="portfolio-info">
-                                <h3 class="portfolio-title">Crypto Wallet App</h3>
-                                <p class="portfolio-category">Mobile Design</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-item glass-card">
-                            <div class="portfolio-thumbnail neon-glow-purple">
-                            </div>
-                            <div class="portfolio-info">
-                                <h3 class="portfolio-title">AI Platform Interface</h3>
-                                <p class="portfolio-category">Web Design</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-item glass-card">
-                            <div class="portfolio-thumbnail neon-glow-cyan">
-                                <div class="portfolio-info">
-                                    <h3 class="portfolio-title">E-commerce Platform</h3>
-                                    <p class="portfolio-category">Full Design</p>
+                            <div class="case-info">
+                                <h4>FinTech App Walkthrough</h4>
+                                <p>Разбор UX решений для банковского приложения</p>
+                                <div class="case-metrics">
+                                    <span><i class="fas fa-heart"></i> 45</span>
+                                    <span><i class="fas fa-comment"></i> 12</span>
                                 </div>
                             </div>
                         </div>
-                </section>
 
-                <!-- Reviews Section -->
-                <aside class="reviews-section">
-                    <div class="reviews-header glass-card">
-                        <h3 class="reviews-title">Отзывы клиентов</h3>
-                        <div class="reviews-rating">
-                            <div class="rating-value neon-text-purple">4.9</div>
-                            <div class="rating-stars">
-                                ⭐⭐⭐⭐⭐
+                        <!-- Case 2 -->
+                        <div class="video-case-item glass-card">
+                            <div class="case-preview">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400"
+                                    alt="Case 2">
+                                <div class="play-icon-small"><i class="fas fa-play"></i></div>
                             </div>
-                            <div class="rating-count">243 отзыва</div>
+                            <div class="case-info">
+                                <h4>E-commerce Redesign</h4>
+                                <p>Процесс редизайна крупного магазина</p>
+                                <div class="case-metrics">
+                                    <span><i class="fas fa-heart"></i> 82</span>
+                                    <span><i class="fas fa-comment"></i> 24</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add New Case -->
+                        <div class="add-case-card glass-card dashed-border">
+                            <div class="add-icon"><i class="fas fa-plus"></i></div>
+                            <span>Добавить кейс</span>
                         </div>
                     </div>
-
-                    <div class="reviews-list">
-                        <div class="review-item glass-card">
-                            <div class="review-header">
-                                <div class="reviewer-avatar neon-glow-blue"></div>
-                                <div class="reviewer-info">
-                                    <div class="reviewer-name">Sarah Johnson</div>
-                                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
-                                </div>
-                            </div>
-                            <p class="review-text">
-                                Невероятный дизайнер! Проект выполнен качественно и в срок.
-                                Отличное понимание современных трендов и потребностей бизнеса.
-                            </p>
-                            <div class="review-footer">
-                                <span class="review-project">UI/UX для SaaS</span>
-                                <span class="review-date">2 дня назад</span>
-                            </div>
-                        </div>
-
-                        <div class="review-item glass-card">
-                            <div class="review-header">
-                                <div class="reviewer-avatar neon-glow-pink"></div>
-                                <div class="reviewer-info">
-                                    <div class="reviewer-name">Michael Chen</div>
-                                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
-                                </div>
-                            </div>
-                            <p class="review-text">
-                                Профессионал высочайшего уровня. Создал потрясающий дизайн
-                                нашего приложения. Рекомендую!
-                            </p>
-                            <div class="review-footer">
-                                <span class="review-project">Mobile App Design</span>
-                                <span class="review-date">1 неделя назад</span>
-                            </div>
-                        </div>
-
-                        <div class="review-item glass-card">
-                            <div class="review-header">
-                                <div class="reviewer-avatar neon-glow-purple"></div>
-                                <div class="reviewer-info">
-                                    <div class="reviewer-name">Emma Davis</div>
-                                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
-                                </div>
-                            </div>
-                            <p class="review-text">
-                                Быстро, качественно, креативно. Именно то, что нужно для
-                                успешного проекта!
-                            </p>
-                            <div class="review-footer">
-                                <span class="review-project">Web Design</span>
-                                <span class="review-date">2 недели назад</span>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
+                </div>
             </div>
+
+            <!-- TAB 2: Лента активности -->
+            <div class="tab-content" data-content="activity">
+                <div class="activity-feed-layout">
+                    <div class="feed-main">
+                        <div class="create-post-card glass-card">
+                            <div class="post-input-row">
+                                <div class="user-avatar-small">AD</div>
+                                <input type="text" placeholder="Поделитесь новостями или проектом..."
+                                    class="post-input">
+                            </div>
+                            <div class="post-actions-row">
+                                <button class="btn-action"><i class="fas fa-image"></i> Фото</button>
+                                <button class="btn-action"><i class="fas fa-video"></i> Видео</button>
+                                <button class="btn-primary-small">Опубликовать</button>
+                            </div>
+                        </div>
+
+                        <!-- Post 1 -->
+                        <div class="feed-post glass-card">
+                            <div class="post-header">
+                                <div class="user-avatar-small">AD</div>
+                                <div class="post-meta">
+                                    <span class="post-author">Alex Designer</span>
+                                    <span class="post-time">2 часа назад</span>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <p>Закончил работу над новым концептом для NFT маркетплейса! 🚀 Как вам цветовая
+                                    палитра?</p>
+                                <span>2023 • Completed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="feed-sidebar glass-card">
+                        <h3 class="sidebar-title">Рекомендуем</h3>
+                        <ul class="sidebar-list">
+                            <li>
+                                <i class="fas fa-book neon-text-blue"></i>
+                                <div>
+                                    <strong>UX Research Guide</strong>
+                                    <span>2023 • PDF Book</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-graduation-cap neon-text-purple"></i>
+                                <div>
+                                    <strong>Advanced React Patterns</strong>
+                                    <span>2022 • Course</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+
+            <!-- TAB 3: Портфолио -->
+            <div class="tab-content" data-content="portfolio">
+                <div class="portfolio-header-actions">
+                    <h2 class="section-title-profile">Завершенные проекты</h2>
+                    <button class="btn-primary"><i class="fas fa-plus"></i> Добавить проект</button>
+                </div>
+
+                <div class="portfolio-grid-detailed">
+                    <!-- Project 1 -->
+                    <div class="portfolio-card-detailed glass-card">
+                        <div class="project-preview-large">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+                                alt="Project 1">
+                            <div class="project-overlay">
+                                <a href="#" class="btn-view-project">Смотреть Live</a>
+                            </div>
+                        </div>
+                        <div class="project-info-detailed">
+                            <div class="project-header-det">
+                                <h3>SaaS Analytics Dashboard</h3>
+                                <span class="project-date">Окт 2023</span>
+                            </div>
+                            <p class="project-desc">Полный редизайн панели администратора для SaaS платформы.
+                                Увеличили
+                                удержание пользователей на 25%.</p>
+                            <div class="project-tags">
+                                <span>UI/UX</span>
+                                <span>Figma</span>
+                                <span>React</span>
+                            </div>
+                            <div class="project-metrics-row">
+                                <div class="metric">
+                                    <span class="metric-val neon-text-green">+25%</span>
+                                    <span class="metric-label">Retention</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-val neon-text-blue">4.9/5</span>
+                                    <span class="metric-label">Client Review</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="portfolio-card-detailed glass-card">
+                        <div class="project-preview-large">
+                            <img src="https://images.unsplash.com/photo-1555421689-492a1880ce49?w=800" alt="Project 2">
+                            <div class="project-overlay">
+                                <a href="#" class="btn-view-project">Смотреть Live</a>
+                            </div>
+                        </div>
+                        <div class="project-info-detailed">
+                            <div class="project-header-det">
+                                <h3>Mobile Banking App</h3>
+                                <span class="project-date">Сен 2023</span>
+                            </div>
+                            <p class="project-desc">Разработка UX/UI для необанка. Фокус на простоте переводов и
+                                геймификации накоплений.</p>
+                            <div class="project-tags">
+                                <span>Mobile</span>
+                                <span>iOS</span>
+                                <span>Prototyping</span>
+                            </div>
+                            <div class="project-metrics-row">
+                                <div class="metric">
+                                    <span class="metric-val neon-text-purple">10k+</span>
+                                    <span class="metric-label">Downloads</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-val neon-text-pink">5.0</span>
+                                    <span class="metric-label">App Store</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: Настройки звонков -->
+            <div class="tab-content" data-content="call-settings">
+                <div class="settings-layout-grid">
+                    <div class="settings-card glass-card">
+                        <h3><i class="fas fa-phone-alt"></i> Доступность звонков</h3>
+                        <div class="settings-form-group">
+                            <label class="radio-option">
+                                <input type="radio" name="call_access" checked>
+                                <div class="radio-content">
+                                    <span class="radio-title">Разрешить входящие звонки</span>
+                                    <span class="radio-desc">Любой пользователь может позвонить вам</span>
+                                </div>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="call_access">
+                                <div class="radio-content">
+                                    <span class="radio-title">Только избранные контакты</span>
+                                    <span class="radio-desc">Звонки только от подтвержденных клиентов</span>
+                                </div>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="call_access">
+                                <div class="radio-content">
+                                    <span class="radio-title">Только по предварительной записи</span>
+                                    <span class="radio-desc">Звонки недоступны, только бронирование слотов</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-card glass-card">
+                        <h3><i class="far fa-clock"></i> Часы работы</h3>
+                        <div class="working-hours-grid">
+                            <div class="day-selector">
+                                <button class="day-btn active">Пн</button>
+                                <button class="day-btn active">Вт</button>
+                                <button class="day-btn active">Ср</button>
+                                <button class="day-btn active">Чт</button>
+                                <button class="day-btn active">Пт</button>
+                                <button class="day-btn">Сб</button>
+                                <button class="day-btn">Вс</button>
+                            </div>
+                            <div class="time-range-inputs">
+                                <div class="input-group">
+                                    <label>Начало</label>
+                                    <input type="time" value="09:00" class="form-input">
+                                </div>
+                                <div class="input-group">
+                                    <label>Конец</label>
+                                    <input type="time" value="18:00" class="form-input">
+                                </div>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="lunch-break" checked>
+                                <label for="lunch-break">Перерыв на обед (13:00 - 14:00)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-card glass-card">
+                        <h3><i class="fas fa-video"></i> Автоматическая запись</h3>
+                        <div class="settings-form-group">
+                            <select class="form-select">
+                                <option>Спрашивать разрешение перед записью</option>
+                                <option>Записывать все звонки автоматически</option>
+                                <option>Не записывать звонки</option>
+                            </select>
+                            <p class="settings-hint">Записи хранятся в облаке 30 дней.</p>
+                        </div>
+                    </div>
+
+                    <div class="settings-actions">
+                        <button class="btn-primary neon-button">Сохранить настройки</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
-
-    <div class="tab-content-container">
-        <!-- TAB 1: Обо мне -->
-        <div class="tab-content" data-content="about">
-            <div class="about-section glass-card">
-                <h3 class="about-title">Обо мне</h3>
-                <p class="about-text">
-                    Я - опытный дизайнер с большим опытом работы в различных областях.
-                    Моя цель - создавать качественные и современные дизайны, которые
-                    удовлетворяют потребности клиентов.
-                </p>
-            </div>
-        </div>
-        <!-- END TAB 1 -->
-
-        <!-- TAB 2: Портфолио -->
-        <div class="tab-content" data-content="portfolio">
-            <div class="portfolio-grid-full">
-                <div class="portfolio-item-large glass-card">
-                    <div class="portfolio-image"
-                        style="background: linear-gradient(135deg, #8B5CF6, #EC4899); height: 300px;"></div>
-                    <div class="portfolio-details">
-                        <h3>Проект 1: FinTech Dashboard</h3>
-                        <p>UI/UX дизайн для финансовой платформы</p>
-                    </div>
-                </div>
-                <div class="portfolio-item-large glass-card">
-                    <div class="portfolio-image"
-                        style="background: linear-gradient(135deg, #EC4899, #F59E0B); height: 300px;"></div>
-                    <div class="portfolio-details">
-                        <h3>Проект 2: E-commerce Platform</h3>
-                        <p>Полный дизайн интернет-магазина</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END TAB 2 -->
-
-        <!-- TAB 3: Статистика -->
-        <div class="tab-content" data-content="stats">
-            <div class="stats-dashboard glass-card">
-                <h3>График доходов</h3>
-                <div class="chart-placeholder"
-                    style="height: 300px; background: rgba(139, 92, 246, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <p style="color: #9CA3AF;">📈 Здесь будет график доходов</p>
-                </div>
-            </div>
-            <div class="completion-stats glass-card" style="margin-top: 20px;">
-                <h3>Completion Rate</h3>
-                <div class="stat-row">
-                    <span>Успешно завершено:</span>
-                    <span class="neon-text-blue">98.5%</span>
-                </div>
-                <div class="stat-row">
-                    <span>Среднее время выполнения:</span>
-                    <span class="neon-text-purple">12 дней</span>
-                </div>
-            </div>
-        </div>
-        <!-- END TAB 3 -->
-
-        <!-- TAB 4: Настройки -->
-        <div class="tab-content" data-content="settings">
-            <div class="settings-section glass-card">
-                <h3>Личная информация</h3>
-                <div class="settings-form">
-                    <div class="form-group">
-                        <label>Имя</label>
-                        <input type="text" value="Alex Designer" class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" value="alex@talentsphere.com" class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <label>Локация</label>
-                        <input type="text" value="Сан-Франциско, США" class="form-input">
-                    </div>
-                    <button class="btn-primary neon-button">Сохранить изменения</button>
-                </div>
-            </div>
-        </div>
-        <!-- END TAB 4 -->
-    </div>
-    <!-- END tab-content-container -->
-
-    <script>
-        // Tabs functionality
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const targetTab = btn.dataset.tab;
-
-                // Remove active from all
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabContents.forEach(c => c.classList.remove('active'));
-
-                // Add active to clicked
-                btn.classList.add('active');
-                document.querySelector(`[data-content="${targetTab}"]`).classList.add('active');
-            });
-        });
-    </script>
 
     <!-- SVG Gradients -->
     <svg width="0" height="0" style="position: absolute;">
@@ -567,10 +508,6 @@
             <linearGradient id="gradient-purple" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" style="stop-color:#b000ff;stop-opacity:1" />
                 <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
-            </linearGradient>
-            <linearGradient id="gradient-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#00fff5;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#00ccff;stop-opacity:1" />
             </linearGradient>
         </defs>
     </svg>

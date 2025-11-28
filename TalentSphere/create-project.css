@@ -11,11 +11,28 @@
     margin-bottom: var(--spacing-lg);
 }
 
+/* No Sidebar Layout Override */
+.main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
 .step {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-xs);
+}
+
+
+
+.step.active .step-number {
+    background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(176, 0, 255, 0.4);
 }
 
 .step-number {
@@ -24,18 +41,31 @@
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid rgba(255, 255, 255, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     font-weight: 700;
     font-size: 18px;
+    margin: 0;
     transition: all 0.3s ease;
+    flex-shrink: 0;
+    line-height: normal;
 }
 
-.step.active .step-number {
-    background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
-    border-color: transparent;
-    box-shadow: 0 0 20px rgba(176, 0, 255, 0.4);
+@media (max-width: 480px) {
+    .step-number {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .step-line {
+        width: 20px;
+        margin: 0 4px;
+    }
+
+    .steps-container {
+        padding: 20px 10px;
+    }
 }
 
 .step-label {
@@ -402,4 +432,420 @@
         right: auto;
         max-width: 100%;
     }
+}
+
+/* ========================================
+   NEW WIZARD STYLES
+   ======================================== */
+
+/* AI Suggestion Box */
+.ai-suggestion-box {
+    background: rgba(176, 0, 255, 0.05);
+    border: 1px solid rgba(176, 0, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-ai-assist {
+    background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-ai-assist:hover {
+    box-shadow: 0 0 15px rgba(176, 0, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+/* File Upload */
+.file-upload-area {
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.file-upload-area:hover {
+    border-color: var(--neon-blue);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+/* AI Loading */
+.ai-loading-overlay {
+    text-align: center;
+    padding: 60px 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.ai-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--neon-purple);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Generated TS Grid */
+.generated-ts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Specialists Grid */
+.specialists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+    .specialists-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section {
+        padding: 20px 15px;
+    }
+}
+
+.freelancer-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.freelancer-card:hover {
+    border-color: var(--neon-purple);
+    transform: translateY(-5px);
+}
+
+.freelancer-video {
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+}
+
+.freelancer-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.freelancer-card:hover .play-icon {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(176, 0, 255, 0.8);
+}
+
+.freelancer-info {
+    padding: 20px;
+}
+
+.freelancer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.freelancer-header h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.rating {
+    font-size: 14px;
+    color: var(--neon-orange);
+}
+
+.freelancer-role {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.freelancer-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.freelancer-skills span {
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: var(--text-secondary);
+}
+
+.btn-small-primary {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--neon-blue);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-small-primary:hover {
+    background: var(--neon-blue);
+    color: white;
+}
+
+/* Budget Table */
+.budget-table-container {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.budget-table-container th {
+    background: rgba(255, 255, 255, 0.05);
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.budget-table-container td {
+    font-size: 14px;
+}
+
+.total-budget {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-budget span:first-child {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.total-budget .amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+}
+
+/* Step 3: Team Selection */
+.team-size-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.size-btn {
+    flex: 1;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.size-btn.active,
+.size-btn:hover {
+    background: rgba(176, 0, 255, 0.1);
+    border-color: var(--neon-purple);
+    color: white;
+}
+
+.gallery-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.filter-pill {
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.filter-pill.active {
+    background: var(--neon-blue);
+    color: black;
+    border-color: var(--neon-blue);
+    font-weight: 600;
+}
+
+.selected-candidate {
+    border: 1px solid var(--neon-green);
+    position: relative;
+}
+
+.selection-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 12px;
+    z-index: 2;
+}
+
+.btn-small-primary.active {
+    background: rgba(0, 255, 157, 0.1);
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+}
+
+/* Step 4: Payment */
+.summary-card {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.summary-row.total {
+    border-bottom: none;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.summary-row .label {
+    color: var(--text-secondary);
+}
+
+.summary-row .value {
+    color: white;
+    font-weight: 500;
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.method-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.method-card:hover,
+.method-card.active {
+    border-color: var(--neon-purple);
+    background: rgba(176, 0, 255, 0.05);
+}
+
+.method-card input {
+    display: none;
+}
+
+.method-card i {
+    font-size: 24px;
+    color: var(--text-secondary);
+}
+
+.method-card.active i {
+    color: var(--neon-purple);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 14px;
 }

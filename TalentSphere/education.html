@@ -16,18 +16,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="dashboard-page education-page">
 
     <div class="mobile-header">
         <button class="mobile-menu-btn" id="mobileSidebarToggle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
+            <i class="fas fa-bars"></i>
         </button>
         <span class="mobile-logo-text">TalentSphere</span>
         <div class="mobile-avatar"></div>
@@ -39,7 +35,7 @@
     <!-- Sidebar Navigation -->
     <aside class="sidebar glass-effect" id="dashboardSidebar">
         <div class="sidebar-header">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
                 <div class="logo-icon neon-glow-purple"></div>
                 <span class="logo-text">TalentSphere</span>
             </a>
@@ -47,58 +43,104 @@
 
         <nav class="sidebar-nav">
             <a href="dashboard.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="7" height="9" rx="1" />
-                    <rect x="14" y="3" width="7" height="5" rx="1" />
-                    <rect x="14" y="12" width="7" height="9" rx="1" />
-                    <rect x="3" y="16" width="7" height="5" rx="1" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="7" height="9" x="3" y="3" rx="1" />
+                    <rect width="7" height="5" x="14" y="3" rx="1" />
+                    <rect width="7" height="9" x="14" y="12" rx="1" />
+                    <rect width="7" height="5" x="3" y="16" rx="1" />
                 </svg>
                 <span>Дашборд</span>
             </a>
+            <a href="find-executors.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Командный проект</span>
+            </a>
             <a href="marketplace.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
                     <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
                 <span>Проекты</span>
             </a>
+            <a href="my-work.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Управление работой</span>
+            </a>
             <a href="profile.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                     <circle cx="12" cy="7" r="4" />
                 </svg>
                 <span>Профиль</span>
             </a>
             <a href="wallet.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
-                    <line x1="1" y1="10" x2="23" y2="10" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+                    <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
                 </svg>
                 <span>Кошелек</span>
             </a>
             <a href="messages.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 <span>Сообщения</span>
                 <span class="badge neon-glow-pink">3</span>
             </a>
             <a href="education.html" class="nav-item active">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                    <path d="M22 10v6" />
+                    <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
                 </svg>
                 <span>Обучение</span>
             </a>
             <a href="settings.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="3" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path
-                        d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24" />
+                        d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                    <circle cx="12" cy="12" r="3" />
                 </svg>
                 <span>Настройки</span>
             </a>
         </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile glass-card">
+                <div class="user-avatar neon-glow-blue"></div>
+                <div class="user-info">
+                    <div class="user-name">Alex Design</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </div>
+        </div>
     </aside>
 
     <!-- Main Content -->
@@ -107,28 +149,19 @@
         <header class="global-header">
             <div class="global-header-left">
                 <div class="global-search-bar">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="search-icon">
-                        <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2" />
-                        <path d="M17 17L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                    <input type="text" placeholder="Поиск курсов..." class="global-search-input">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Поиск..." class="global-search-input">
                 </div>
             </div>
 
             <div class="global-header-right">
                 <button class="header-icon-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-                    </svg>
+                    <i class="far fa-bell"></i>
                     <span class="notification-badge">3</span>
                 </button>
 
                 <button class="header-icon-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
-                        <line x1="1" y1="10" x2="23" y2="10" />
-                    </svg>
+                    <i class="fas fa-wallet"></i>
                     <span class="wallet-balance">$2,450</span>
                 </button>
 
@@ -138,206 +171,358 @@
             </div>
         </header>
 
-        <!-- Progress Header -->
-        <div class="education-progress-header">
-            <div class="progress-info">
-                <h2>Ваш прогресс обучения</h2>
-                <div class="progress-stats">
-                    <div class="progress-stat">
-                        <span class="stat-value">65%</span>
-                        <span class="stat-label">Завершено</span>
-                    </div>
-                    <div class="progress-stat">
-                        <span class="stat-value">12/18</span>
-                        <span class="stat-label">Уроков</span>
-                    </div>
-                    <div class="progress-stat">
-                        <span class="stat-value">8</span>
-                        <span class="stat-label">Сертификатов</span>
-                    </div>
-                </div>
-            </div>
-            <div class="progress-bar-large">
-                <div class="progress-fill-large" style="width: 65%"></div>
+        <!-- Creator Dashboard Tabs -->
+        <div class="creator-tabs-container glass-card">
+            <div class="creator-tabs">
+                <button class="creator-tab active" data-tab="create">
+                    <i class="fas fa-plus-circle"></i> Создать
+                </button>
+                <button class="creator-tab" data-tab="materials">
+                    <i class="fas fa-layer-group"></i> Материалы
+                </button>
+                <button class="creator-tab" data-tab="analytics">
+                    <i class="fas fa-chart-line"></i> Статистика
+                </button>
+                <button class="creator-tab" data-tab="reviews">
+                    <i class="fas fa-star"></i> Отзывы
+                </button>
             </div>
         </div>
 
-        <!-- Education Grid (30% + 70%) -->
-        <div class="education-grid">
+        <!-- TAB CONTENT: CREATE -->
+        <div class="creator-section active" id="section-create">
+            <h2 class="section-title">Создание контента</h2>
 
-            <!-- Course Nav Overlay -->
-            <div class="course-nav-overlay" id="courseNavOverlay"></div>
+            <!-- Type Selection -->
+            <div class="content-type-grid">
+                <div class="type-card glass-card" onclick="selectContentType('course')">
+                    <div class="type-icon neon-glow-blue"><i class="fas fa-video"></i></div>
+                    <h3>Видео-курс</h3>
+                    <p>Создайте серию видео-уроков с заданиями</p>
+                </div>
+                <div class="type-card glass-card" onclick="selectContentType('tutoring')">
+                    <div class="type-icon neon-glow-purple"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Репетиторство</h3>
+                    <p>Предложите индивидуальные занятия</p>
+                </div>
+                <div class="type-card glass-card" onclick="selectContentType('hack')">
+                    <div class="type-icon neon-glow-pink"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Лайфхак / Совет</h3>
+                    <p>Короткое полезное видео или статья</p>
+                </div>
+                <div class="type-card glass-card" onclick="selectContentType('bundle')">
+                    <div class="type-icon neon-glow-green"><i class="fas fa-box-open"></i></div>
+                    <h3>Готовый курс</h3>
+                    <p>Загрузите готовые материалы пакетом</p>
+                </div>
+            </div>
 
-            <!-- Main Content -->
-            <main class="main-content">
-                <!-- ... -->
-                <!-- Education Grid (30% + 70%) -->
-                <div class="education-grid">
+            <!-- Creation Wizard (Hidden by default) -->
+            <div class="creation-wizard glass-card" id="creationWizard" style="display: none;">
+                <div class="wizard-header">
+                    <h3>Новый видео-курс</h3>
+                    <button class="btn-close-wizard" onclick="closeWizard()"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="wizard-steps">
+                    <div class="step active" data-step="1">1. Инфо</div>
+                    <div class="step" data-step="2">2. Контент</div>
+                    <div class="step" data-step="3">3. Доступ</div>
+                    <div class="step" data-step="4">4. Цена</div>
+                    <div class="step" data-step="5">5. Публикация</div>
+                </div>
 
-                    <!-- LEFT: Course Navigation (30%) -->
-                    <aside class="course-nav" id="courseNav">
-                        <div class="course-nav-close">
-                            <span style="color: white; font-weight: 600;">Меню курса</span>
-                            <button class="course-nav-close-btn" id="courseNavClose">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                                </svg>
-                            </button>
+                <div class="wizard-content">
+                    <!-- Step 1 Form -->
+                    <div class="wizard-step-content active" id="step1">
+                        <div class="form-group">
+                            <label>Название курса</label>
+                            <input type="text" class="form-input" placeholder="Например: Основы веб-дизайна">
                         </div>
-
-                        <div class="course-nav-card">
-                            <h3 class="course-nav-title">📚 Эффективный фриланс</h3>
-                            <div class="course-progress-mini">
-                                <span>65% завершено</span>
-                                <div class="progress-bar-mini">
-                                    <div class="progress-fill-mini" style="width: 65%"></div>
-                                </div>
+                        <div class="form-group">
+                            <label>Описание</label>
+                            <textarea class="form-input" rows="4" placeholder="О чем этот курс?"></textarea>
+                        </div>
+                    </div>
+                    <!-- Step 2: Content -->
+                    <div class="wizard-step-content" id="step2">
+                        <div class="upload-area glass-card">
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <h3>Перетащите файлы сюда</h3>
+                            <p>или нажмите для загрузки видео и материалов</p>
+                            <input type="file" hidden id="courseFileUpload" multiple>
+                            <button class="btn-small-outline"
+                                onclick="document.getElementById('courseFileUpload').click()">Выбрать файлы</button>
+                        </div>
+                        <div class="uploaded-files-list">
+                            <!-- Files will appear here -->
+                            <div class="file-item">
+                                <i class="fas fa-file-video"></i>
+                                <span>intro.mp4</span>
+                                <span class="file-size">12 MB</span>
+                                <i class="fas fa-check-circle text-success"></i>
                             </div>
-
-                            <div class="lessons-list">
-                                <div class="lesson-item completed">
-                                    <span class="lesson-icon">✓</span>
-                                    <span class="lesson-title">Введение в фриланс</span>
-                                </div>
-                                <div class="lesson-item completed">
-                                    <span class="lesson-icon">✓</span>
-                                    <span class="lesson-title">Создание профиля</span>
-                                </div>
-                                <div class="lesson-item active">
-                                    <span class="lesson-icon">▶</span>
-                                    <span class="lesson-title">Поиск клиентов</span>
-                                </div>
-                                <div class="lesson-item">
-                                    <span class="lesson-icon">🔒</span>
-                                    <span class="lesson-title">Ценообразование</span>
-                                </div>
-                                <div class="lesson-item">
-                                    <span class="lesson-icon">🔒</span>
-                                    <span class="lesson-title">Работа с возражениями</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Achievements -->
-                        <div class="achievements-card">
-                            <h3 class="achievements-title">🏆 Достижения</h3>
-                            <div class="badges-grid">
-                                <div class="badge-item earned">
-                                    <div class="badge-icon">🥇</div>
-                                    <span class="badge-name">Первый курс</span>
-                                </div>
-                                <div class="badge-item earned">
-                                    <div class="badge-icon">⭐</div>
-                                    <span class="badge-name">5 уроков</span>
-                                </div>
-                                <div class="badge-item">
-                                    <div class="badge-icon">🎯</div>
-                                    <span class="badge-name">Мастер</span>
-                                </div>
-                                <div class="badge-item">
-                                    <div class="badge-icon">💎</div>
-                                    <span class="badge-name">Эксперт</span>
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
-
-                    <!-- RIGHT: Course Content (70%) -->
-                    <div class="course-content">
-                        <!-- Mobile Course Nav Toggle -->
-                        <button class="mobile-course-nav-toggle" id="courseNavToggle">
-                            <span class="toggle-icon">📂</span>
-                            <span>Содержание курса</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-
-                        <div class="lesson-header">
-                            <h1 class="lesson-title">Урок 3: Поиск клиентов</h1>
-                            <div class="lesson-meta">
-                                <span>📹 15 минут</span>
-                                <span>📝 2 задания</span>
-                            </div>
-                        </div>
-
-                        <!-- Video Player -->
-                        <div class="video-player">
-                            <div class="video-placeholder">
-                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                                    <circle cx="40" cy="40" r="40" fill="rgba(139, 92, 246, 0.2)" />
-                                    <path d="M32 28L56 40L32 52V28Z" fill="white" />
-                                </svg>
-                                <p>Видео: Эффективные стратегии поиска клиентов</p>
-                            </div>
-                        </div>
-
-                        <!-- Lesson Description -->
-                        <div class="lesson-description">
-                            <h3>О чем этот урок</h3>
-                            <p>В этом уроке вы узнаете проверенные стратегии поиска клиентов на фриланс-платформах. Мы
-                                разберем:
-                            </p>
-                            <ul>
-                                <li>Как правильно составить поисковый запрос</li>
-                                <li>Где искать лучшие проекты</li>
-                                <li>Как выделиться среди конкурентов</li>
-                                <li>Техники холодных предложений</li>
-                            </ul>
-                        </div>
-
-                        <!-- Materials -->
-                        <div class="lesson-materials">
-                            <h3>📁 Материалы урока</h3>
-                            <div class="materials-list">
-                                <a href="#" class="material-item">
-                                    <span class="material-icon">📄</span>
-                                    <span class="material-name">Шаблоны предложений.pdf</span>
-                                </a>
-                                <a href="#" class="material-item">
-                                    <span class="material-icon">📊</span>
-                                    <span class="material-name">Чек-лист поиска клиентов.xlsx</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Quiz -->
-                        <div class="lesson-quiz">
-                            <h3>✏️ Проверочный тест</h3>
-                            <div class="quiz-question">
-                                <p><strong>Вопрос 1:</strong> Какой метод поиска клиентов наиболее эффективен?</p>
-                                <div class="quiz-options">
-                                    <label class="quiz-option">
-                                        <input type="radio" name="q1">
-                                        <span>Массовая рассылка предложений</span>
-                                    </label>
-                                    <label class="quiz-option">
-                                        <input type="radio" name="q1">
-                                        <span>Персонализированный подход</span>
-                                    </label>
-                                    <label class="quiz-option">
-                                        <input type="radio" name="q1">
-                                        <span>Ожидание откликов на профиль</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <button class="quiz-submit-btn">Проверить ответы</button>
-                        </div>
-
-                        <!-- Navigation -->
-                        <div class="lesson-navigation">
-                            <button class="lesson-nav-btn prev">← Предыдущий урок</button>
-                            <button class="lesson-nav-btn next">Следующий урок →</button>
                         </div>
                     </div>
 
-                </div>
-            </main>
+                    <!-- Step 3: Access -->
+                    <div class="wizard-step-content" id="step3">
+                        <div class="access-options-grid">
+                            <label class="access-card glass-card">
+                                <input type="radio" name="accessType" value="free">
+                                <div class="access-content">
+                                    <div class="access-icon neon-text-green"><i class="fas fa-unlock"></i></div>
+                                    <h4>Бесплатно</h4>
+                                    <p>Доступно всем пользователям</p>
+                                </div>
+                            </label>
+                            <label class="access-card glass-card">
+                                <input type="radio" name="accessType" value="paid" checked>
+                                <div class="access-content">
+                                    <div class="access-icon neon-text-purple"><i class="fas fa-tag"></i></div>
+                                    <h4>Платный</h4>
+                                    <p>Единоразовая покупка</p>
+                                </div>
+                            </label>
+                            <label class="access-card glass-card">
+                                <input type="radio" name="accessType" value="private">
+                                <div class="access-content">
+                                    <div class="access-icon neon-text-blue"><i class="fas fa-lock"></i></div>
+                                    <h4>Приватный</h4>
+                                    <p>Только по приглашению</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
 
-            <script src="script.js"></script>
+                    <!-- Step 4: Price -->
+                    <div class="wizard-step-content" id="step4">
+                        <div class="price-setup-container">
+                            <div class="form-group">
+                                <label>Стоимость курса ($)</label>
+                                <div class="price-input-wrapper">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="number" class="form-input price-input" placeholder="49.99"
+                                        value="49.99">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span>Включить скидку для первых 100 студентов (20%)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Publish -->
+                    <div class="wizard-step-content" id="step5">
+                        <div class="publish-summary">
+                            <div class="summary-icon neon-glow-green"><i class="fas fa-check"></i></div>
+                            <h3>Почти готово!</h3>
+                            <p>Ваш курс готов к публикации. Проверьте данные:</p>
+
+                            <div class="summary-details glass-card">
+                                <div class="summary-row">
+                                    <span>Название:</span>
+                                    <strong>Основы веб-дизайна</strong>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Тип:</span>
+                                    <strong>Видео-курс</strong>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Доступ:</span>
+                                    <strong>Платный ($49.99)</strong>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Файлов:</span>
+                                    <strong>12 уроков</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wizard-footer">
+                    <button class="btn-secondary" onclick="prevStep()">Назад</button>
+                    <button class="btn-primary neon-button" onclick="nextStep()">Далее</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: MATERIALS -->
+        <div class="creator-section" id="section-materials">
+            <div class="section-header-row">
+                <h2 class="section-title">Мои материалы</h2>
+                <div class="filters-row">
+                    <select class="form-select-small">
+                        <option>Все типы</option>
+                        <option>Курсы</option>
+                    </select>
+                    <select class="form-select-small">
+                        <option>Все статусы</option>
+                        <option>Опубликован</option>
+                    </select>
+                    <button class="btn-primary-small"><i class="fas fa-plus"></i> Создать</button>
+                </div>
+            </div>
+
+            <div class="materials-table-container glass-card">
+                <table class="materials-table">
+                    <thead>
+                        <tr>
+                            <th>Название</th>
+                            <th>Статус</th>
+                            <th>Просмотры</th>
+                            <th>Доход</th>
+                            <th>Рейтинг</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="material-info">
+                                    <div class="material-icon"><i class="fas fa-video"></i></div>
+                                    <div>
+                                        <strong>UX Design Masterclass</strong>
+                                        <span>Видео-курс</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status-badge published">Опубликован</span></td>
+                            <td>1,234</td>
+                            <td>$4,500</td>
+                            <td>⭐ 4.9</td>
+                            <td>
+                                <button class="btn-icon-small"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon-small"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="material-info">
+                                    <div class="material-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                                    <div>
+                                        <strong>Менторство Figma</strong>
+                                        <span>Услуга</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="status-badge draft">Черновик</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>
+                                <button class="btn-icon-small"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon-small"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: ANALYTICS -->
+        <div class="creator-section" id="section-analytics">
+            <h2 class="section-title">Статистика и аналитика</h2>
+            <div class="analytics-cards-row">
+                <div class="stat-card glass-card">
+                    <div class="stat-icon neon-text-green"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="stat-info">
+                        <h3>$12,450</h3>
+                        <span>Общий доход</span>
+                    </div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-icon neon-text-blue"><i class="fas fa-users"></i></div>
+                    <div class="stat-info">
+                        <h3>1,540</h3>
+                        <span>Студентов</span>
+                    </div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-icon neon-text-purple"><i class="fas fa-eye"></i></div>
+                    <div class="stat-info">
+                        <h3>45.2k</h3>
+                        <span>Просмотров</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card glass-card">
+                    <h3>Динамика дохода</h3>
+                    <div class="chart-placeholder">
+                        <!-- Placeholder for Chart -->
+                        <div class="bar" style="height: 40%"></div>
+                        <div class="bar" style="height: 60%"></div>
+                        <div class="bar" style="height: 30%"></div>
+                        <div class="bar" style="height: 80%"></div>
+                        <div class="bar" style="height: 50%"></div>
+                        <div class="bar" style="height: 90%"></div>
+                        <div class="bar" style="height: 70%"></div>
+                    </div>
+                </div>
+                <div class="chart-card glass-card">
+                    <h3>Вовлеченность</h3>
+                    <div class="chart-placeholder-line">
+                        <svg viewBox="0 0 100 50" class="line-chart-svg">
+                            <polyline points="0,50 20,40 40,45 60,20 80,30 100,10" fill="none" stroke="#8b5cf6"
+                                stroke-width="2" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: REVIEWS -->
+        <div class="creator-section" id="section-reviews">
+            <h2 class="section-title">Управление отзывами</h2>
+            <div class="reviews-list">
+                <div class="review-card glass-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">JD</div>
+                            <div>
+                                <strong>John Doe</strong>
+                                <span>Студент курса "UX Design"</span>
+                            </div>
+                        </div>
+                        <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="review-text">Отличный курс! Очень много полезной информации и практики. Рекомендую всем
+                        новичкам.</p>
+                    <div class="review-actions">
+                        <button class="btn-small-outline">Ответить</button>
+                        <button class="btn-small-outline">Поблагодарить</button>
+                    </div>
+                </div>
+
+                <div class="review-card glass-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">AS</div>
+                            <div>
+                                <strong>Anna Smith</strong>
+                                <span>Менторство Figma</span>
+                            </div>
+                        </div>
+                        <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="review-text">Спасибо за консультацию! Все четко и по делу. Разобрали сложные моменты в
+                        автолейаутах.</p>
+                    <div class="review-actions">
+                        <button class="btn-small-outline">Ответить</button>
+                        <button class="btn-small-outline">Поблагодарить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройка профиля | TalentSphere</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth-landing.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-split-container">
+
+        <div class="auth-left">
+            <div class="auth-left-content">
+                <div class="auth-landing-logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="10" fill="url(#logo-gradient)" />
+                        <path d="M16 8L24 16L16 24L8 16L16 8Z" fill="white" />
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#8B5CF6" />
+                                <stop offset="1" stop-color="#EC4899" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h2>TalentSphere</h2>
+                </div>
+
+                <div class="auth-landing-hero">
+                    <h1>Почти <br><span class="highlight">готово!</span></h1>
+                    <p class="auth-landing-subtitle">Заполните профиль, чтобы мы могли подобрать для вас идеальные
+                        проекты или кандидатов.</p>
+                </div>
+
+                <div class="auth-features">
+                    <div class="auth-feature-item">
+                        <div class="auth-feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </div>
+                        <div class="auth-feature-text">
+                            <h3>Персонализация</h3>
+                            <p>Умная лента под ваши интересы</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="auth-right">
+            <div class="auth-form-container">
+                <div class="auth-form-header">
+                    <h2>Настройка профиля ⚙️</h2>
+                    <p>Расскажите немного о себе</p>
+                </div>
+
+                <form action="dashboard.html" method="get">
+
+                    <!-- Avatar Upload -->
+                    <div class="avatar-upload-container">
+                        <div class="avatar-upload" onclick="document.getElementById('avatarInput').click()">
+                            <div class="avatar-placeholder">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="17 8 12 3 7 8" />
+                                    <line x1="12" y1="3" x2="12" y2="15" />
+                                </svg>
+                                <span>Загрузить фото</span>
+                            </div>
+                            <img id="avatarPreview" src="" alt="Avatar Preview" style="display: none;">
+                            <input type="file" id="avatarInput" accept="image/*" hidden onchange="previewAvatar(this)">
+                        </div>
+                    </div>
+
+                    <!-- Skills Multiselect -->
+                    <div class="auth-form-group">
+                        <label class="auth-form-label">Ваши навыки</label>
+                        <div class="skills-input-container" onclick="document.getElementById('skillInput').focus()">
+                            <div class="skills-list" id="skillsList">
+                                <!-- Tags will appear here -->
+                            </div>
+                            <input type="text" id="skillInput" class="skill-input-field"
+                                placeholder="Например: React, Design...">
+                        </div>
+                        <div class="skills-suggestions">
+                            <span onclick="addSkill('JavaScript')">JavaScript</span>
+                            <span onclick="addSkill('UI/UX')">UI/UX</span>
+                            <span onclick="addSkill('Python')">Python</span>
+                            <span onclick="addSkill('Marketing')">Marketing</span>
+                        </div>
+                    </div>
+
+                    <!-- Bio -->
+                    <div class="auth-form-group">
+                        <label for="bio" class="auth-form-label">О себе</label>
+                        <textarea id="bio" class="auth-form-input" rows="4"
+                            placeholder="Кратко опишите ваш опыт и цели..."></textarea>
+                    </div>
+
+                    <button type="submit" class="auth-submit-btn">
+                        Завершить регистрацию
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Avatar Preview
+        function previewAvatar(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const preview = document.getElementById('avatarPreview');
+                    const placeholder = document.querySelector('.avatar-placeholder');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                    placeholder.style.display = 'none';
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // Skills Logic
+        const skillInput = document.getElementById('skillInput');
+        const skillsList = document.getElementById('skillsList');
+        const skills = new Set();
+
+        skillInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const skill = this.value.trim();
+                if (skill) {
+                    addSkill(skill);
+                    this.value = '';
+                }
+            }
+        });
+
+        function addSkill(skill) {
+            if (skills.has(skill)) return;
+            skills.add(skill);
+
+            const tag = document.createElement('div');
+            tag.className = 'skill-tag';
+            tag.innerHTML = `
+                ${skill}
+                <span onclick="removeSkill(this, '${skill}')">&times;</span>
+            `;
+            skillsList.appendChild(tag);
+        }
+
+        function removeSkill(element, skill) {
+            skills.delete(skill);
+            element.parentElement.remove();
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск исполнителей - TalentSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="find-executors.css">
+    <link rel="stylesheet" href="global-header.css">
+    <link rel="stylesheet" href="universal-mobile.css">
+    <link rel="stylesheet" href="mobile-header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+
+    <div class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileSidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <span class="mobile-logo-text">TalentSphere</span>
+        <div class="mobile-avatar"></div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar glass-effect" id="dashboardSidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                <div class="logo-icon neon-glow-purple"></div>
+                <span class="logo-text">TalentSphere</span>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="7" height="9" x="3" y="3" rx="1" />
+                    <rect width="7" height="5" x="14" y="3" rx="1" />
+                    <rect width="7" height="9" x="14" y="12" rx="1" />
+                    <rect width="7" height="5" x="3" y="16" rx="1" />
+                </svg>
+                <span>Дашборд</span>
+            </a>
+            <a href="find-executors.html" class="nav-item active">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>Поиск исполнителей</span>
+            </a>
+            <a href="team-project.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Командный проект</span>
+            </a>
+            <a href="marketplace.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                <span>Проекты</span>
+            </a>
+            <a href="my-work.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Управление работой</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+                <span>Профиль</span>
+            </a>
+            <a href="wallet.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+                    <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
+                </svg>
+                <span>Кошелек</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                <span>Сообщения</span>
+                <span class="badge neon-glow-pink">3</span>
+            </a>
+            <a href="education.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                    <path d="M22 10v6" />
+                    <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                </svg>
+                <span>Обучение</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+                <span>Настройки</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile glass-card">
+                <div class="user-avatar neon-glow-blue"></div>
+                <div class="user-info">
+                    <div class="user-name">Alex Design</div>
+                    <div class="user-status">Pro Member</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Global Header -->
+        <header class="global-header">
+            <div class="global-header-left">
+                <div class="global-search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Поиск проектов, фрилансеров..." class="global-search-input">
+                </div>
+            </div>
+
+            <div class="global-header-right">
+                <button class="header-icon-btn" id="notificationsBtn">
+                    <i class="far fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+
+                <button class="header-icon-btn" id="walletBtn">
+                    <i class="fas fa-wallet"></i>
+                    <span class="wallet-balance">$2,450</span>
+                </button>
+
+                <div class="header-user-avatar">
+                    <div class="avatar-image">AD</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="find-executors-container">
+            <!-- Search & Filter Panel -->
+            <div class="search-filter-panel glass-card">
+                <div class="search-row">
+                    <div class="main-search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="main-search-input"
+                            placeholder="Найти специалиста по навыкам (например, React, 3D Design)...">
+                    </div>
+                    <button class="btn-apply-filters">Применить</button>
+                </div>
+
+                <div class="filters-row">
+                    <div class="filter-group">
+                        <span class="filter-label">💰 Бюджет:</span>
+                        <select class="filter-select">
+                            <option>Любой</option>
+                            <option>$10 - $30 / час</option>
+                            <option>$30 - $60 / час</option>
+                            <option>$60+ / час</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">⭐ Рейтинг:</span>
+                        <select class="filter-select">
+                            <option>Любой</option>
+                            <option>4.5+</option>
+                            <option>4.8+</option>
+                            <option>5.0</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">📍 Локация:</span>
+                        <select class="filter-select">
+                            <option>Весь мир</option>
+                            <option>Европа</option>
+                            <option>США</option>
+                            <option>Азия</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">🗣️ Язык:</span>
+                        <select class="filter-select">
+                            <option>Любой</option>
+                            <option>Английский</option>
+                            <option>Русский</option>
+                            <option>Испанский</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">⏱️ Доступность:</span>
+                        <select class="filter-select">
+                            <option>Сейчас</option>
+                            <option>В течение недели</option>
+                            <option>В следующем месяце</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="sort-ai-row">
+                    <div class="sort-options">
+                        <button class="sort-btn active">По рейтингу</button>
+                        <button class="sort-btn">По цене</button>
+                        <button class="sort-btn">По отзывам</button>
+                    </div>
+                    <label class="ai-toggle">
+                        <span class="ai-toggle-label">✨ AI-рекомендации</span>
+                        <input type="checkbox" checked>
+                        <div class="toggle-switch"></div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Executors Grid -->
+            <div class="executors-grid">
+                <!-- Card 1 -->
+                <div class="executor-card glass-card">
+                    <div class="executor-header">
+                        <div class="executor-avatar-wrapper">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt="Avatar"
+                                class="executor-avatar">
+                            <div class="status-indicator status-online"></div>
+                        </div>
+                        <div class="executor-info">
+                            <h3>Анна Смирнова</h3>
+                            <div class="executor-role">Senior UI/UX Designer</div>
+                            <div class="executor-rating">
+                                <i class="fas fa-star"></i> 4.9 <span>(124 отзыва)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-preview">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400" alt="Preview">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Prototyping</span>
+                        <span class="skill-tag">Web Design</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="rate-info">
+                            <span class="rate-label">Ставка</span>
+                            <span class="rate-value">$45/час</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-icon"><i class="far fa-envelope"></i></button>
+                            <button class="btn-icon btn-invite" onclick="openProfileModal()">Пригласить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="executor-card glass-card">
+                    <div class="executor-header">
+                        <div class="executor-avatar-wrapper">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" alt="Avatar"
+                                class="executor-avatar">
+                            <div class="status-indicator status-busy"></div>
+                        </div>
+                        <div class="executor-info">
+                            <h3>Максим Волков</h3>
+                            <div class="executor-role">Full Stack Developer</div>
+                            <div class="executor-rating">
+                                <i class="fas fa-star"></i> 5.0 <span>(89 отзывов)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-preview">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400" alt="Preview">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="skills-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="rate-info">
+                            <span class="rate-label">Ставка</span>
+                            <span class="rate-value">$60/час</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-icon"><i class="far fa-envelope"></i></button>
+                            <button class="btn-icon btn-invite" onclick="openProfileModal()">Пригласить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="executor-card glass-card">
+                    <div class="executor-header">
+                        <div class="executor-avatar-wrapper">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150" alt="Avatar"
+                                class="executor-avatar">
+                            <div class="status-indicator status-online"></div>
+                        </div>
+                        <div class="executor-info">
+                            <h3>Елена Козлова</h3>
+                            <div class="executor-role">Digital Marketer</div>
+                            <div class="executor-rating">
+                                <i class="fas fa-star"></i> 4.8 <span>(56 отзывов)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-preview">
+                        <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=400" alt="Preview">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="skills-tags">
+                        <span class="skill-tag">SEO</span>
+                        <span class="skill-tag">SMM</span>
+                        <span class="skill-tag">Content Strategy</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="rate-info">
+                            <span class="rate-label">Ставка</span>
+                            <span class="rate-value">$35/час</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-icon"><i class="far fa-envelope"></i></button>
+                            <button class="btn-icon btn-invite" onclick="openProfileModal()">Пригласить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="executor-card glass-card">
+                    <div class="executor-header">
+                        <div class="executor-avatar-wrapper">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150" alt="Avatar"
+                                class="executor-avatar">
+                            <div class="status-indicator status-offline"></div>
+                        </div>
+                        <div class="executor-info">
+                            <h3>Дмитрий Петров</h3>
+                            <div class="executor-role">3D Artist</div>
+                            <div class="executor-rating">
+                                <i class="fas fa-star"></i> 4.7 <span>(32 отзыва)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-preview">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400" alt="Preview">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Blender</span>
+                        <span class="skill-tag">Maya</span>
+                        <span class="skill-tag">ZBrush</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="rate-info">
+                            <span class="rate-label">Ставка</span>
+                            <span class="rate-value">$50/час</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-icon"><i class="far fa-envelope"></i></button>
+                            <button class="btn-icon btn-invite" onclick="openProfileModal()">Пригласить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-indicator">
+                <i class="fas fa-spinner fa-spin fa-2x"></i>
+            </div>
+        </div>
+    </main>
+
+    <!-- Profile Modal -->
+    <div class="modal-overlay" id="profileModal">
+        <div class="profile-modal glass-card">
+            <div class="modal-header">
+                <div class="modal-profile-info">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt="Avatar"
+                        class="modal-avatar">
+                    <div class="modal-user-details">
+                        <h2>Анна Смирнова</h2>
+                        <span class="modal-user-role">Senior UI/UX Designer</span>
+                        <div class="modal-stats">
+                            <span><i class="fas fa-star" style="color: gold;"></i> 4.9</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Лондон, Великобритания</span>
+                            <span><i class="far fa-clock"></i> 10:30 AM</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="modal-close-btn" onclick="closeProfileModal()"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-sidebar">
+                    <div class="info-block">
+                        <span class="info-label">Контакты</span>
+                        <div class="info-value">anna.design@example.com</div>
+                        <div class="info-value">+44 20 7123 4567</div>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">Языки</span>
+                        <div class="info-value">Английский (Native)</div>
+                        <div class="info-value">Русский (Fluent)</div>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">Навыки</span>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Adobe XD</span>
+                            <span class="skill-tag">Prototyping</span>
+                            <span class="skill-tag">User Research</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-content">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" onclick="switchTab('about')">О себе</button>
+                        <button class="tab-btn" onclick="switchTab('portfolio')">Портфолио</button>
+                        <button class="tab-btn" onclick="switchTab('reviews')">Отзывы (124)</button>
+                    </div>
+
+                    <div id="tab-about" class="tab-pane active">
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Привет! Я Senior UI/UX дизайнер с более чем 8-летним опытом создания интуитивно понятных и
+                            визуально привлекательных цифровых продуктов.
+                            Я специализируюсь на дизайне мобильных приложений и сложных веб-интерфейсов.
+                            <br><br>
+                            Мой подход основан на глубоком понимании потребностей пользователей и бизнес-целей. Я верю,
+                            что хороший дизайн должен быть не только красивым, но и функциональным.
+                        </p>
+
+                        <h4 style="margin-top: 24px; margin-bottom: 12px;">История проектов</h4>
+                        <div
+                            style="background: rgba(255,255,255,0.05); padding: 16px; border-radius: 12px; margin-bottom: 12px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-weight: 600;">FinTech App Redesign</span>
+                                <span style="color: var(--neon-green);">Завершен</span>
+                            </div>
+                            <p style="font-size: 13px; color: var(--text-secondary); margin: 0;">Полный редизайн
+                                банковского приложения для крупного европейского банка.</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); padding: 16px; border-radius: 12px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-weight: 600;">E-commerce Platform</span>
+                                <span style="color: var(--neon-green);">Завершен</span>
+                            </div>
+                            <p style="font-size: 13px; color: var(--text-secondary); margin: 0;">Разработка
+                                дизайн-системы для маркетплейса.</p>
+                        </div>
+                    </div>
+
+                    <div id="tab-portfolio" class="tab-pane">
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item"><img
+                                    src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=300"
+                                    alt="Work 1"></div>
+                            <div class="portfolio-item"><img
+                                    src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=300"
+                                    alt="Work 2"></div>
+                            <div class="portfolio-item"><img
+                                    src="https://images.unsplash.com/photo-1558655146-d09347e0b7a9?w=300" alt="Work 3">
+                            </div>
+                            <div class="portfolio-item"><img
+                                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300" alt="Work 4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-reviews" class="tab-pane">
+                        <div
+                            style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-weight: 600;">John Doe</span>
+                                <span style="color: gold;"><i class="fas fa-star"></i> 5.0</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Анна проделала отличную работу!
+                                Очень внимательна к деталям и всегда на связи.</p>
+                        </div>
+                        <div
+                            style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span style="font-weight: 600;">Sarah Smith</span>
+                                <span style="color: gold;"><i class="fas fa-star"></i> 5.0</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Профессионал своего дела.
+                                Рекомендую!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-icon" style="width: auto; padding: 0 20px; border-radius: 8px;">Написать</button>
+                <button class="btn-invite"
+                    style="padding: 10px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">Пригласить в
+                    проект</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Modal Logic
+        function openProfileModal() {
+            document.getElementById('profileModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProfileModal() {
+            document.getElementById('profileModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on outside click
+        document.getElementById('profileModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeProfileModal();
+            }
+        });
+
+        // Tabs Logic
+        function switchTab(tabName) {
+            // Remove active class from all buttons and panes
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+            // Add active class to clicked button and corresponding pane
+            event.target.classList.add('active');
+            document.getElementById('tab-' + tabName).classList.add('active');
+        }
+
+        // Sort Buttons Logic
+        document.querySelectorAll('.sort-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

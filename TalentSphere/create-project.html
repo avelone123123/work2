@@ -11,332 +11,477 @@
     <link rel="stylesheet" href="create-project.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-</head>
+    <!DOCTYPE html>
+    <html lang="ru">
 
-<body class="dashboard-page">
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar glass-effect">
-        <div class="sidebar-header">
-            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
-                <div class="logo-icon neon-glow-purple"></div>
-                <span class="logo-text">TalentSphere</span>
-            </a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Создать проект - TalentSphere</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="dashboard.css">
+        <link rel="stylesheet" href="dashboard-fixes.css">
+        <link rel="stylesheet" href="create-project.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link <div class="header-left">
+        <h1 class="page-title">Создать <span class="gradient-text">проект</span></h1>
+        <p class="page-subtitle">AI поможет превратить вашу идею в готовое ТЗ</p>
         </div>
-
-        <nav class="sidebar-nav">
-            <a href="dashboard.html" class="nav-item active">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="7" height="9" rx="1" />
-                    <rect x="14" y="3" width="7" height="5" rx="1" />
-                    <rect x="14" y="12" width="7" height="9" rx="1" />
-                    <rect x="3" y="16" width="7" height="5" rx="1" />
-                </svg>
-                <span>Дашборд</span>
-            </a>
-            <a href="marketplace.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                </svg>
-                <span>Проекты</span>
-            </a>
-            <a href="profile.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                </svg>
-                <span>Профиль</span>
-            </a>
-            <a href="wallet.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
-                    <line x1="1" y1="10" x2="23" y2="10" />
-                </svg>
-                <span>Кошелек</span>
-            </a>
-            <a href="messages.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                </svg>
-                <span>Сообщения</span>
-                <span class="badge neon-glow-pink">3</span>
-            </a>
-            <a href="education.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                </svg>
-                <span>Обучение</span>
-            </a>
-            <a href="settings.html" class="nav-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3" />
-                    <path
-                        d="M12 1v6m0 6v6m6-11.66l-3 5.2m-6 0l-3-5.2M1.34 18l5.2-3m5.2 0l5.2 3M1.34 6l5.2 3m5.2 0l5.2-3" />
-                </svg>
-                <span>Настройки</span>
-            </a>
-        </nav>
-
-        <div class="sidebar-footer">
-            <div class="user-profile glass-card">
-                <div class="user-avatar neon-glow-blue"></div>
-                <div class="user-info">
-                    <div class="user-name">Alex Design</div>
-                    <div class="user-status">Pro Member</div>
-                </div>
-            </div>
-        </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Header -->
-        <header class="content-header">
-            <div class="header-left">
-                <h1 class="page-title">Создать <span class="gradient-text">проект</span></h1>
-                <p class="page-subtitle">Опишите ваш проект и найдите лучших исполнителей</p>
-            </div>
         </header>
 
+        <!-- Steps Indicator -->
+        <div class="steps-container">
+            <div class="step active" id="stepIndicator1">
+            </div>
+            <div class="step" id="stepIndicator2">
+            </div>
+            <div class="step" id="stepIndicator3">
+            </div>
+            <div class="step" id="stepIndicator4">
+            </div>
+        </div>
 
-        <!-- Project Form -->
-        <form class="project-form">
+        <!-- Step 1: Description -->
+        <div id="step1" class="step-content active">
             <div class="form-section glass-card">
-                <h2 class="section-title">Основная информация</h2>
+                <h2 class="section-title">Опишите вашу идею</h2>
 
-                <!-- Project Title -->
                 <div class="form-group">
                     <label class="form-label">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2" />
-                            <path d="M7 7H13M7 11H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                        Название проекта
-                        <span class="required">*</span>
+                        <i class="fas fa-pen-fancy" style="color: var(--neon-purple);"></i>
+                        Детальное описание проекта
                     </label>
-                    <input type="text" class="form-input glass-card"
-                        placeholder="Например: Редизайн мобильного приложения" required>
-                    <span class="form-hint">Краткое и понятное название</span>
+                    <textarea class="form-textarea glass-card" rows="8"
+                        placeholder="Опишите цели, целевую аудиторию, ожидания..."></textarea>
+
+                    <div class="ai-suggestion-box">
+                        <button class="btn-ai-assist neon-button-small" type="button">
+                            <i class="fas fa-magic"></i> AI-помощник для ТЗ
+                        </button>
+                        <span class="form-hint" style="margin: 0;">Нажмите, чтобы AI помог сформулировать мысли</span>
+                    </div>
                 </div>
 
-                <!-- Category -->
                 <div class="form-group">
                     <label class="form-label">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <rect x="3" y="3" width="5" height="5" rx="1" stroke="currentColor" stroke-width="2" />
-                            <rect x="3" y="12" width="5" height="5" rx="1" stroke="currentColor" stroke-width="2" />
-                            <rect x="12" y="3" width="5" height="5" rx="1" stroke="currentColor" stroke-width="2" />
-                            <rect x="12" y="12" width="5" height="5" rx="1" stroke="currentColor" stroke-width="2" />
-                        </svg>
-                        Категория
-                        <span class="required">*</span>
+                        <i class="fas fa-paperclip" style="color: var(--neon-blue);"></i>
+                        Прикрепить файлы (опционально)
                     </label>
-                    <select class="form-select glass-card" required>
-                        <option value="">Выберите категорию</option>
-                        <option value="ui-ux">UI/UX Design</option>
-                        <option value="web-dev">Web Development</option>
-                        <option value="mobile">Mobile Development</option>
-                        <option value="branding">Branding</option>
-                        <option value="illustration">Illustration</option>
-                        <option value="video">Video & Animation</option>
-                        <option value="writing">Content Writing</option>
-                        <option value="marketing">Marketing</option>
-                    </select>
+                    <div class="file-upload-area glass-card">
+                        <i class="fas fa-cloud-upload-alt"
+                            style="font-size: 32px; color: var(--text-secondary); margin-bottom: 10px;"></i>
+                        <p style="color: var(--text-secondary);">Перетащите файлы сюда или нажмите для выбора</p>
+                    </div>
                 </div>
 
-                <!-- Description -->
-                <div class="form-group">
-                    <label class="form-label">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M3 5H17M3 10H17M3 15H11" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" />
-                        </svg>
-                        Описание проекта
-                        <span class="required">*</span>
-                    </label>
-                    <textarea class="form-textarea glass-card" rows="6"
-                        placeholder="Подробно опишите что нужно сделать, ваши ожидания и требования..."
-                        required></textarea>
-                    <span class="form-hint">Минимум 100 символов</span>
+                <div class="form-actions">
+                    <button class="btn-secondary glass-card" type="button"
+                        onclick="window.history.back()">Назад</button>
+                    <button class="btn-primary neon-button" type="button" onclick="startAIAnalysis()">
+                        <span>Далее</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
+        </div>
 
-            <!-- Skills & Requirements -->
-            <div class="form-section glass-card">
-                <h2 class="section-title">Навыки и требования</h2>
+        <!-- Step 2: AI Analysis -->
+        <div id="step2" class="step-content" style="display: none;">
 
-                <!-- Required Skills -->
-                <div class="form-group">
-                    <label class="form-label">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M10 2L13 7L18 8L14 12L15 17L10 14.5L5 17L6 12L2 8L7 7L10 2Z" stroke="currentColor"
-                                stroke-width="2" />
-                        </svg>
-                        Необходимые навыки
-                    </label>
-                    <div class="skills-input-container">
-                        <input type="text" class="form-input glass-card" placeholder="Начните вводить навык..."
-                            id="skillInput">
-                        <div class="skills-suggestions glass-card" id="skillsSuggestions">
-                            <div class="skill-suggest" data-skill="Figma">Figma</div>
-                            <div class="skill-suggest" data-skill="Adobe XD">Adobe XD</div>
-                            <div class="skill-suggest" data-skill="React">React</div>
-                            <div class="skill-suggest" data-skill="Vue.js">Vue.js</div>
-                            <div class="skill-suggest" data-skill="Python">Python</div>
-                            <div class="skill-suggest" data-skill="Node.js">Node.js</div>
+            <!-- Loading State -->
+            <div id="aiLoading" class="ai-loading-overlay" style="display: none;">
+                <div class="ai-spinner"></div>
+                <h3>AI анализирует ваш проект...</h3>
+                <p style="color: var(--text-secondary);">Составляем ТЗ, подбираем команду и считаем бюджет</p>
+            </div>
+
+            <!-- Results -->
+            <div id="aiResults" style="display: none;">
+                <!-- Generated TS -->
+                <div class="form-section glass-card">
+                    <h2 class="section-title">📋 Сгенерированное ТЗ</h2>
+                    <div class="generated-ts-grid">
+                        <div class="form-group">
+                            <label class="form-label">Цели и задачи</label>
+                            <textarea class="form-textarea glass-card"
+                                rows="4">Создать современный маркетплейс для фрилансеров с AI-подбором. Основная цель - сократить время поиска исполнителя до 5 минут.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Стек технологий</label>
+                            <div class="tags-container" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                <span class="skill-tag">React <i class="fas fa-times skill-remove"></i></span>
+                                <span class="skill-tag">Node.js <i class="fas fa-times skill-remove"></i></span>
+                                <span class="skill-tag">PostgreSQL <i class="fas fa-times skill-remove"></i></span>
+                                <span class="skill-tag">AI/ML <i class="fas fa-times skill-remove"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Критерии приемки</label>
+                            <textarea class="form-textarea glass-card" rows="3">- Полная адаптивность под мобильные устройства
+- Скорость загрузки страниц < 1.5 сек
+- Интеграция с платежными системами</textarea>
                         </div>
                     </div>
-                    <div class="selected-skills" id="selectedSkills">
-                        <!-- Будут добавляться выбранные навыки -->
-                    </div>
                 </div>
 
-                <!-- Experience Level -->
-                <div class="form-group">
-                    <label class="form-label">
-                        Уровень опыта исполнителя
-                    </label>
-                    <div class="experience-options">
-                        <label class="experience-option glass-card">
-                            <input type="radio" name="experience" value="junior" checked>
-                            <div class="option-content">
-                                <span class="option-title">Junior</span>
-                                <span class="option-desc">До 2 лет опыта</span>
+                <!-- Recommended Specialists -->
+                <div class="form-section glass-card">
+                    <h2 class="section-title">👥 Рекомендуемая команда</h2>
+                    <div class="specialists-grid">
+                        <!-- Card 1 -->
+                        <div class="freelancer-card glass-card">
+                            <div class="freelancer-video">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400"
+                                    alt="Video">
+                                <div class="play-icon"><i class="fas fa-play"></i></div>
                             </div>
-                        </label>
-                        <label class="experience-option glass-card">
-                            <input type="radio" name="experience" value="middle">
-                            <div class="option-content">
-                                <span class="option-title">Middle</span>
-                                <span class="option-desc">2-5 лет опыта</span>
+                            <div class="freelancer-info">
+                                <div class="freelancer-header">
+                                    <h5>Анна В.</h5>
+                                    <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                                </div>
+                                <p class="freelancer-role">Senior UI/UX Designer</p>
+                                <div class="freelancer-skills">
+                                    <span>Figma</span>
+                                    <span>Prototyping</span>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                                    <span style="color: var(--neon-blue); font-weight: 600;">$45/ч</span>
+                                    <button class="btn-small-primary">Выбрать</button>
+                                </div>
                             </div>
-                        </label>
-                        <label class="experience-option glass-card">
-                            <input type="radio" name="experience" value="senior">
-                            <div class="option-content">
-                                <span class="option-title">Senior</span>
-                                <span class="option-desc">5+ лет опыта</span>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-            </div>
+                        </div>
 
-            <!-- Budget & Timeline -->
-            <div class="form-section glass-card">
-                <h2 class="section-title">Бюджет и сроки</h2>
-
-                <!-- Payment Type -->
-                <div class="form-group">
-                    <label class="form-label">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <rect x="3" y="5" width="14" height="11" rx="2" stroke="currentColor" stroke-width="2" />
-                            <path d="M3 9H17" stroke="currentColor" stroke-width="2" />
-                        </svg>
-                        Тип оплаты
-                    </label>
-                    <div class="payment-types">
-                        <label class="payment-type glass-card">
-                            <input type="radio" name="paymentType" value="fixed" checked>
-                            <div class="payment-content">
-                                <div class="payment-icon neon-glow-blue">💰</div>
-                                <span class="payment-title">Фиксированная цена</span>
-                                <span class="payment-desc">Оплата за весь проект</span>
+                        <!-- Card 2 -->
+                        <div class="freelancer-card glass-card">
+                            <div class="freelancer-video">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400" alt="Video">
+                                <div class="play-icon"><i class="fas fa-play"></i></div>
                             </div>
-                        </label>
-                        <label class="payment-type glass-card">
-                            <input type="radio" name="paymentType" value="hourly">
-                            <div class="payment-content">
-                                <div class="payment-icon neon-glow-pink">⏱️</div>
-                                <span class="payment-title">Почасовая оплата</span>
-                                <span class="payment-desc">Оплата за время работы</span>
+                            <div class="freelancer-info">
+                                <div class="freelancer-header">
+                                    <h5>Максим К.</h5>
+                                    <span class="rating"><i class="fas fa-star"></i> 5.0</span>
+                                </div>
+                                <p class="freelancer-role">Frontend Developer</p>
+                                <div class="freelancer-skills">
+                                    <span>React</span>
+                                    <span>Vue.js</span>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                                    <span style="color: var(--neon-blue); font-weight: 600;">$50/ч</span>
+                                    <button class="btn-small-primary">Выбрать</button>
+                                </div>
                             </div>
-                        </label>
+                        </div>
                     </div>
+                    <button class="btn-secondary glass-card" style="width: 100%;">Просмотреть всех кандидатов</button>
                 </div>
 
                 <!-- Budget -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label">
-                            Бюджет (USD)
-                            <span class="required">*</span>
-                        </label>
-                        <div class="budget-inputs">
-                            <input type="number" class="form-input glass-card" placeholder="От" min="0">
-                            <span class="budget-separator">—</span>
-                            <input type="number" class="form-input glass-card" placeholder="До" min="0">
-                        </div>
+                <div class="form-section glass-card">
+                    <h2 class="section-title">💰 Расчет бюджета</h2>
+                    <div class="budget-table-container">
+                        <table style="width: 100%; border-collapse: collapse; color: var(--text-primary);">
+                            <thead>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                    <th style="text-align: left; padding: 10px;">Роль</th>
+                                    <th style="text-align: right; padding: 10px;">Часы</th>
+                                    <th style="text-align: right; padding: 10px;">Ставка</th>
+                                    <th style="text-align: right; padding: 10px;">Сумма</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 10px;">UI/UX Designer</td>
+                                    <td style="text-align: right; padding: 10px;">40</td>
+                                    <td style="text-align: right; padding: 10px;">$45</td>
+                                    <td style="text-align: right; padding: 10px;">$1,800</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 10px;">Frontend Dev</td>
+                                    <td style="text-align: right; padding: 10px;">80</td>
+                                    <td style="text-align: right; padding: 10px;">$50</td>
+                                    <td style="text-align: right; padding: 10px;">$4,000</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding: 10px;">Backend Dev</td>
+                                    <td style="text-align: right; padding: 10px;">60</td>
+                                    <td style="text-align: right; padding: 10px;">$55</td>
+                                    <td style="text-align: right; padding: 10px;">$3,300</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">
-                            Срок выполнения
-                            <span class="required">*</span>
-                        </label>
-                        <select class="form-select glass-card" required>
-                            <option value="">Выберите срок</option>
-                            <option value="1">До 1 недели</option>
-                            <option value="2">1-2 недели</option>
-                            <option value="4">2-4 недели</option>
-                            <option value="8">1-2 месяца</option>
-                            <option value="12">2-3 месяца</option>
-                            <option value="more">Более 3 месяцев</option>
-                        </select>
+                    <div class="total-budget">
+                        <span style="font-size: 18px; font-weight: 600;">Итоговый бюджет:</span>
+                        <span class="amount"
+                            style="font-size: 24px; font-weight: 700; color: var(--neon-green);">$9,100</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Form Actions -->
-            <div class="form-actions">
-                <button type="button" class="btn-secondary glass-card">
-                    Сохранить черновик
-                </button>
-                <button type="submit" class="btn-primary neon-button">
-                    <span>Опубликовать проект</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" />
-                    </svg>
-                </button>
-            </div>
-        </form>
-
-        <!-- AI Helper -->
-        <div class="ai-helper glass-card">
-            <div class="ai-icon neon-glow-purple">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M16 4L19 12L27 15L19 18L16 26L13 18L5 15L13 12L16 4Z" fill="url(#gradient-purple)" />
-                </svg>
-            </div>
-            <div class="ai-content">
-                <h3 class="ai-title">AI Помощник</h3>
-                <p class="ai-text">Нужна помощь с описанием? AI поможет составить идеальное описание проекта!</p>
-                <button class="ai-button neon-button">Сгенерировать описание</button>
+                <div class="form-actions">
+                    <button class="btn-secondary glass-card" onclick="backToStep1()">Назад</button>
+                    <button class="btn-primary neon-button" onclick="goToStep3()">
+                        <span>Далее: Выбор команды</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </main>
 
-    <svg width="0" height="0" style="position: absolute;">
-        <defs>
-            <linearGradient id="gradient-purple" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#b000ff;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
-            </linearGradient>
-        </defs>
-    </svg>
+        <!-- Step 3: Team Selection -->
+        <div id="step3" class="step-content" style="display: none;">
+            <div class="form-section glass-card">
+                <h2 class="section-title">Выбор команды</h2>
 
-    <script src="script.js"></script>
-</body>
+                <div class="form-group">
+                    <label class="form-label">Размер команды</label>
+                    <div class="team-size-selector">
+                        <button class="size-btn active">3 специалиста</button>
+                        <button class="size-btn">5 специалистов</button>
+                        <button class="size-btn">Больше</button>
+                    </div>
+                </div>
 
-</html>
+                <div class="candidates-gallery">
+                    <div class="gallery-filters">
+                        <button class="filter-pill active">Все</button>
+                        <button class="filter-pill">Топ рейтинг</button>
+                        <button class="filter-pill">Быстрый старт</button>
+                    </div>
+
+                    <div class="specialists-grid">
+                        <!-- Candidate 1 -->
+                        <div class="freelancer-card glass-card selected-candidate">
+                            <div class="selection-badge"><i class="fas fa-check"></i></div>
+                            <div class="freelancer-video">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400"
+                                    alt="Video">
+                                <div class="play-icon"><i class="fas fa-play"></i></div>
+                            </div>
+                            <div class="freelancer-info">
+                                <div class="freelancer-header">
+                                    <h5>Анна В.</h5>
+                                    <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                                </div>
+                                <p class="freelancer-role">Senior UI/UX Designer</p>
+                                <button class="btn-small-primary active">В команде</button>
+                            </div>
+                        </div>
+
+                        <!-- Candidate 2 -->
+                        <div class="freelancer-card glass-card selected-candidate">
+                            <div class="selection-badge"><i class="fas fa-check"></i></div>
+                            <div class="freelancer-video">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400" alt="Video">
+                                <div class="play-icon"><i class="fas fa-play"></i></div>
+                            </div>
+                            <div class="freelancer-info">
+                                <div class="freelancer-header">
+                                    <h5>Максим К.</h5>
+                                    <span class="rating"><i class="fas fa-star"></i> 5.0</span>
+                                </div>
+                                <p class="freelancer-role">Frontend Developer</p>
+                                <button class="btn-small-primary active">В команде</button>
+                            </div>
+                        </div>
+
+                        <!-- Candidate 3 -->
+                        <div class="freelancer-card glass-card">
+                            <div class="freelancer-video">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400"
+                                    alt="Video">
+                                <div class="play-icon"><i class="fas fa-play"></i></div>
+                            </div>
+                            <div class="freelancer-info">
+                                <div class="freelancer-header">
+                                    <h5>Олег П.</h5>
+                                    <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                                </div>
+                                <p class="freelancer-role">Backend Developer</p>
+                                <button class="btn-small-primary">Добавить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-summary glass-card"
+                    style="margin-top: 20px; background: rgba(0, 255, 157, 0.05); border-color: rgba(0, 255, 157, 0.2);">
+                    <h3 style="font-size: 16px; margin-bottom: 10px;">Ваша команда (2/3)</h3>
+                    <div class="team-avatars">
+                        <div class="team-avatar-item" title="Анна В.">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100"
+                                style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--neon-green);">
+                        </div>
+                        <div class="team-avatar-item" title="Максим К.">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100"
+                                style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--neon-green);">
+                        </div>
+                        <div class="team-avatar-placeholder"
+                            style="width: 40px; height: 40px; border-radius: 50%; border: 2px dashed rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn-secondary glass-card" onclick="backToStep2()">Назад</button>
+                    <button class="btn-primary neon-button" onclick="goToStep4()">
+                        <span>Далее: Оплата</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Confirmation & Payment -->
+        <div id="step4" class="step-content" style="display: none;">
+            <div class="form-section glass-card">
+                <h2 class="section-title">Подтверждение и оплата</h2>
+
+                <div class="summary-card glass-card" style="margin-bottom: 20px;">
+                    <div class="summary-row">
+                        <span class="label">Проект</span>
+                        <span class="value">Маркетплейс фрилансеров</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="label">Команда</span>
+                        <span class="value">3 специалиста</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="label">Срок</span>
+                        <span class="value">2 месяца</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span class="label">Итого к оплате</span>
+                        <span class="value neon-text">$9,100</span>
+                    </div>
+                </div>
+
+                <div class="escrow-settings">
+                    <h3 class="section-subtitle">Настройки Escrow</h3>
+                    <div class="escrow-option glass-card">
+                        <div class="option-header">
+                            <i class="fas fa-shield-alt" style="color: var(--neon-green);"></i>
+                            <span>Безопасная сделка</span>
+                        </div>
+                        <p>Средства резервируются и выплачиваются поэтапно после приемки работ.</p>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <h3 class="section-subtitle">Способ оплаты</h3>
+                    <div class="methods-grid">
+                        <label class="method-card glass-card active">
+                            <input type="radio" name="payment" checked>
+                            <i class="fas fa-credit-card"></i>
+                            <span>Карта</span>
+                        </label>
+                        <label class="method-card glass-card">
+                            <input type="radio" name="payment">
+                            <i class="fas fa-university"></i>
+                            <span>Банк</span>
+                        </label>
+                        <label class="method-card glass-card">
+                            <input type="radio" name="payment">
+                            <i class="fab fa-bitcoin"></i>
+                            <span>Crypto</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="consent-checkboxes">
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked>
+                        <span>Я принимаю условия использования платформы</span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn-secondary glass-card" onclick="backToStep3()">Назад</button>
+                    <button class="btn-primary neon-button" onclick="alert('Проект успешно создан! 🚀')">
+                        <span>Запустить проект</span>
+                        <i class="fas fa-rocket"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </main>
+
+        <svg width="0" height="0" style="position: absolute;">
+            <defs>
+                <linearGradient id="gradient-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#b000ff;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#7000ff;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <script src="script.js"></script>
+        <script>
+            function updateSteps(currentStep) {
+                // Reset all steps
+                for (let i = 1; i <= 4; i++) {
+                    const indicator = document.getElementById(`stepIndicator${i}`);
+                    const content = document.getElementById(`step${i}`);
+
+                    // Update Indicators
+                    if (i < currentStep) {
+                        indicator.classList.add('completed');
+                        indicator.classList.remove('active');
+                    } else if (i === currentStep) {
+                        indicator.classList.add('active');
+                        indicator.classList.remove('completed');
+                    } else {
+                        indicator.classList.remove('active', 'completed');
+                    }
+
+                    // Update Content Visibility
+                    if (i === currentStep) {
+                        content.style.display = 'block';
+                        setTimeout(() => content.classList.add('active'), 10);
+                    } else {
+                        content.style.display = 'none';
+                        content.classList.remove('active');
+                    }
+                }
+            }
+
+            function startAIAnalysis() {
+                updateSteps(2);
+                document.getElementById('aiLoading').style.display = 'block';
+                document.getElementById('aiResults').style.display = 'none';
+
+                setTimeout(() => {
+                    document.getElementById('aiLoading').style.display = 'none';
+                    document.getElementById('aiResults').style.display = 'block';
+
+                    // Fade in
+                    document.getElementById('aiResults').style.opacity = 0;
+                    let opacity = 0;
+                    const fadeIn = setInterval(() => {
+                        opacity += 0.1;
+                        document.getElementById('aiResults').style.opacity = opacity;
+                        if (opacity >= 1) clearInterval(fadeIn);
+                    }, 50);
+                }, 3000);
+            }
+
+            function backToStep1() { updateSteps(1); }
+            function goToStep3() { updateSteps(3); }
+            function backToStep2() {
+                updateSteps(2);
+                // Ensure results are shown when going back
+                document.getElementById('aiLoading').style.display = 'none';
+                document.getElementById('aiResults').style.display = 'block';
+            }
+            function goToStep4() { updateSteps(4); }
+            function backToStep3() { updateSteps(3); }
+        </script>
+        </body>
+
+    </html>

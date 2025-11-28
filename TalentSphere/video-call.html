@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видеозвонок - TalentSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            overflow: hidden;
+            /* Prevent scrolling during call */
+            background: var(--bg-primary);
+        }
+
+        .call-layout {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        /* Main Video Area */
+        .main-video-area {
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .active-speaker {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .video-overlay-info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .connection-quality {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 20px;
+            color: var(--accent-green);
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            backdrop-filter: blur(5px);
+        }
+
+        .call-timer-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Thumbnails Grid */
+        .thumbnails-grid {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .thumbnail {
+            width: 180px;
+            height: 120px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .thumbnail:hover {
+            border-color: var(--primary-blue);
+            transform: scale(1.05);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbnail-name {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            font-size: 10px;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Control Bar */
+        .control-bar {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            padding: 15px 30px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 20;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .control-btn.active {
+            background: var(--primary-blue);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+
+        .control-btn.danger {
+            background: #ef4444;
+        }
+
+        .control-btn.danger:hover {
+            background: #dc2626;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+        }
+
+        /* Sidebar (Chat/Participants) */
+        .call-sidebar {
+            width: 350px;
+            background: var(--bg-secondary);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+            z-index: 15;
+        }
+
+        .call-sidebar.hidden {
+            display: none;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar-tabs {
+            display: flex;
+            padding: 10px 20px;
+            gap: 10px;
+        }
+
+        .sidebar-tab {
+            flex: 1;
+            padding: 8px;
+            text-align: center;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .sidebar-tab.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .sidebar-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        /* Chat Styles */
+        .chat-message {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .chat-message.self {
+            align-items: flex-end;
+        }
+
+        .message-bubble {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 15px;
+            border-radius: 12px;
+            border-top-left-radius: 2px;
+            max-width: 85%;
+            font-size: 14px;
+        }
+
+        .chat-message.self .message-bubble {
+            background: var(--primary-blue);
+            border-radius: 12px;
+            border-top-right-radius: 2px;
+        }
+
+        .message-sender {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .chat-input-area {
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 10px 15px;
+            color: white;
+            outline: none;
+        }
+
+        /* Modals */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: translateY(0);
+        }
+
+        .incoming-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 3px solid var(--primary-purple);
+            padding: 3px;
+        }
+
+        .incoming-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .incoming-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .action-circle-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .action-circle-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .btn-accept {
+            background: var(--accent-green);
+            color: white;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+            animation: pulse-green 2s infinite;
+        }
+
+        .btn-decline {
+            background: #ef4444;
+            color: white;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(16, 185, 129, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+
+        /* Settings Modal */
+        .settings-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .settings-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .status-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .status-option {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s;
+        }
+
+        .status-option.active {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: var(--primary-blue);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .dot-green {
+            background: var(--accent-green);
+        }
+
+        .dot-yellow {
+            background: var(--accent-orange);
+        }
+
+        .dot-red {
+            background: #ef4444;
+        }
+
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: var(--primary-blue);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(16px);
+        }
+
+        /* Notifications */
+        .notification-toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: rgba(239, 68, 68, 0.9);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            z-index: 200;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .notification-toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Mobile Control Bar Optimization */
+        @media (max-width: 768px) {
+            .control-bar {
+                width: 90%;
+                max-width: 100%;
+                padding: 12px 15px;
+                gap: 12px;
+                overflow-x: auto;
+                justify-content: flex-start;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                /* Firefox */
+            }
+
+            .control-bar::-webkit-scrollbar {
+                display: none;
+                /* Chrome/Safari */
+            }
+
+            .control-btn {
+                flex-shrink: 0;
+                width: 48px;
+                height: 48px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="call-layout">
+        <!-- Main Video Area -->
+        <div class="main-video-area">
+            <!-- Background Image as Video Placeholder -->
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Active Speaker" class="active-speaker">
+
+            <!-- Overlay Info -->
+            <div class="video-overlay-info">
+                <div class="connection-quality">
+                    <i class="fas fa-signal"></i>
+                    <span>HD</span>
+                </div>
+                <div class="call-timer-badge" id="mainTimer">12:45</div>
+            </div>
+
+            <!-- Thumbnails -->
+            <div class="thumbnails-grid">
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                        alt="User 1">
+                    <span class="thumbnail-name">Максим (PM)</span>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                        alt="User 2">
+                    <span class="thumbnail-name">Дмитрий (Dev)</span>
+                </div>
+                <div class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                        alt="You">
+                    <span class="thumbnail-name">Вы</span>
+                </div>
+            </div>
+
+            <!-- Control Bar -->
+            <div class="control-bar">
+                <button class="control-btn" id="micToggle" title="Микрофон">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button class="control-btn" id="camToggle" title="Камера">
+                    <i class="fas fa-video"></i>
+                </button>
+                <button class="control-btn" title="Поделиться экраном">
+                    <i class="fas fa-desktop"></i>
+                </button>
+                <button class="control-btn" id="recordToggle" title="Запись">
+                    <i class="fas fa-circle" style="font-size: 14px;"></i>
+                </button>
+                <button class="control-btn" id="chatToggle" title="Чат">
+                    <i class="fas fa-comment-alt"></i>
+                </button>
+                <button class="control-btn" id="settingsToggle" title="Настройки">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="control-btn danger" onclick="window.location.href='team-project.html'" title="Завершить">
+                    <i class="fas fa-phone-slash"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="call-sidebar hidden" id="callSidebar">
+            <div class="sidebar-header">
+                <h3>Встреча</h3>
+                <button class="control-btn" style="width: 30px; height: 30px; font-size: 14px;" id="closeSidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="sidebar-tabs">
+                <button class="sidebar-tab active" data-tab="chat">Чат</button>
+                <button class="sidebar-tab" data-tab="participants">Участники (3)</button>
+            </div>
+
+            <div class="sidebar-content" id="sidebarContent">
+                <!-- Chat Content -->
+                <div class="chat-container">
+                    <div class="chat-message">
+                        <span class="message-sender">Максим (PM)</span>
+                        <div class="message-bubble">
+                            Коллеги, давайте обсудим новый спринт.
+                        </div>
+                    </div>
+                    <div class="chat-message self">
+                        <div class="message-bubble">
+                            Да, я подготовил отчет.
+                        </div>
+                    </div>
+                    <div class="chat-message">
+                        <span class="message-sender">Дмитрий (Dev)</span>
+                        <div class="message-bubble">
+                            API уже обновлено?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" placeholder="Сообщение...">
+                <button class="control-btn" style="width: 40px; height: 40px; background: var(--primary-blue);">
+                    <i class="fas fa-paper-plane" style="font-size: 14px;"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incoming Call Modal -->
+    <div class="modal-overlay" id="incomingModal">
+        <div class="modal-card glass-card">
+            <div class="incoming-avatar">
+                <img src="https://24smi.org/public/media/celebrity/2021/07/05/hehlqw5gt59z-anna-khilkevich.jpg"
+                    alt="Caller">
+            </div>
+            <h3 style="margin-bottom: 5px;">Анна Власова</h3>
+            <div style="color: var(--accent-orange); font-size: 14px; margin-bottom: 15px;">
+                <i class="fas fa-star"></i> 4.9 Рейтинг
+            </div>
+            <p style="color: var(--text-secondary);">Входящий видеозвонок...</p>
+
+            <div class="incoming-actions">
+                <button class="action-circle-btn btn-decline" onclick="closeModal('incomingModal')">
+                    <i class="fas fa-phone-slash"></i>
+                </button>
+                <button class="action-circle-btn btn-accept" onclick="closeModal('incomingModal')">
+                    <i class="fas fa-video"></i>
+                </button>
+            </div>
+            <div style="margin-top: 15px; font-size: 12px; color: var(--text-muted);">
+                Автоответ через <span id="autoAnswerTimer">30</span>с
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal-card glass-card" style="text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3>Настройки доступности</h3>
+                <button style="background: none; border: none; color: white; cursor: pointer;"
+                    onclick="closeModal('settingsModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="settings-group">
+                <span class="settings-label">Статус</span>
+                <div class="status-options">
+                    <div class="status-option active" onclick="selectStatus(this)">
+                        <div class="status-dot dot-green"></div>
+                        Доступен
+                    </div>
+                    <div class="status-option" onclick="selectStatus(this)">
+                        <div class="status-dot dot-yellow"></div>
+                        По записи
+                    </div>
+                    <div class="status-option" onclick="selectStatus(this)">
+                        <div class="status-dot dot-red"></div>
+                        Не беспокоить
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-group">
+                <div class="toggle-switch">
+                    <span>Автоматическая запись</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-switch">
+                    <span>Требовать согласие</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-group">
+                <span class="settings-label">Часы работы</span>
+                <div style="display: flex; gap: 10px;">
+                    <input type="time" value="09:00" class="chat-input" style="border-radius: 8px;">
+                    <span style="align-self: center;">-</span>
+                    <input type="time" value="18:00" class="chat-input" style="border-radius: 8px;">
+                </div>
+            </div>
+
+            <button class="neon-button" style="width: 100%; justify-content: center; margin-top: 10px;"
+                onclick="closeModal('settingsModal')">
+                Сохранить
+            </button>
+        </div>
+    </div>
+
+    <!-- Poor Connection Notification -->
+    <div class="notification-toast" id="connectionToast">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span>Обнаружено плохое соединение</span>
+    </div>
+
+    <script>
+        // Toggle Sidebar
+        const chatToggle = document.getElementById('chatToggle');
+        const closeSidebar = document.getElementById('closeSidebar');
+        const sidebar = document.getElementById('callSidebar');
+
+        chatToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            chatToggle.classList.toggle('active');
+        });
+
+        closeSidebar.addEventListener('click', () => {
+            sidebar.classList.add('hidden');
+            chatToggle.classList.remove('active');
+        });
+
+        // Mic & Cam Toggles
+        const micToggle = document.getElementById('micToggle');
+        const camToggle = document.getElementById('camToggle');
+
+        micToggle.addEventListener('click', function () {
+            this.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (this.classList.contains('active')) {
+                icon.classList.remove('fa-microphone');
+                icon.classList.add('fa-microphone-slash');
+                this.style.background = '#ef4444';
+            } else {
+                icon.classList.add('fa-microphone');
+                icon.classList.remove('fa-microphone-slash');
+                this.style.background = '';
+            }
+        });
+
+        camToggle.addEventListener('click', function () {
+            this.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (this.classList.contains('active')) {
+                icon.classList.remove('fa-video');
+                icon.classList.add('fa-video-slash');
+                this.style.background = '#ef4444';
+            } else {
+                icon.classList.add('fa-video');
+                icon.classList.remove('fa-video-slash');
+                this.style.background = '';
+            }
+        });
+
+        // Record Toggle
+        const recordToggle = document.getElementById('recordToggle');
+        recordToggle.addEventListener('click', function () {
+            this.classList.toggle('active');
+            if (this.classList.contains('active')) {
+                this.style.color = '#ef4444';
+                this.querySelector('i').classList.add('fa-beat');
+            } else {
+                this.style.color = 'white';
+                this.querySelector('i').classList.remove('fa-beat');
+            }
+        });
+
+        // Modals
+        const settingsToggle = document.getElementById('settingsToggle');
+        const settingsModal = document.getElementById('settingsModal');
+
+        settingsToggle.addEventListener('click', () => {
+            settingsModal.classList.add('active');
+        });
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        // Status Selection
+        function selectStatus(element) {
+            document.querySelectorAll('.status-option').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // Demo: Show Incoming Call after 3 seconds
+        setTimeout(() => {
+            // Only show if not already in a "call" (simulated)
+            // For demo purposes, we can show it or just let the user see the UI
+            // document.getElementById('incomingModal').classList.add('active');
+        }, 3000);
+
+        // Demo: Poor connection toast
+        setTimeout(() => {
+            const toast = document.getElementById('connectionToast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        }, 10000);
+
+        // Timer Logic
+        let seconds = 765; // Start at 12:45
+        function updateTimer() {
+            seconds++;
+            const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const s = (seconds % 60).toString().padStart(2, '0');
+            document.getElementById('mainTimer').textContent = `${m}:${s}`;
+        }
+        setInterval(updateTimer, 1000);
+
+    </script>
+</body>
+
+</html>

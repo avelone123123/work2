@@ -1,0 +1,641 @@
+/* My Work Page Styles */
+
+/* Tabs Navigation */
+.work-tabs-container {
+    margin-bottom: 30px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.work-tabs {
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    min-width: max-content;
+}
+
+.work-tab {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.work-tab:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.work-tab.active {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.work-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Controls */
+.content-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: var(--neon-blue);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.filter-select {
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--text-primary);
+    outline: none;
+    cursor: pointer;
+}
+
+.filter-select option {
+    background: #1e293b;
+    color: white;
+}
+
+/* Individual Project Card (List View) */
+.project-list-card {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.project-list-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.project-main-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+.client-name-small {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.project-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    border-radius: 3px;
+}
+
+.progress-text {
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-meta-col {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.status-active {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.status-review {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.status-completed {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.project-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.project-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-action-btn:hover {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: var(--neon-purple);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+/* Team Projects Redesign */
+.team-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.team-project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.team-project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+}
+
+.team-project-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--neon-purple);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+}
+
+.tp-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tp-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.tp-info {
+    flex: 1;
+}
+
+.tp-info h3 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.tp-role {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.icon-btn-small {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.icon-btn-small:hover {
+    color: var(--text-primary);
+}
+
+.tp-progress-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tp-progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.tp-progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.tp-progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 1s ease;
+}
+
+.tp-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tp-team {
+    display: flex;
+    align-items: center;
+}
+
+.team-avatars-stack {
+    display: flex;
+}
+
+.team-avatars-stack img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #0f172a;
+    margin-left: -10px;
+    transition: transform 0.2s;
+}
+
+.team-avatars-stack img:first-child {
+    margin-left: 0;
+}
+
+.team-avatars-stack img:hover {
+    transform: translateY(-2px);
+    z-index: 2;
+}
+
+.add-member-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 10px;
+    transition: all 0.3s;
+}
+
+.add-member-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-style: solid;
+}
+
+.tp-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.tp-action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tp-action-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.tp-action-btn.primary {
+    width: auto;
+    padding: 0 12px;
+    font-size: 12px;
+    font-weight: 500;
+    background: rgba(139, 92, 246, 0.2);
+    border-color: rgba(139, 92, 246, 0.3);
+    color: var(--neon-purple);
+}
+
+.tp-action-btn.primary:hover {
+    background: var(--neon-purple);
+    color: white;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* Applications Table */
+.applications-table-container {
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.applications-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.applications-table th {
+    text-align: left;
+    padding: 15px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.applications-table td {
+    padding: 15px;
+    color: var(--text-primary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.applications-table tr:last-child td {
+    border-bottom: none;
+}
+
+.app-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+}
+
+.app-status.sent {
+    color: var(--text-secondary);
+}
+
+.app-status.viewed {
+    color: var(--neon-blue);
+}
+
+.app-status.accepted {
+    color: var(--neon-green);
+}
+
+.app-status.rejected {
+    color: var(--neon-pink);
+}
+
+.app-delete-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.app-delete-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.5);
+    color: #ef4444;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+}
+
+/* Invitations */
+.invitations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.invitation-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.invitation-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-purple);
+    font-size: 24px;
+}
+
+.invitation-content {
+    flex: 1;
+}
+
+.invitation-role {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.invitation-project {
+    color: var(--neon-blue);
+    margin-bottom: 10px;
+}
+
+.invitation-details {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.invitation-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 150px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .project-list-card {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .project-actions {
+        grid-column: 1 / -1;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 600px) {
+    .project-list-card {
+        grid-template-columns: 1fr;
+    }
+
+    .invitation-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .invitation-details {
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .invitation-actions {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    /* Fix for long titles on mobile */
+    .page-title {
+        font-size: 1.2rem;
+        /* Reduce font size */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+        /* Ensure it doesn't overflow */
+    }
+}
+
+@media (max-width: 400px) {
+    .page-title {
+        font-size: 1.1rem;
+        max-width: 160px;
+    }
+}
