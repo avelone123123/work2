@@ -304,7 +304,17 @@
                     </div>
                 </div>
 
-                <div class="input-panel">
+                <div class="reply-preview-bar" id="replyPreviewBar">
+                    <div class="reply-info">
+                        <span class="reply-to-label">Replying to <span id="replyToName">Name</span></span>
+                        <span class="reply-text-preview" id="replyTextPreview">Message text...</span>
+                    </div>
+                    <button class="close-reply-btn" id="cancelReplyBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="input-panel" id="inputPanel">
                     <div class="attach-button">
                         <i class="fas fa-paperclip"></i>
                     </div>
@@ -525,24 +535,108 @@
             const sendBtn = document.getElementById('sendMessageBtn');
             const input = document.getElementById('messageInput');
             const container = document.getElementById('messagesContainer');
+            const messagesContainer = document.getElementById('messagesContainer');
+
+            // Context Menu Elements
+            const contextMenu = document.getElementById('messageContextMenu');
+            const ctxReply = document.getElementById('ctxReply');
+            const ctxCopy = document.getElementById('ctxCopy');
+            const ctxEdit = document.getElementById('ctxEdit');
+            const ctxDelete = document.getElementById('ctxDelete');
+
+            // Reply & Edit Elements
+            const replyPreviewBar = document.getElementById('replyPreviewBar');
+            const replyToName = document.getElementById('replyToName');
+            const replyTextPreview = document.getElementById('replyTextPreview');
+            const cancelReplyBtn = document.getElementById('cancelReplyBtn');
+            const inputPanel = document.getElementById('inputPanel');
+            const sendIcon = sendBtn.querySelector('i');
+
+            let activeMessage = null;
+            let currentReply = null; // { text, author }
+            let editingMessage = null; // DOM Element
+            let longPressTimer;
+            const longPressDuration = 500; // 500ms for long press
 
             const sendMessage = () => {
                 const text = input.value.trim();
-                if (text) {
+                if (!text) return;
+
+                const now = new Date();
+                const timeString = now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+
+                if (editingMessage) {
+                    // Edit existing message
+                    const contentDiv = editingMessage.querySelector('.msg-content');
+                    const timeSpan = contentDiv.querySelector('.msg-time');
+                    const editedLabel = contentDiv.querySelector('.edited-label');
+
+                    // Update text content, preserving reply quote if any
+                    const replyQuote = contentDiv.querySelector('.reply-quote');
+                    if (replyQuote) {
+                        // The text node is after the quote
+                        // We need to be careful not to delete the quote
+                        // Let's remove all child nodes EXCEPT the quote and time/edited label
+                        // Actually, simpler: just update the text node that contains the message
+                        // Assuming structure: [Quote] [Text] [Time]
+
+                        // Find the text node
+                        let textNode = null;
+                        for (let node of contentDiv.childNodes) {
+                            if (node.nodeType === Node.TEXT_NODE && node.textContent.trim().length > 0) {
+                                textNode = node;
+                                break;
+                            }
+                        }
+
+                        if (textNode) {
+                            textNode.textContent = ' ' + text + ' ';
+                        } else {
+                            // If no text node found (weird), insert one after quote
+                            const newText = document.createTextNode(' ' + text + ' ');
+                            contentDiv.insertBefore(newText, timeSpan);
+                        }
+                    } else {
+                        // No quote, just update first text node
+                        contentDiv.childNodes[0].textContent = text + ' ';
+                    }
+
+                    if (!editedLabel) {
+                        const newEditedLabel = document.createElement('span');
+                        newEditedLabel.classList.add('edited-label');
+                        newEditedLabel.textContent = ' (изм.)';
+                        if (timeSpan) {
+                            timeSpan.parentNode.insertBefore(newEditedLabel, timeSpan);
+                        } else {
+                            contentDiv.appendChild(newEditedLabel);
+                        }
+                    }
+                    resetInputState();
+                } else {
+                    // Send new message (or reply)
                     const msgDiv = document.createElement('div');
                     msgDiv.classList.add('message', 'sent');
-                    const now = new Date();
-                    const timeString = now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+
+                    let replyQuoteHtml = '';
+                    if (currentReply) {
+                        replyQuoteHtml = `
+                            <div class="reply-quote">
+                                <span class="reply-sender">${currentReply.author}</span>
+                                <span class="reply-text">${currentReply.text}</span>
+                            </div>
+                        `;
+                    }
 
                     msgDiv.innerHTML = `
                         <div class="msg-content">
+                            ${replyQuoteHtml}
                             ${text}
                             <span class="msg-time">${timeString}</span>
                         </div>
                     `;
 
                     messagesContainer.appendChild(msgDiv);
-                    messageInput.value = '';
+                    resetInputState(); // Clear reply/edit state after sending
                     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
                     // Simulated Reply
@@ -562,11 +656,206 @@
             }
 
             sendBtn.addEventListener('click', sendMessage);
-            messageInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') sendMessage();
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault(); // Prevent new line in input
+                    sendMessage();
+                }
             });
+
+            // Context Menu Logic
+            // Close menu on click outside
+            document.addEventListener('click', (e) => {
+                if (!contextMenu.contains(e.target)) {
+                    contextMenu.style.display = 'none';
+                }
+            });
+
+            // Prevent default context menu and show custom one
+            document.addEventListener('contextmenu', (e) => {
+                const message = e.target.closest('.message');
+                if (message) {
+                    e.preventDefault();
+                    showContextMenu(e.clientX, e.clientY, message);
+                }
+            });
+
+            // Mobile Long Press Logic
+            document.addEventListener('touchstart', (e) => {
+                const message = e.target.closest('.message');
+                if (message && !e.target.closest('.action-btn')) {
+                    longPressTimer = setTimeout(() => {
+                        const touch = e.touches[0];
+                        showContextMenu(touch.clientX, touch.clientY, message);
+                        // Vibrate if supported
+                        if (navigator.vibrate) navigator.vibrate(50);
+                    }, longPressDuration);
+                }
+            }, { passive: true });
+
+            document.addEventListener('touchend', () => {
+                clearTimeout(longPressTimer);
+            });
+
+            document.addEventListener('touchmove', () => {
+                clearTimeout(longPressTimer);
+            });
+
+            function showContextMenu(x, y, message) {
+                activeMessage = message;
+
+                // Adjust if close to edge
+                if (x + 160 > window.innerWidth) x -= 160;
+                if (y + 150 > window.innerHeight) y -= 150;
+
+                contextMenu.style.left = `${x}px`;
+                contextMenu.style.top = `${y}px`;
+                contextMenu.style.display = 'block';
+
+                // Show/Hide Edit based on message type
+                if (message.classList.contains('sent')) {
+                    ctxEdit.style.display = 'flex';
+                    ctxDelete.style.display = 'flex';
+                } else {
+                    ctxEdit.style.display = 'none';
+                    // ctxDelete.style.display = 'none'; // Can delete received messages locally? Let's keep it for now
+                }
+            }
+
+            // --- Actions ---
+
+            // DELETE
+            ctxDelete.addEventListener('click', () => {
+                if (activeMessage) {
+                    activeMessage.remove();
+                    contextMenu.style.display = 'none';
+                    resetInputState(); // Reset if we were editing this message
+                }
+            });
+
+            // COPY
+            ctxCopy.addEventListener('click', () => {
+                if (activeMessage) {
+                    // Get text only, ignoring time and other elements
+                    const contentDiv = activeMessage.querySelector('.msg-content');
+                    // Clone to remove children without affecting DOM
+                    const clone = contentDiv.cloneNode(true);
+                    // Remove time, reply quote, etc.
+                    const time = clone.querySelector('.msg-time');
+                    const quote = clone.querySelector('.reply-quote');
+                    const edited = clone.querySelector('.edited-label');
+                    if (time) time.remove();
+                    if (quote) quote.remove();
+                    if (edited) edited.remove();
+
+                    const text = clone.textContent.trim();
+                    navigator.clipboard.writeText(text);
+                    contextMenu.style.display = 'none';
+                }
+            });
+
+            // REPLY
+            ctxReply.addEventListener('click', () => {
+                if (activeMessage) {
+                    const isSent = activeMessage.classList.contains('sent');
+                    const author = isSent ? 'You' : document.getElementById('activeChatName').textContent.split('(')[0].trim();
+
+                    // Get text content cleanly
+                    const contentDiv = activeMessage.querySelector('.msg-content');
+                    const clone = contentDiv.cloneNode(true);
+                    const time = clone.querySelector('.msg-time');
+                    const quote = clone.querySelector('.reply-quote');
+                    const edited = clone.querySelector('.edited-label');
+                    if (time) time.remove();
+                    if (quote) quote.remove(); // Don't nest quotes for simplicity
+                    if (edited) edited.remove();
+
+                    const text = clone.textContent.trim();
+
+                    startReplyMode(author, text);
+                    contextMenu.style.display = 'none';
+                }
+            });
+
+            // EDIT
+            ctxEdit.addEventListener('click', () => {
+                if (activeMessage && activeMessage.classList.contains('sent')) {
+                    startEditMode(activeMessage);
+                    contextMenu.style.display = 'none';
+                }
+            });
+
+            // --- Helper Functions ---
+
+            function startReplyMode(author, text) {
+                // Reset Edit mode if active
+                if (editingMessage) resetInputState();
+
+                currentReply = { author, text };
+                replyToName.textContent = author;
+                replyTextPreview.textContent = text;
+                replyPreviewBar.classList.add('active');
+
+                input.focus();
+            }
+
+            function startEditMode(message) {
+                // Reset Reply mode if active
+                if (currentReply) resetInputState();
+
+                editingMessage = message;
+                inputPanel.classList.add('editing-mode');
+
+                // Change Icon to Checkmark
+                sendIcon.classList.remove('fa-paper-plane');
+                sendIcon.classList.add('fa-check');
+
+                // Populate Input
+                const contentDiv = message.querySelector('.msg-content');
+                const clone = contentDiv.cloneNode(true);
+                const time = clone.querySelector('.msg-time');
+                const quote = clone.querySelector('.reply-quote');
+                const edited = clone.querySelector('.edited-label');
+                if (time) time.remove();
+                if (quote) quote.remove();
+                if (edited) edited.remove();
+
+                const currentText = clone.textContent.trim();
+                input.value = currentText;
+                input.focus();
+            }
+
+            function resetInputState() {
+                currentReply = null;
+                editingMessage = null;
+
+                replyPreviewBar.classList.remove('active');
+                inputPanel.classList.remove('editing-mode');
+
+                sendIcon.classList.remove('fa-check');
+                sendIcon.classList.add('fa-paper-plane');
+
+                input.value = '';
+            }
+
+            cancelReplyBtn.addEventListener('click', resetInputState);
         });
     </script>
+    <!-- Context Menu -->
+    <div class="message-context-menu" id="messageContextMenu">
+        <div class="context-menu-item" id="ctxReply">
+            <i class="fas fa-reply"></i> Ответить
+        </div>
+        <div class="context-menu-item" id="ctxCopy">
+            <i class="fas fa-copy"></i> Копировать
+        </div>
+        <div class="context-menu-item" id="ctxEdit">
+            <i class="fas fa-pen"></i> Изменить
+        </div>
+        <div class="context-menu-item delete" id="ctxDelete">
+            <i class="fas fa-trash"></i> Удалить
+        </div>
+    </div>
 </body>
 
 </html>
